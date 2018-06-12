@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Restaurant from "./components/restaurant"
+import RestaurantDetails from "./components/restaurant_details"
+
 
 class App extends Component {
 
@@ -8,13 +9,13 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.restaurantList)
+
     const restaurants = this.state.restaurantList.map(restaurant =>{
-      return <Restaurant key={restaurant.id} restaurant={restaurant} />
+      return <RestaurantDetails key={restaurant.id} restaurant={restaurant} />
     })
     return (
       <div>
-        {restaurants}
+        <RestaurantDetails restaurant={this.state.restaurantList[0]} />
       </div>
     );
   }
