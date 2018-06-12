@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Restaurant from "./components/restaurant"
 
 class App extends Component {
+
+  state = {
+    restaurantList: []
+  }
+
   render() {
+    console.log(this.state.restaurantList)
+    const restaurants = this.state.restaurantList.map(restaurant =>{
+      return <Restaurant key={restaurant.id} restaurant={restaurant} />
+    })
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        {restaurants}
       </div>
     );
+  }
+  componentDidMount(){
+    fetch("http://localhost:3000/restaurants")
+    .then(res => res.json())
+    .then(restaurantList => this.setState({restaurantList}))
   }
 }
 
