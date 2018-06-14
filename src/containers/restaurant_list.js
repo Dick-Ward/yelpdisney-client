@@ -11,7 +11,7 @@ class RestaurantList extends Component {
   render() {
     const restaurants = this.props.restaurantList.map(restaurant => {
       if (restaurant.park.includes(this.state.selectedPark)) {
-        return <Restaurant key={restaurant.id} restaurant={restaurant} />;
+        return <Restaurant selectRestaurant={this.props.selectRestaurant} key={restaurant.id} restaurant={restaurant} />;
       } else {
         return null;
       }
@@ -19,8 +19,7 @@ class RestaurantList extends Component {
     const handleChange = event => {
       this.setState({ selectedPark: event.target.value });
     };
-
-    console.log(this.state);
+    console.log(this.props.selectedRestaurant)
 
     return (
       <div style={{ margin: "10px" }}>
@@ -44,7 +43,8 @@ class RestaurantList extends Component {
 
 function mapStateToProps(state) {
   return {
-    restaurantList: state.restaurantList
+    restaurantList: state.restaurantList,
+    selectedRestaurant: state.selectedRestaurant
   };
 }
 
