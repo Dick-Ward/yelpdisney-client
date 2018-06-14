@@ -5,20 +5,28 @@ import * as actions from "../actions";
 
 class RestaurantList extends Component {
   state = {
-    selectedPark: "Resort"
+    selectedPark: ""
   };
 
   render() {
-    const filteredRestaurants = this.props.restaurantList.filter(restaurant => {
-      return this.state.selectedPark.includes(restaurant.park);
+    const restaurants = this.props.restaurantList.map(restaurant => {
+      if (restaurant.park.includes(this.state.selectedPark)) {
+        return <Restaurant key={restaurant.id} restaurant={restaurant} />;
+      } else {
+        return null;
+      }
     });
-    const restaurants = filteredRestaurants.map(restaurant => {
-      return <Restaurant key={restaurant.id} restaurant={restaurant} />;
-    });
+    const handleChange = event => {
+      this.setState({ selectedPark: event.target.value });
+    };
+
+    console.log(this.state);
+
     return (
-      <div>
+      <div style={{ margin: "10px" }}>
         <form>
-          <select>
+          <select defaultValue="" onChange={handleChange}>
+            <option value="">All Parks</option>
             <option value="Epcot">Epcot</option>
             <option value="Magic Kingdom">Magic Kingdom</option>
             <option value="Hollywood Studios">Hollywood Studios</option>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Restaurant from "./components/restaurant";
 import { connect } from "react-redux";
 import * as actions from "./actions";
 import RestaurantList from "./containers/restaurant_list";
