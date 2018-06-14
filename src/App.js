@@ -6,10 +6,10 @@ import RestaurantDetails from "./components/restaurant_details"
 
 class App extends Component {
   render() {
-    console.log(this.props.selectedRestaurant === "none")
+
     return (
       <div>
-      { this.props.selectedRestaurant !== "none" ? <RestaurantDetails restaurant={this.props.selectedRestaurant} /> : null}
+      { this.props.selectedRestaurant !== "none" ? <RestaurantDetails deSelectRestaurant={this.props.deSelectRestaurant} restaurant={this.props.selectedRestaurant} /> : null}
         <RestaurantList />
       </div>
     );
