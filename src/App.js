@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
-import RestaurantDetails from "./components/restaurant_details"
-
+import React, { Component } from "react";
+import RestaurantDetails from "./components/restaurant_details";
+import { connect } from "react-redux";
+import * as actions from "./actions";
 
 class App extends Component {
-
-  state = {
-    restaurantList: []
-  }
-
   render() {
-
-    const restaurants = this.state.restaurantList.map(restaurant =>{
-      return <RestaurantDetails key={restaurant.id} restaurant={restaurant} />
-    })
+    const restaurants = this.props.restaurantList.map(restaurant => {
+      return <RestaurantDetails key={restaurant.id} restaurant={restaurant} />;
+    });
     return (
       <div>
-        <RestaurantDetails restaurant={this.state.restaurantList[0]} />
+        {restaurants}
+        <RestaurantDetails restaurant={this.props.restaurantList[0]} />
       </div>
     );
   }
-  componentDidMount(){
-    fetch("http://localhost:3000/restaurants")
-    .then(res => res.json())
-    .then(restaurantList => this.setState({restaurantList}))
+  componentDidMount() {
+    this.props.getRestaurants();
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    restaurantList: state.restaurantList
+  };
+}
+
+export default connect(mapStateToProps, actions)(App);
