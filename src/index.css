@@ -5,6 +5,7 @@ body {
 }
 
 .restaurant-card {
+  max-width: 40%;
   border: solid;
   border-radius: 10px;
   border-width: thin;

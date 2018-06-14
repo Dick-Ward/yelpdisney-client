@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import RestaurantDetails from "./components/restaurant_details";
+import Restaurant from "./components/restaurant";
 import { connect } from "react-redux";
 import * as actions from "./actions";
+import RestaurantList from "./containers/restaurant_list";
 
 class App extends Component {
   render() {
-    const restaurants = this.props.restaurantList.map(restaurant => {
-      return <RestaurantDetails key={restaurant.id} restaurant={restaurant} />;
-    });
     return (
       <div>
-        {restaurants}
-        <RestaurantDetails restaurant={this.props.restaurantList[0]} />
+        <RestaurantList />
       </div>
     );
   }
