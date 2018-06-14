@@ -19,7 +19,8 @@ class RestaurantList extends Component {
     const handleChange = event => {
       this.setState({ selectedPark: event.target.value });
     };
-    console.log(this.props.selectedRestaurant)
+
+
 
     return (
       <div style={{ margin: "10px" }}>
@@ -43,8 +44,7 @@ class RestaurantList extends Component {
 
 function mapStateToProps(state) {
   return {
-    restaurantList: state.restaurantList,
-    selectedRestaurant: state.selectedRestaurant
+    restaurantList: state.restaurantList
   };
 }
 
