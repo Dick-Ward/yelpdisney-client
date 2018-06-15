@@ -2,14 +2,18 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "./actions";
 import RestaurantList from "./containers/restaurant_list";
-import RestaurantDetails from "./components/restaurant_details"
+import RestaurantDetails from "./components/restaurant_details";
 
 class App extends Component {
   render() {
-
     return (
       <div>
-      { this.props.selectedRestaurant !== "none" ? <RestaurantDetails deSelectRestaurant={this.props.deSelectRestaurant} restaurant={this.props.selectedRestaurant} /> : null}
+        {this.props.selectedRestaurant !== "none" ? (
+          <RestaurantDetails
+            deSelectRestaurant={this.props.deSelectRestaurant}
+            restaurant={this.props.selectedRestaurant}
+          />
+        ) : null}
         <RestaurantList />
       </div>
     );
