@@ -6,6 +6,7 @@ const RestaurantDetails = ({ restaurant, deSelectRestaurant }) => {
 const reviews = restaurant.reviews.map(review =>{
   return <Review key={review.id} review={review}/>
 })
+
     return (
       <div onClick={deSelectRestaurant} className="restaurant-card">
         <h3>{restaurant.name} </h3>
@@ -18,7 +19,8 @@ const reviews = restaurant.reviews.map(review =>{
 
         {restaurant.portion_size ? (<p>Portion Size: {restaurant.portion_size}</p>) : null}
 
-        {reviews.length > 0 ? {reviews} : "Be the first to review this restaurant!"}
+        {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
+        <button>New Review</button>
       </div>
     );
 };
