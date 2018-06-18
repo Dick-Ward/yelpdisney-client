@@ -3,6 +3,9 @@ const API_URL = "http://localhost:3000";
 const getRestaurants = fetch(`${API_URL}/restaurants`)
       .then(res => res.json());
 
+const getRestaurant = id => fetch(`${API_URL}/restaurants/${id}`)
+      .then(res => res.json());
+
 const postReview = data => fetch(`${API_URL}/reviews`,
 {
   body: JSON.stringify(data),
@@ -14,6 +17,7 @@ const postReview = data => fetch(`${API_URL}/reviews`,
 
 const api = {
   getRestaurants,
+  getRestaurant,
   postReview
 
 };

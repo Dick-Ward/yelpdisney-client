@@ -1,9 +1,9 @@
 import React from "react";
 
 const Restaurant = ({ restaurant, selectRestaurant, deSelectRestaurant, selectedRestaurant }) => {
-  
+
   function toggleRestaurant() {
-      if (restaurant !== selectedRestaurant) {
+      if (restaurant.name !== selectedRestaurant.name) {
       selectRestaurant(restaurant);
     } else {
       deSelectRestaurant();
@@ -13,7 +13,6 @@ const Restaurant = ({ restaurant, selectRestaurant, deSelectRestaurant, selected
   return (
     <div onClick={toggleRestaurant} className="restaurant-card">
       <h3>{restaurant.name} </h3>
-      <h5>Cuisine: {restaurant.cuisine}</h5>
     </div>
   );
 };

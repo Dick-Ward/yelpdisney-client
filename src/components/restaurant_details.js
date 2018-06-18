@@ -1,14 +1,14 @@
 import React from "react";
 import Review from "./review"
 
-const RestaurantDetails = ({ restaurant, deSelectRestaurant }) => {
+const RestaurantDetails = ({ restaurant }) => {
 
 const reviews = restaurant.reviews.map(review =>{
   return <Review key={review.id} review={review}/>
 })
 
     return (
-      <div onClick={deSelectRestaurant} className="restaurant-card">
+      <div className="restaurant-review-card">
         <h3>{restaurant.name} </h3>
 
         <h5>Cuisine: {restaurant.cuisine}</h5>
