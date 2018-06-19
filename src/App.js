@@ -6,6 +6,7 @@ import RestaurantDetails from "./components/restaurant_details";
 
 class App extends Component {
   render() {
+    console.log(this.props.selectedRestaurant)
     return (
       <div>
         {this.props.selectedRestaurant !== "none" ? (

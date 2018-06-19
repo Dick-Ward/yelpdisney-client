@@ -9,7 +9,7 @@ class RestaurantDetails extends Component{
   }
 
   render(){
-  console.log(this.state)
+
 
     const {restaurant} = this.props
 
@@ -35,7 +35,7 @@ class RestaurantDetails extends Component{
 
           {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
           <button onClick={handleClick}>New Review</button>
-          {this.state.reviewFormOpen === true ? <div><ReviewForm /> </div>: null}
+          {this.state.reviewFormOpen === true ? <div><ReviewForm restaurant_id={restaurant.id}/> </div>: null}
         </div>
       )}
   };

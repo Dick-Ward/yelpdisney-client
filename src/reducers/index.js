@@ -8,7 +8,7 @@ const indexReducer = (state = initialState, action) => {
       return {...state, selectedRestaurant: action.payload}
     case "SUBMIT_REVIEW":
       console.log("review working")
-      return { ...state, restaurantList: action.payload };
+      return { ...state, selectedRestaurant: {...state.selectedRestaurant, reviews: [...state.selectedRestaurant.reviews, action.payload]  }}
     default:
       return state;
   }

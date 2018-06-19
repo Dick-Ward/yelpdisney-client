@@ -1,4 +1,6 @@
 import React, { Component} from 'react'
+import {connect} from 'react-redux'
+import * as actions from "../actions"
 
 class ReviewForm extends Component{
 
@@ -9,9 +11,13 @@ class ReviewForm extends Component{
 
   render(){
 
-    console.log(this.state)
+
     const handleSubmit = event => {
       event.preventDefault()
+      const data = {rating: this.state.rating,
+              content: this.state.content,
+              restaurant_id: this.props.restaurant_id}
+      this.props.submitReview(data)
       this.setState({
         rating: 1,
         content: ""
@@ -39,4 +45,4 @@ class ReviewForm extends Component{
   }
 }
 
-export default ReviewForm
+export default connect(null, actions)(ReviewForm)

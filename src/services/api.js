@@ -6,7 +6,7 @@ const getRestaurants = fetch(`${API_URL}/restaurants`)
 const getRestaurant = id => fetch(`${API_URL}/restaurants/${id}`)
       .then(res => res.json());
 
-const postReview = data => fetch(`${API_URL}/reviews`,
+const submitReview = data => fetch(`${API_URL}/reviews`,
 {
   body: JSON.stringify(data),
   headers: {
@@ -18,7 +18,7 @@ const postReview = data => fetch(`${API_URL}/reviews`,
 const api = {
   getRestaurants,
   getRestaurant,
-  postReview
+  submitReview
 
 };
 
