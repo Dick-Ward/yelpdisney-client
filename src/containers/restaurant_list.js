@@ -24,6 +24,7 @@ class RestaurantList extends Component {
 
     return (
       <div style={{ margin: "10px" }}>
+
         <form>
           <select defaultValue="" onChange={handleChange}>
             <option value="">All Parks</option>

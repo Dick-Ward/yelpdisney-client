@@ -1,28 +1,43 @@
-import React from "react";
+import React, { Component } from "react";
 import Review from "./review"
+import ReviewForm from "../containers/review_form"
 
-const RestaurantDetails = ({ restaurant }) => {
+class RestaurantDetails extends Component{
 
-const reviews = restaurant.reviews.map(review =>{
-  return <Review key={review.id} review={review}/>
-})
+  state = {
+    reviewFormOpen: false
+  }
 
-    return (
-      <div className="restaurant-review-card">
-        <h3>{restaurant.name} </h3>
+  render(){
+  console.log(this.state)
 
-        <h5>Cuisine: {restaurant.cuisine}</h5>
+    const {restaurant} = this.props
 
-        {restaurant.portion_size ? (<p>Portion Size: {restaurant.portion_size}</p>) : null}
+    const handleClick = () =>{
+      this.setState({reviewFormOpen: true})
+    }
 
-        {restaurant.resort_name ? (<p>Resort: {restaurant.resort_name}</p>) : (<p>Park: {restaurant.park}</p>)}
+    const reviews = restaurant.reviews.map(review =>{
+    return <Review key={review.id} review={review}/>
+  })
 
-        {restaurant.portion_size ? (<p>Portion Size: {restaurant.portion_size}</p>) : null}
+      return (
+        <div className="restaurant-review-card">
+          <h3>{restaurant.name} </h3>
 
-        {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
-        <button>New Review</button>
-      </div>
-    );
-};
+          <h5>Cuisine: {restaurant.cuisine}</h5>
+
+          {restaurant.portion_size ? (<p>Portion Size: {restaurant.portion_size}</p>) : null}
+
+          {restaurant.resort_name ? (<p>Resort: {restaurant.resort_name}</p>) : (<p>Park: {restaurant.park}</p>)}
+
+          {restaurant.portion_size ? (<p>Portion Size: {restaurant.portion_size}</p>) : null}
+
+          {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
+          <button onClick={handleClick}>New Review</button>
+          {this.state.reviewFormOpen === true ? <div><ReviewForm /> </div>: null}
+        </div>
+      )}
+  };
 
 export default RestaurantDetails;
