@@ -4,6 +4,24 @@ body {
   font-family: sans-serif;
 }
 
+@font-face{
+  font-family: "Walt";
+  src: local("Walt"), url("fonts/waltograph42.otf")
+}
+
+.bottom-bordered {
+  border-bottom: solid
+}
+
+.navbar {
+  font-family: "Walt";
+  font-size: 2em;
+  text-align: right;
+  margin-right: 40px;
+  margin-top: 20px;
+  color: blue;
+}
+
 .restaurant-card {
   max-width: 40%;
   border: solid;
