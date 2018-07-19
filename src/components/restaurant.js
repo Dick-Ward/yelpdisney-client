@@ -13,6 +13,7 @@ const Restaurant = ({ restaurant, selectRestaurant, deSelectRestaurant, selected
   return (
     <div onClick={toggleRestaurant} className="restaurant-card">
       <h3>{restaurant.name} </h3>
+      {restaurant.resort_name ? (<p>Resort: {restaurant.resort_name}</p>) : (<p>Park: {restaurant.park}</p>)}
     </div>
   );
 };
