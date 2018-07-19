@@ -26,6 +26,8 @@ class RestaurantDetails extends Component{
           <h3>{restaurant.name} </h3>
 
           <h5>Cuisine: {restaurant.cuisine}</h5>
+          
+          {restaurant.average_rating > 0 ?    <h5>Average Rating: {restaurant.average_rating}</h5> : "Be the first to review this restaurant!"}
 
           {restaurant.portion_size ? (<p>Portion Size: {restaurant.portion_size}</p>) : null}
 
