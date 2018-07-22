@@ -1,4 +1,4 @@
-import {GET_RESTAURANTS, SELECT_RESTAURANT, SUBMIT_REVIEW} from "./types";
+import {GET_RESTAURANTS, SELECT_RESTAURANT} from "./types";
 import api from "../services/api";
 
 export const getRestaurants = () => dispatch => {
@@ -18,7 +18,7 @@ export const deSelectRestaurant = (restaurant) => dispatch => {
 }
 
 export const submitReview = (review) => dispatch => {
-  api.submitReview(review).then(restaurantList =>
-  dispatch({type: SUBMIT_REVIEW, payload: restaurantList})
+  api.submitReview(review).then(restaurant =>
+  dispatch({type: SELECT_RESTAURANT, payload: restaurant})
 )
 }
