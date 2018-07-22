@@ -11,9 +11,10 @@ class App extends Component {
     return (
       <div>
         <div className="bottom-bordered">
-        <Navbar />
+          <Navbar />
+
         </div>
-          {this.props.selectedRestaurant !== "none" ? (
+        {this.props.selectedRestaurant !== "none" ? (
             <RestaurantDetails
               deSelectRestaurant={this.props.deSelectRestaurant}
               restaurant={this.props.selectedRestaurant}

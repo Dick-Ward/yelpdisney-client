@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Review from "./review"
 import ReviewForm from "../containers/review_form"
+import Rating from "./rating"
 
 class RestaurantDetails extends Component{
 
@@ -23,6 +24,7 @@ class RestaurantDetails extends Component{
 
       return (
         <div className="restaurant-review-card">
+          <Rating style={{width: "100px"}}/>
           <h3>{restaurant.name} </h3>
 
           {restaurant.cuisine ? <h5>Cuisine: {restaurant.cuisine}</h5> : null}

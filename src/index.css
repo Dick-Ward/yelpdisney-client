@@ -24,7 +24,7 @@ body {
 }
 
 .restaurant-card {
-  max-width: 40%;
+  width: 40%;
   border: solid;
   border-radius: 10px;
   border-width: thin;
@@ -39,7 +39,7 @@ body {
 
 .restaurant-review-card {
   float: right;
-  max-width: 40%;
+  width: 40%;
   border: solid;
   border-radius: 10px;
   border-width: thin;
