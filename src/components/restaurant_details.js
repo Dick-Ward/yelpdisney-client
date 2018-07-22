@@ -24,8 +24,8 @@ class RestaurantDetails extends Component{
 
       return (
         <div className="restaurant-review-card">
-          <Rating style={{width: "100px"}}/>
           <h3>{restaurant.name} </h3>
+          <Rating style={{width: "100px"}}/>
 
           {restaurant.cuisine ? <h5>Cuisine: {restaurant.cuisine}</h5> : null}
 
