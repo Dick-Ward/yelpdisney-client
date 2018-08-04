@@ -11,8 +11,10 @@ class RestaurantDetails extends Component{
 
   render(){
 
-
     const {restaurant} = this.props
+
+
+
 
     const handleClick = () =>{
       this.setState({reviewFormOpen: true})
@@ -25,12 +27,10 @@ class RestaurantDetails extends Component{
       return (
         <div className="restaurant-review-card">
           <h3>{restaurant.name} </h3>
-          <Rating style={{width: "100px"}}/>
+          <Rating style={{width: "100px"}} rating={restaurant.average_rating} quality={restaurant.average_quality} cleanliness={restaurant.average_cleanliness} service={restaurant.average_service} value={restaurant.average_value}/>
 
           {restaurant.cuisine ? <h5>Cuisine: {restaurant.cuisine}</h5> : null}
-
-          {restaurant.average_rating > 0 ?    <h5>Average Rating: {restaurant.average_rating}</h5> : "Be the first to review this restaurant!"}
-
+          
           {restaurant.portion_size ? (<p>Portion Size: {restaurant.portion_size}</p>) : null}
 
           {restaurant.resort_name ? (<p>Resort: {restaurant.resort_name}</p>) : (<p>Park: {restaurant.park}</p>)}

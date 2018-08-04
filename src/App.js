@@ -15,12 +15,12 @@ class App extends Component {
 
         </div>
         {this.props.selectedRestaurant !== "none" ? (
-            <RestaurantDetails
-              deSelectRestaurant={this.props.deSelectRestaurant}
-              restaurant={this.props.selectedRestaurant}
-            />
-          ) : null}
-          <RestaurantList />
+          <RestaurantDetails
+            deSelectRestaurant={this.props.deSelectRestaurant}
+            restaurant={this.props.selectedRestaurant}
+          />
+        ) : null}
+        <RestaurantList />
       </div>
     );
   }

@@ -49,5 +49,10 @@ body {
 
 .vertical {
   transform: rotate(-90deg);
-  width: 100px;
+  width: 150px;
+  height: 62px;
+}
+
+.rating-text {
+  text-align: center;
 }
