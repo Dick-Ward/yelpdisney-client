@@ -13,6 +13,8 @@ class RestaurantDetails extends Component{
 
     const {restaurant} = this.props
 
+    console.log(restaurant)
+
 
 
 
@@ -30,7 +32,7 @@ class RestaurantDetails extends Component{
           <Rating style={{width: "100px"}} rating={restaurant.average_rating} quality={restaurant.average_quality} cleanliness={restaurant.average_cleanliness} service={restaurant.average_service} value={restaurant.average_value}/>
 
           {restaurant.cuisine ? <h5>Cuisine: {restaurant.cuisine}</h5> : null}
-          
+
           {restaurant.portion_size ? (<p>Portion Size: {restaurant.portion_size}</p>) : null}
 
           {restaurant.resort_name ? (<p>Resort: {restaurant.resort_name}</p>) : (<p>Park: {restaurant.park}</p>)}
