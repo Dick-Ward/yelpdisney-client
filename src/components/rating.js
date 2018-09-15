@@ -2,7 +2,6 @@ import React from 'react'
 import { Progress, Container, Grid } from 'semantic-ui-react'
 
 const Rating = props =>{
-  console.log(props)
   return (
     <Container>
       <Grid >

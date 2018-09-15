@@ -11,7 +11,7 @@ class RestaurantList extends Component {
   render() {
     const restaurants = this.props.restaurantList.map(restaurant => {
       if (restaurant.park.includes(this.state.selectedPark)) {
-        return <Restaurant key={restaurant.id} deSelectRestaurant={this.props.deSelectRestaurant} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
+        return <Restaurant key={restaurant.id} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
       } else {
         return null;
       }
