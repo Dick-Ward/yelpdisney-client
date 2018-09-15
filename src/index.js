@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import indexReducer from "./reducers/index";
 import reduxThunk from "redux-thunk";
 import 'semantic-ui-css/semantic.min.css';
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
 
 
 const store = createStore(indexReducer, applyMiddleware(reduxThunk));

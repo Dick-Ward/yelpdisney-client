@@ -4,7 +4,7 @@ import * as actions from "./actions";
 import RestaurantList from "./containers/restaurant_list";
 import Navbar from "./components/navbar"
 import RestaurantPage from "./containers/restaurant_page";
-import {Route, Switch} from 'react-router-dom'
+import {withRouter, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -17,10 +17,9 @@ class App extends Component {
 
           </div>
           <Switch>
-            <Route path="/restaurants/:id" render={ (renderProps) => {
+            <Route path="/restaurants/:permalink" render={ (renderProps) => {
 
               return <RestaurantPage
-                deSelectRestaurant={this.props.deSelectRestaurant}
                 restaurant={this.props.selectedRestaurant}
                 renderProps={renderProps}
                 selectRestaurant={this.props.selectRestaurant}
@@ -46,4 +45,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, actions)(App);
+export default withRouter(connect(mapStateToProps, actions)(App));

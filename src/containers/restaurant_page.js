@@ -13,7 +13,9 @@ class RestaurantPage extends Component{
 
     const {restaurant} = this.props
 
-console.log(this.props)
+    console.log(this.props)
+
+
 
 
 
