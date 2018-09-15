@@ -8,7 +8,8 @@ export const getRestaurants = () => dispatch => {
 };
 
 export const selectRestaurant = (restaurant) => dispatch => {
-  api.getRestaurant(restaurant.id).then(restaurant =>
+  console.log(restaurant.permalink)
+  api.getRestaurant(`${restaurant.permalink}`).then(restaurant =>
   dispatch({type: SELECT_RESTAURANT, payload: restaurant})
 )
 }
