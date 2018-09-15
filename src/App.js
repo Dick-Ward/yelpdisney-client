@@ -3,26 +3,36 @@ import { connect } from "react-redux";
 import * as actions from "./actions";
 import RestaurantList from "./containers/restaurant_list";
 import Navbar from "./components/navbar"
-import RestaurantDetails from "./components/restaurant_details";
+import RestaurantPage from "./containers/restaurant_page";
+import {Route, Switch} from 'react-router-dom'
 
 class App extends Component {
   render() {
 
     return (
-      <div>
-        <div className="bottom-bordered">
-          <Navbar />
+      <React.Fragment>
+        <div>
+          <div className="bottom-bordered">
+            <Navbar />
 
-        </div>
-        {this.props.selectedRestaurant !== "none" ? (
-          <RestaurantDetails
-            deSelectRestaurant={this.props.deSelectRestaurant}
-            restaurant={this.props.selectedRestaurant}
-          />
-        ) : null}
-        <RestaurantList />
-      </div>
-    );
+          </div>
+          <Switch>
+            <Route path="/restaurants/:id" render={ (renderProps) => {
+
+              return <RestaurantPage
+                deSelectRestaurant={this.props.deSelectRestaurant}
+                restaurant={this.props.selectedRestaurant}
+                renderProps={renderProps}
+                selectRestaurant={this.props.selectRestaurant}
+                     />
+            }}/>
+            <Route path="/" component={RestaurantList}/>
+          </Switch>
+
+
+            </div>
+            </React.Fragment>
+        );
   }
   componentDidMount() {
     this.props.getRestaurants();
