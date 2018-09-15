@@ -5,7 +5,10 @@ import * as actions from "../actions"
 class ReviewForm extends Component{
 
    state = {
-     rating: 1,
+     quality: 1,
+     cleanliness: 1,
+     service: 1,
+     value: 1,
      content: ""
    }
 
@@ -15,11 +18,18 @@ class ReviewForm extends Component{
     const handleSubmit = event => {
       event.preventDefault()
       const data = {rating: this.state.rating,
-              content: this.state.content,
-              restaurant_id: this.props.restaurant_id}
+        quality: this.state.quality,
+        cleanliness: this.state.cleanliness,
+        service: this.state.service,
+        value: this.state.value,
+        content: this.state.content,
+        restaurant_id: this.props.restaurant_id}
       this.props.submitReview(data)
       this.setState({
-        rating: 1,
+        quality: 1,
+        cleanliness: 1,
+        service: 1,
+        value: 1,
         content: ""
       })
     }
@@ -33,10 +43,19 @@ class ReviewForm extends Component{
 
     return(
       <div>
-      <form onSubmit={handleSubmit}>
-        <br/>
-      <label> Rating: <input onChange={handleChange} name="rating" type="number" min="1" max="5" value={this.state.rating}/></label>
-      <br/>
+        <form onSubmit={handleSubmit}>
+          <br/>
+          <label> Quality: <input onChange={handleChange} name="quality" type="number" min="1" max="5" value={this.state.quality}/></label>
+          <br/>
+          <br/>
+          <label> Cleanliness: <input onChange={handleChange} name="cleanliness" type="number" min="1" max="5" value={this.state.cleanliness}/></label>
+          <br/>
+          <br/>
+          <label> Service: <input onChange={handleChange} name="service" type="number" min="1" max="5" value={this.state.service}/></label>
+          <br/>
+          <br/>
+          <label> Value: <input onChange={handleChange} name="value" type="number" min="1" max="5" value={this.state.value}/></label>
+          <br/>
       <label> Content: <textarea onChange={handleChange} name="content" rows="5" value={this.state.content}/></label>
       <input type="submit" />
       </form>
