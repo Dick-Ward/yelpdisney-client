@@ -12,7 +12,7 @@ const Navbar = () => {
           <input type="submit" />
         </label>
       </form>
-      </React.Fragment>
+    </React.Fragment>
   )
 }
 

@@ -8,15 +8,9 @@ export const getRestaurants = () => dispatch => {
 };
 
 export const selectRestaurant = (restaurant) => dispatch => {
-  console.log(restaurant.permalink)
   api.getRestaurant(`${restaurant.permalink}`).then(restaurant =>
   dispatch({type: SELECT_RESTAURANT, payload: restaurant})
-)
-}
-
-export const deSelectRestaurant = (restaurant) => dispatch => {
-  dispatch({type: SELECT_RESTAURANT, payload: "none"})
-}
+)}
 
 export const submitReview = (review) => dispatch => {
   api.submitReview(review).then(restaurant =>

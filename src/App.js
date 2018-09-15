@@ -7,7 +7,15 @@ import RestaurantPage from "./containers/restaurant_page";
 import {withRouter, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
+
+  state = {
+    selectedPark: "",
+    restaurantList: ""
+  }
+
+
   render() {
+
 
     return (
       <React.Fragment>
@@ -21,8 +29,8 @@ class App extends Component {
 
               return <RestaurantPage
                 restaurant={this.props.selectedRestaurant}
-                renderProps={renderProps}
                 selectRestaurant={this.props.selectRestaurant}
+                renderProps={renderProps}
                      />
             }}/>
             <Route path="/" component={RestaurantList}/>
