@@ -15,7 +15,7 @@ class RestaurantList extends Component {
       } else {
         return null;
       }
-    });
+    })
     const handleChange = event => {
       this.setState({ selectedPark: event.target.value });
     };
