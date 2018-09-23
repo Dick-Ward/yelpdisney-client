@@ -20,6 +20,15 @@ body {
   left: 2px;
 }
 
+.in {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  margin-left: 8px;
+  margin-right: 8px;
+
+}
+
 .navSearch {
   position: absolute;
   top: 5px;

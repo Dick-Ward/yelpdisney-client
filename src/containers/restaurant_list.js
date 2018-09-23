@@ -26,8 +26,8 @@ class RestaurantList extends Component {
 
     const options = [
       {key: 'All Parks', text: 'All Parks', value: ''},
-      {key: 'Epcot', text: 'Epcot', value: 'Epcot'},
       {key: 'Magic Kingdom', text: 'Magic Kingdom', value: 'Magic Kingdom'},
+      {key: 'Epcot', text: 'Epcot', value: 'Epcot'},
       {key: 'Hollywood Studios', text: 'Hollywood Studios', value: 'Hollywood Studios'},
       {key: 'Animal Kingdom', text: 'Animal Kingdom', value: 'Animal Kingdom'},
       {key: 'Blizzard Beach', text: 'Blizzard Beach', value: 'Blizzard Beach'},
@@ -47,7 +47,7 @@ class RestaurantList extends Component {
           onChange={handleChange}
           value={this.state.selectedPark}
           className="parkFilter"
-          />
+        />
 
         {restaurants}
       </div>
