@@ -1,8 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import * as actions from "../actions"
 import {Form, Input, Button, Dropdown} from 'semantic-ui-react'
 
-const Navbar = () => {
+class Navbar extends React.Component{
+
+
+render(){
 
   const options = [
     {key: 'All Parks', text: 'All Parks', value: ''},
@@ -21,7 +26,7 @@ const Navbar = () => {
       <Link className="homeLink" to="/">Home</Link>
       <Form className="navSearch" onSubmit={ (e) => {e.preventDefault()}}>
         <Form.Group >
-          <label>{`Search `} 
+          <label>{`Search `}
             <Input type="text"/>
           </label>
           <div className="in">in</div>
@@ -36,6 +41,13 @@ const Navbar = () => {
       </Form>
     </React.Fragment>
   )
+ }
 }
 
-export default Navbar
+function mapStateToProps(state) {
+  return {
+    state: state
+  }
+}
+
+export default connect(mapStateToProps, actions)(Navbar)
