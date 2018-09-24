@@ -16,8 +16,8 @@ const submitReview = data => fetch(`${API_URL}/reviews`,
   method: "POST"
 }).then(response => response.json())
 
-const searchRestaurants = (query, park) =>
-  fetch(`${API_URL}/restaurants/search/${query}/${park}`)
+const searchRestaurants = (query) =>
+  fetch(`${API_URL}/restaurants/search/${query}`)
       .then(res => res.json())
 
 

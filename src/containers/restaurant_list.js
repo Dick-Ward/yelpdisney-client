@@ -5,18 +5,15 @@ import * as actions from "../actions";
 import {Dropdown} from 'semantic-ui-react'
 
 class RestaurantList extends Component {
-  state = {
-    selectedPark: ""
-  };
 
   handleChange = (event, {value}) => {
-
-    this.setState({ selectedPark: value });
+    this.props.applyFilter(value)
   };
 
   render() {
+    console.log(this.props)
     const restaurants = this.props.restaurantList.map(restaurant => {
-      if (restaurant.park.includes(this.state.selectedPark)) {
+      if (restaurant.park.includes(this.props.filter)) {
         return <Restaurant key={restaurant.id} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
       } else {
         return null;
@@ -45,7 +42,7 @@ class RestaurantList extends Component {
           options={options}
           selection
           onChange={this.handleChange}
-          value={this.state.selectedPark}
+          value={this.props.filter}
           className="parkFilter"
         />
 
@@ -58,7 +55,8 @@ class RestaurantList extends Component {
 function mapStateToProps(state) {
   return {
     restaurantList: state.restaurantList,
-    selectedRestaurant: state.selectedRestaurant
+    selectedRestaurant: state.selectedRestaurant,
+    filter: state.filter
   };
 }
 

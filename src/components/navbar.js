@@ -8,11 +8,11 @@ class Navbar extends React.Component{
 
   state = {
     query: '',
-    park: ''
+    filter: ''
   }
 
   handleFilterChange = (e, {value}) =>{
-      this.setState({ park: value });
+      this.setState({ filter: value });
   }
 
   handleSearchChange = e =>{
@@ -21,9 +21,10 @@ class Navbar extends React.Component{
 
   handleSubmit = e =>{
     e.preventDefault()
-    let query = this.state.query == '' ? "all" : this.state.query
-    let park = this.state.park == '' ? "all" : this.state.park
-    this.props.searchRestaurants(query, park)
+    let query = this.state.query === '' ? "all" : this.state.query
+    let filter = this.state.filter === '' ? "all" : this.state.filter
+    this.props.applyFilter(filter)
+    this.props.searchRestaurants(query)
   }
 
 render(){
