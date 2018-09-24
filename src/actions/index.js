@@ -1,8 +1,9 @@
 import {
    GET_RESTAURANTS,
    SELECT_RESTAURANT,
-   APPLY_PARK_FILTER
-  } 
+   APPLY_PARK_FILTER,
+   APPLY_CUISINE_FILTER
+  }
   from "./types";
 import api from "../services/api";
 
@@ -31,4 +32,8 @@ export const searchRestaurants = (query) => dispatch => {
 
 export const applyParkFilter = (park) => dispatch => {
   dispatch({ type: APPLY_PARK_FILTER, payload: park })
+}
+
+export const applyCuisineFilter = (cuisine) => dispatch => {
+  dispatch({ type: APPLY_CUISINE_FILTER, payload: cuisine })
 }
