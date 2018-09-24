@@ -5,6 +5,7 @@ import RestaurantList from "./containers/restaurant_list";
 import Navbar from "./components/navbar"
 import RestaurantPage from "./containers/restaurant_page";
 import {withRouter, Route, Switch} from 'react-router-dom'
+import Splash from './components/splash'
 
 class App extends Component {
 
@@ -33,7 +34,8 @@ class App extends Component {
                 renderProps={renderProps}
                      />
             }}/>
-            <Route path="/" component={RestaurantList}/>
+            <Route path="/restaurants" component={RestaurantList}/>
+            <Route path="/" component={Splash}/>
           </Switch>
 
 
