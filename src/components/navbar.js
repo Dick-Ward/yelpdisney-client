@@ -50,6 +50,7 @@ render(){
               type="text"
               onChange={this.handleSearchChange}
               value={this.state.query}
+              placeholder="Leave blank to see all"
             />
           </label>
           <div className="in">in</div>
