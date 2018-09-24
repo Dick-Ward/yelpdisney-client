@@ -1,4 +1,4 @@
-const initialState = { restaurantList: [], selectedRestaurant: "none" };
+const initialState = { restaurantList: [], selectedRestaurant: "none", filter: "" };
 
 const indexReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -8,6 +8,8 @@ const indexReducer = (state = initialState, action) => {
       return {...state, selectedRestaurant: action.payload}
     case "SUBMIT_REVIEW":
       return { ...state, selectedRestaurant: action.payload}
+    case "APPLY_FILTER":
+      return {...state, filter: action.payload}
     default:
       return state;
   }

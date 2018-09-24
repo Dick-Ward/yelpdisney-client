@@ -13,11 +13,6 @@ class RestaurantDetails extends Component{
 
     const {restaurant} = this.props
 
-    console.log(restaurant)
-
-
-
-
     const handleClick = () =>{
       this.setState({reviewFormOpen: true})
     }
