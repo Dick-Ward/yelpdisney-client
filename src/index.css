@@ -14,6 +14,31 @@ body {
   border-bottom-color: RGBa(200, 75, 75, .5);
 }
 
+.filter {
+  width: 20%;
+}
+
+.homeLink {
+  position: absolute;
+  top: 5px;
+  left: 2px;
+}
+
+.in {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  margin-left: 8px;
+  margin-right: 8px;
+
+}
+
+.navSearch {
+  position: absolute;
+  top: 5px;
+  left: 70px;
+}
+
 .navbar {
   font-family: "Walt";
   font-size: 2em;
