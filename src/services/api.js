@@ -4,8 +4,8 @@ const getRestaurants = fetch(`${API_URL}/restaurants`)
       .then(res => res.json());
 
 const getRestaurant = permalink =>
-fetch(`${API_URL}/restaurants/${permalink}`)
-      .then(res => res.json());
+  fetch(`${API_URL}/restaurants/${permalink}`)
+      .then(res => res.json())
 
 const submitReview = data => fetch(`${API_URL}/reviews`,
 {
@@ -16,10 +16,16 @@ const submitReview = data => fetch(`${API_URL}/reviews`,
   method: "POST"
 }).then(response => response.json())
 
+const searchRestaurants = (query, park) =>
+  fetch(`${API_URL}/restaurants/search/${query}/${park}`)
+      .then(res => res.json())
+
+
 const api = {
   getRestaurants,
   getRestaurant,
-  submitReview
+  submitReview,
+  searchRestaurants
 
 };
 

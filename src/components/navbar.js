@@ -6,9 +6,28 @@ import {Form, Input, Button, Dropdown} from 'semantic-ui-react'
 
 class Navbar extends React.Component{
 
+  state = {
+    query: '',
+    park: ''
+  }
+
+  handleFilterChange = (e, {value}) =>{
+      this.setState({ park: value });
+  }
+
+  handleSearchChange = e =>{
+    this.setState({ query: e.target.value})
+  }
+
+  handleSubmit = e =>{
+    e.preventDefault()
+    let query = this.state.query == '' ? "all" : this.state.query
+    let park = this.state.park == '' ? "all" : this.state.park
+    this.props.searchRestaurants(query, park)
+  }
 
 render(){
-
+ console.log(this.props)
   const options = [
     {key: 'All Parks', text: 'All Parks', value: ''},
     {key: 'Magic Kingdom', text: 'Magic Kingdom', value: 'Magic Kingdom'},
@@ -24,17 +43,21 @@ render(){
     <React.Fragment>
       <div className="navbar">Yelp Disney</div>
       <Link className="homeLink" to="/">Home</Link>
-      <Form className="navSearch" onSubmit={ (e) => {e.preventDefault()}}>
+      <Form className="navSearch" onSubmit={this.handleSubmit}>
         <Form.Group >
           <label>{`Search `}
-            <Input type="text"/>
+            <Input
+              type="text"
+              onChange={this.handleSearchChange}
+              value={this.state.query}
+            />
           </label>
           <div className="in">in</div>
           <Dropdown
-            placeholder={'Filter Results by Park'}
+            placeholder={'All Parks'}
             options={options}
             selection
-            onChange={() => {console.log("hi")}}
+            onChange={this.handleFilterChange}
           />
           <Button>Submit</Button>
         </Form.Group>
@@ -46,7 +69,7 @@ render(){
 
 function mapStateToProps(state) {
   return {
-    state: state
+    restaurantList: state.restaurantList
   }
 }
 

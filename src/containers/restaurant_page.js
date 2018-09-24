@@ -12,13 +12,6 @@ class RestaurantPage extends Component{
   render(){
 
     const {restaurant} = this.props
-
-    console.log(this.props)
-
-
-
-
-
     const handleClick = () =>{
       this.setState({reviewFormOpen: true})
     }

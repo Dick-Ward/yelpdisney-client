@@ -9,8 +9,12 @@ class RestaurantList extends Component {
     selectedPark: ""
   };
 
+  handleChange = (event, {value}) => {
+
+    this.setState({ selectedPark: value });
+  };
+
   render() {
-    // console.log(this.state.selectedPark)
     const restaurants = this.props.restaurantList.map(restaurant => {
       if (restaurant.park.includes(this.state.selectedPark)) {
         return <Restaurant key={restaurant.id} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
@@ -19,10 +23,6 @@ class RestaurantList extends Component {
       }
     })
 
-    const handleChange = (event, {value}) => {
-
-      this.setState({ selectedPark: value });
-    };
 
     const options = [
       {key: 'All Parks', text: 'All Parks', value: ''},
@@ -44,7 +44,7 @@ class RestaurantList extends Component {
           placeholder={'Filter Results by Park'}
           options={options}
           selection
-          onChange={handleChange}
+          onChange={this.handleChange}
           value={this.state.selectedPark}
           className="parkFilter"
         />
