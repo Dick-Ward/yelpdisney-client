@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import ReviewForm from "./review_form"
-import Review from "../components/review"
-import Rating from "../components/rating"
+import Review from "./review"
+import ReviewForm from "../containers/review_form"
+import Rating from "./rating"
 
-class RestaurantPage extends Component{
+class RestaurantDetails extends Component{
 
   state = {
     reviewFormOpen: false
@@ -12,11 +12,11 @@ class RestaurantPage extends Component{
   render(){
 
     const {restaurant} = this.props
+
     const handleClick = () =>{
       this.setState({reviewFormOpen: true})
     }
 
-if (this.props.restaurant !== "none"){
     const reviews = restaurant.reviews.map(review =>{
     return <Review key={review.id} review={review}/>
   })
@@ -38,15 +38,7 @@ if (this.props.restaurant !== "none"){
           <button onClick={handleClick}>New Review</button>
           {this.state.reviewFormOpen === true ? <div><ReviewForm restaurant_id={restaurant.id}/> </div>: null}
         </div>
-      )}else {
-        return (
-          <div> Loading...</div>
-        )
-      }
-    }
-      componentDidMount(){
-        this.props.selectRestaurant(this.props.renderProps.match.params)
-      }
+      )}
   };
 
-export default RestaurantPage;
+export default RestaurantDetails;

@@ -1,42 +1,71 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Restaurant from "../components/restaurant";
+import cuisineOptions from '../services/data'
 import * as actions from "../actions";
+import {Dropdown} from 'semantic-ui-react'
 
 class RestaurantList extends Component {
-  state = {
-    selectedPark: ""
+
+  handleChange = (event, value) => {
+    if(value.name === "parkFilter"){
+    this.props.applyParkFilter(value.value)
+  } else if (value.name === "cuisineFilter") {
+    this.props.applyCuisineFilter(value.value)
+  }
   };
 
   render() {
     const restaurants = this.props.restaurantList.map(restaurant => {
-      if (restaurant.park.includes(this.state.selectedPark)) {
-        return <Restaurant key={restaurant.id} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
+      if (this.props.cuisineFilter != ""){
+        if (restaurant.park.includes(this.props.parkFilter) && restaurant.cuisine && restaurant.cuisine.includes(this.props.cuisineFilter)) {
+          return <Restaurant key={restaurant.id} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
+        } else {
+          return null;
+        }
       } else {
-        return null;
+        if (restaurant.park.includes(this.props.parkFilter)) {
+          return <Restaurant key={restaurant.id} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
+        } else {
+          return null;
+        }
       }
-    });
-    const handleChange = event => {
-      this.setState({ selectedPark: event.target.value });
-    };
+    })
+    console.log(restaurants)
 
-
+    const options = [
+      {key: 'All Parks', text: 'All Parks', value: ''},
+      {key: 'Magic Kingdom', text: 'Magic Kingdom', value: 'Magic Kingdom'},
+      {key: 'Epcot', text: 'Epcot', value: 'Epcot'},
+      {key: 'Hollywood Studios', text: 'Hollywood Studios', value: 'Hollywood Studios'},
+      {key: 'Animal Kingdom', text: 'Animal Kingdom', value: 'Animal Kingdom'},
+      {key: 'Blizzard Beach', text: 'Blizzard Beach', value: 'Blizzard Beach'},
+      {key: 'Typhoon Lagoon', text: 'Typhoon Lagoon', value: 'Typhoon Lagoon'},
+      {key: 'Resort Dining', text: 'Resort Dining', value: 'Resort Dining'}
+    ]
 
     return (
       <div style={{ margin: "10px" }}>
 
-        <form>
-          <select defaultValue="" onChange={handleChange}>
-            <option value="">All Parks</option>
-            <option value="Epcot">Epcot</option>
-            <option value="Magic Kingdom">Magic Kingdom</option>
-            <option value="Hollywood Studios">Hollywood Studios</option>
-            <option value="Animal Kingdom">Animal Kingdom</option>
-            <option value="Blizzard Beach">Blizzard Beach</option>
-            <option value="Typhoon Lagoon">Typhoon Lagoon</option>
-            <option value="Resort Dining">Resort Dining</option>
-          </select>
-        </form>
+        <Dropdown
+          placeholder={'Filter Results by Park'}
+          options={options}
+          selection
+          onChange={this.handleChange}
+          value={this.props.parkFilter}
+          name="parkFilter"
+          className="filter"
+        />
+        <Dropdown
+          placeholder={'Filter Results by Cuisine'}
+          options={cuisineOptions}
+          selection
+          onChange={this.handleChange}
+          value={this.props.cuisineFilter}
+          name="cuisineFilter"
+          className="filter"
+        />
+
         {restaurants}
       </div>
     );
@@ -46,7 +75,9 @@ class RestaurantList extends Component {
 function mapStateToProps(state) {
   return {
     restaurantList: state.restaurantList,
-    selectedRestaurant: state.selectedRestaurant
+    selectedRestaurant: state.selectedRestaurant,
+    parkFilter: state.parkFilter,
+    cuisineFilter: state.cuisineFilter
   };
 }
 
