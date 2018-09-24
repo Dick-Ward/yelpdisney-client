@@ -59,7 +59,7 @@ render(){
             selection
             onChange={this.handleFilterChange}
           />
-          <Link to="/restaurants"><Button>Submit</Button></Link>
+        <Button>Submit</Button>
         </Form.Group>
       </Form>
     </React.Fragment>
