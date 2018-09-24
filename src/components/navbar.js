@@ -2,7 +2,9 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as actions from "../actions"
+import Options from "../services/data"
 import {Form, Input, Button, Dropdown} from 'semantic-ui-react'
+import {withRouter} from 'react-router-dom'
 
 class Navbar extends React.Component{
 
@@ -25,19 +27,10 @@ class Navbar extends React.Component{
     let park = this.state.park
     this.props.applyParkFilter(park)
     this.props.searchRestaurants(query)
+    this.props.history.push('/restaurants')
   }
 
 render(){
-  const options = [
-    {key: 'All Parks', text: 'All Parks', value: ''},
-    {key: 'Magic Kingdom', text: 'Magic Kingdom', value: 'Magic Kingdom'},
-    {key: 'Epcot', text: 'Epcot', value: 'Epcot'},
-    {key: 'Hollywood Studios', text: 'Hollywood Studios', value: 'Hollywood Studios'},
-    {key: 'Animal Kingdom', text: 'Animal Kingdom', value: 'Animal Kingdom'},
-    {key: 'Blizzard Beach', text: 'Blizzard Beach', value: 'Blizzard Beach'},
-    {key: 'Typhoon Lagoon', text: 'Typhoon Lagoon', value: 'Typhoon Lagoon'},
-    {key: 'Resort Dining', text: 'Resort Dining', value: 'Resort Dining'}
-  ]
 
   return(
     <React.Fragment>
@@ -56,7 +49,7 @@ render(){
           <div className="in">in</div>
           <Dropdown
             placeholder={'All Parks'}
-            options={options}
+            options={Options.parkOptions}
             selection
             onChange={this.handleFilterChange}
           />
@@ -74,4 +67,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, actions)(Navbar)
+export default withRouter(connect(mapStateToProps, actions)(Navbar))

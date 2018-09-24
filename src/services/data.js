@@ -8,5 +8,20 @@ let cuisineOptions = cuisineTypes.sort().map(cuisine =>{
 
 cuisineOptions.unshift({key: "All Cuisine Types", text: "All Cuisine Types", value: ""})
 
+const parkOptions = [
+  {key: 'All Parks', text: 'All Parks', value: ''},
+  {key: 'Magic Kingdom', text: 'Magic Kingdom', value: 'Magic Kingdom'},
+  {key: 'Epcot', text: 'Epcot', value: 'Epcot'},
+  {key: 'Hollywood Studios', text: 'Hollywood Studios', value: 'Hollywood Studios'},
+  {key: 'Animal Kingdom', text: 'Animal Kingdom', value: 'Animal Kingdom'},
+  {key: 'Blizzard Beach', text: 'Blizzard Beach', value: 'Blizzard Beach'},
+  {key: 'Typhoon Lagoon', text: 'Typhoon Lagoon', value: 'Typhoon Lagoon'},
+  {key: 'Resort Dining', text: 'Resort Dining', value: 'Resort Dining'}
+]
 
-export default cuisineOptions
+const Options = {
+  cuisineOptions,
+  parkOptions
+}
+
+export default Options
