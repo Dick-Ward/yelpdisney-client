@@ -35,7 +35,6 @@ render(){
   return(
     <React.Fragment>
       <div className="navbar">Yelp Disney</div>
-      <Link className="homeLink" to="/">Home</Link>
       <Form className="navSearch" onSubmit={this.handleSubmit}>
         <Form.Group >
           <label>{`Search `}
@@ -43,7 +42,7 @@ render(){
               type="text"
               onChange={this.handleSearchChange}
               value={this.state.query}
-              placeholder="Leave blank to see all"
+              placeholder="New Search"
             />
           </label>
           <div className="in">in</div>
@@ -53,9 +52,11 @@ render(){
             selection
             onChange={this.handleFilterChange}
           />
-        <Button>Submit</Button>
+          <Button>Submit</Button>
         </Form.Group>
       </Form>
+      <Link className="homeLink" to="/">Home</Link>
+      
     </React.Fragment>
   )
  }

@@ -19,9 +19,9 @@ body {
 }
 
 .homeLink {
-  position: absolute;
-  top: 5px;
-  left: 2px;
+position: absolute;
+top: 20px;
+left: 10px;
 }
 
 .in {
@@ -35,14 +35,15 @@ body {
 
 .navSearch {
   position: absolute;
-  top: 5px;
-  left: 70px;
+  left: 100px;
+  top: 10px;
+  margin-bottom: 30px;
 }
 
 .navbar {
   font-family: "Walt";
   font-size: 2em;
-  text-align: right;
+  float: right;
   margin-right: 40px;
   margin-top: 20px;
   color: RGBa(50,50,200, .8);
