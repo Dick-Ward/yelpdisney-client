@@ -2,11 +2,17 @@ import React, { Component } from "react";
 import ReviewForm from "./review_form"
 import Review from "../components/review"
 import Rating from "../components/rating"
+import {Button} from 'semantic-ui-react'
+import {withRouter} from 'react-router-dom'
 
 class RestaurantPage extends Component{
 
   state = {
     reviewFormOpen: false
+  }
+
+  back = () =>{
+    this.props.history.goBack()
   }
 
   render(){
@@ -23,20 +29,21 @@ if (this.props.restaurant !== "none"){
 
       return (
         <div className="restaurant-review-card">
+          <Button onClick={this.back} basic size='mini'>Back</Button>
           <h3>{restaurant.name} </h3>
           <Rating style={{width: "100px"}} rating={restaurant.average_rating} quality={restaurant.average_quality} cleanliness={restaurant.average_cleanliness} service={restaurant.average_service} value={restaurant.average_value}/>
 
-          {restaurant.cuisine ? <h5>Cuisine: {restaurant.cuisine}</h5> : null}
+          {restaurant.cuisine && <h5>Cuisine: {restaurant.cuisine}</h5>}
 
-          {restaurant.portion_size ? (<p>Portion Size: {restaurant.portion_size}</p>) : null}
+          {restaurant.portion_size && (<p>Portion Size: {restaurant.portion_size}</p>)}
 
           {restaurant.resort_name ? (<p>Resort: {restaurant.resort_name}</p>) : (<p>Park: {restaurant.park}</p>)}
 
-          {restaurant.portion_size ? (<p>Portion Size: {restaurant.portion_size}</p>) : null}
+          {restaurant.portion_size && (<p>Portion Size: {restaurant.portion_size}</p>)}
 
           {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
           <button onClick={handleClick}>New Review</button>
-          {this.state.reviewFormOpen === true ? <div><ReviewForm restaurant_id={restaurant.id}/> </div>: null}
+          {this.state.reviewFormOpen === true && <div><ReviewForm restaurant_id={restaurant.id}/> </div>}
         </div>
       )}else {
         return (
@@ -49,4 +56,4 @@ if (this.props.restaurant !== "none"){
       }
   };
 
-export default RestaurantPage;
+export default withRouter(RestaurantPage);
