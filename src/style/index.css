@@ -2,11 +2,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-size: cover;
 }
 
 @font-face{
   font-family: "Walt";
-  src: local("Walt"), url("fonts/waltograph42.otf")
+  src: local("Walt"), url("../fonts/waltograph42.otf")
 }
 
 .bottom-bordered {

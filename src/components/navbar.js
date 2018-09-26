@@ -56,16 +56,12 @@ render(){
         </Form.Group>
       </Form>
       <Link className="homeLink" to="/">Home</Link>
-      
+
     </React.Fragment>
   )
  }
 }
 
-function mapStateToProps(state) {
-  return {
-    restaurantList: state.restaurantList
-  }
-}
 
-export default withRouter(connect(mapStateToProps, actions)(Navbar))
+
+export default withRouter(connect(null, actions)(Navbar))
