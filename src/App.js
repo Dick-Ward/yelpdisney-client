@@ -21,6 +21,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <div>
+
           <div className="bottom-bordered">
             <Navbar />
 
