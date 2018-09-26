@@ -35,7 +35,7 @@ class RestaurantList extends Component {
 
     return (
       <div style={{ margin: "10px" }}>
-
+        <br/>
         <Dropdown
           placeholder={'Filter Results by Park'}
           options={Options.parkOptions}
