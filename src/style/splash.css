@@ -21,6 +21,11 @@
   background-color: RGBa(50,220,180,1);
 }
 
+.splashSearchForm{
+  width: 70%;
+  margin: auto;
+}
+
 .splashTitle{
   font-size: 10em;
   font-family: "Walt";
