@@ -25,6 +25,7 @@ class Navbar extends React.Component{
     e.preventDefault()
     let query = this.state.query === '' ? "all" : this.state.query
     let park = this.state.park
+    this.props.resetRestaurants()
     this.props.applyParkFilter(park)
     this.props.searchRestaurants(query)
     this.props.history.push('/restaurants')
@@ -56,16 +57,12 @@ render(){
         </Form.Group>
       </Form>
       <Link className="homeLink" to="/">Home</Link>
-      
+
     </React.Fragment>
   )
  }
 }
 
-function mapStateToProps(state) {
-  return {
-    restaurantList: state.restaurantList
-  }
-}
 
-export default withRouter(connect(mapStateToProps, actions)(Navbar))
+
+export default withRouter(connect(null, actions)(Navbar))

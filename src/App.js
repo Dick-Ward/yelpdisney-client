@@ -21,6 +21,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <div>
+
           <div className="bottom-bordered">
             <Navbar />
 
@@ -43,9 +44,7 @@ class App extends Component {
             </React.Fragment>
         );
   }
-  componentDidMount() {
-    this.props.getRestaurants();
-  }
+
 }
 
 function mapStateToProps(state) {

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import "./style/index.css";
+import AppContainer from "./containers/app_container";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import indexReducer from "./reducers/index";
@@ -16,7 +16,7 @@ const store = createStore(indexReducer, applyMiddleware(reduxThunk));
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <AppContainer />
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")

@@ -6,7 +6,7 @@ body {
 
 @font-face{
   font-family: "Walt";
-  src: local("Walt"), url("fonts/waltograph42.otf")
+  src: local("Walt"), url("../fonts/waltograph42.otf")
 }
 
 .bottom-bordered {
