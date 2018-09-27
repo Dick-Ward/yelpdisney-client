@@ -12,14 +12,18 @@ class Filters extends React.Component{
       this.props.applyParkFilter(value.value)
     } else if (value.name === "cuisineFilter") {
       this.props.applyCuisineFilter(value.value)
+    } else if (value.name === "categoryFilter") {
+      this.props.applyCategoryFilter(value.value)
     }
   }
 
   render(){
+    console.log(this.props)
     return(
       <div>
+        <h5>Filter Results By:</h5>
         <Dropdown
-          placeholder={'Filter Results by Park'}
+          placeholder={'Park'}
           options={Options.parkOptions}
           selection
           onChange={this.handleChange}
@@ -28,12 +32,21 @@ class Filters extends React.Component{
           className="filter"
         />
         <Dropdown
-          placeholder={'Filter Results by Cuisine'}
+          placeholder={'Cuisine'}
           options={Options.cuisineOptions}
           selection
           onChange={this.handleChange}
           value={this.props.cuisineFilter}
           name="cuisineFilter"
+          className="filter"
+        />
+        <Dropdown
+          placeholder={'Category'}
+          options={Options.categoryOptions}
+          selection
+          onChange={this.handleChange}
+          value={this.props.categoryFilter}
+          name="categoryFilter"
           className="filter"
         />
       </div>
@@ -44,7 +57,8 @@ class Filters extends React.Component{
 function mapStateToProps(state){
   return {
     parkFilter: state.parkFilter,
-    cuisineFilter: state.cuisineFilter
+    cuisineFilter: state.cuisineFilter,
+    categoryFilter: state.categoryFilter
   }
 }
 

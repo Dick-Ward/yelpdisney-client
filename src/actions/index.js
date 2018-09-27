@@ -2,7 +2,8 @@ import {
    GET_RESTAURANTS,
    SELECT_RESTAURANT,
    APPLY_PARK_FILTER,
-   APPLY_CUISINE_FILTER
+   APPLY_CUISINE_FILTER,
+   APPLY_CATEGORY_FILTER
   }
   from "./types";
 import api from "../services/api";
@@ -34,11 +35,14 @@ export const submitReview = (review) => dispatch => {
 )
 }
 
-
 export const applyParkFilter = (park) => dispatch => {
   dispatch({ type: APPLY_PARK_FILTER, payload: park })
 }
 
 export const applyCuisineFilter = (cuisine) => dispatch => {
   dispatch({ type: APPLY_CUISINE_FILTER, payload: cuisine })
+}
+
+export const applyCategoryFilter = (category) => dispatch => {
+  dispatch({ type: APPLY_CATEGORY_FILTER, payload: category })
 }
