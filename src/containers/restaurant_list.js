@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Restaurant from "../components/restaurant";
+import RestaurantCard from "../components/restaurant_card";
 import * as actions from "../actions";
 import {Grid} from 'semantic-ui-react'
 import Filters from "./filters"
@@ -12,13 +12,13 @@ class RestaurantList extends Component {
     const restaurants = this.props.restaurantList.map(restaurant => {
       if (this.props.cuisineFilter !== ""){
         if (restaurant.park.includes(this.props.parkFilter) && restaurant.cuisine && restaurant.cuisine.includes(this.props.cuisineFilter)) {
-          return <Restaurant key={restaurant.id} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
+          return <RestaurantCard key={restaurant.id} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
         } else {
           return null;
         }
       } else {
         if (restaurant.park.includes(this.props.parkFilter)) {
-          return <Restaurant key={restaurant.id} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
+          return <RestaurantCard key={restaurant.id} selectRestaurant={this.props.selectRestaurant}  restaurant={restaurant} selectedRestaurant={this.props.selectedRestaurant}/>;
         } else {
           return null;
         }
