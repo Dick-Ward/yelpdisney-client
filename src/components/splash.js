@@ -35,9 +35,9 @@ class Splash extends React.Component {
         <div className="splashTitle">Yelp Disney</div>
         <div className="splashBorder">
           <div className="splashSearch">
-            <Form onSubmit={this.handleSubmit}>
+            <Form className="splashSearchForm" onSubmit={this.handleSubmit}>
               <Form.Group >
-                <label>{`Search `}
+                <label >{`Search `}
                   <Input
                     type="text"
                     onChange={this.handleSearchChange}

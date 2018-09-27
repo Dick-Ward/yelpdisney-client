@@ -20,7 +20,7 @@ class Filters extends React.Component{
   render(){
     console.log(this.props)
     return(
-      <div>
+      <div className="filterContainer">
         <h5>Filter Results By:</h5>
         <Dropdown
           placeholder={'Park'}
