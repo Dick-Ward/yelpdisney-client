@@ -1,9 +1,8 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as actions from '../actions/index'
 import Options from '../services/data'
-import {Form, Input, Dropdown, Button, Container} from 'semantic-ui-react'
+import {Form, Input, Dropdown, Button} from 'semantic-ui-react'
 import "../style/splash.css"
 
 class Splash extends React.Component {
@@ -24,6 +23,7 @@ class Splash extends React.Component {
     e.preventDefault()
     let query = this.state.query === '' ? "all" : this.state.query
     let park = this.state.park
+    this.props.resetRestaurants()
     this.props.applyParkFilter(park)
     this.props.searchRestaurants(query)
     this.props.history.push('/restaurants')

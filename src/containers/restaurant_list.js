@@ -16,6 +16,7 @@ class RestaurantList extends Component {
   };
 
   render() {
+    console.log(this.props.restaurantList)
     const restaurants = this.props.restaurantList.map(restaurant => {
       if (this.props.cuisineFilter !== ""){
         if (restaurant.park.includes(this.props.parkFilter) && restaurant.cuisine && restaurant.cuisine.includes(this.props.cuisineFilter)) {
@@ -31,6 +32,7 @@ class RestaurantList extends Component {
         }
       }
     })
+
 
 
     return (
@@ -55,7 +57,7 @@ class RestaurantList extends Component {
           className="filter"
         />
 
-        {restaurants}
+        {this.props.restaurantList.length === 0 ? <div> Loading... </div> : <div>{restaurants}</div>}
       </div>
     );
   }

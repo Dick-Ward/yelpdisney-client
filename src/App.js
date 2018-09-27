@@ -44,9 +44,7 @@ class App extends Component {
             </React.Fragment>
         );
   }
-  componentDidMount() {
-    this.props.getRestaurants();
-  }
+
 }
 
 function mapStateToProps(state) {
