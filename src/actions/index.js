@@ -13,6 +13,16 @@ export const getRestaurants = () => dispatch => {
   )
 }
 
+export const resetRestaurants= () => dispatch => {
+  dispatch({ type: GET_RESTAURANTS, payload: []})
+}
+
+export const searchRestaurants = (query) => dispatch => {
+  api.searchRestaurants(query).then(restaurantList =>
+    dispatch({ type: GET_RESTAURANTS, payload: restaurantList })
+  )
+}
+
 export const selectRestaurant = (restaurant) => dispatch => {
   api.getRestaurant(`${restaurant.permalink}`).then(restaurant =>
   dispatch({type: SELECT_RESTAURANT, payload: restaurant})
@@ -24,11 +34,6 @@ export const submitReview = (review) => dispatch => {
 )
 }
 
-export const searchRestaurants = (query) => dispatch => {
-  api.searchRestaurants(query).then(restaurantList =>
-  dispatch({ type: GET_RESTAURANTS, payload: restaurantList })
- )
-}
 
 export const applyParkFilter = (park) => dispatch => {
   dispatch({ type: APPLY_PARK_FILTER, payload: park })

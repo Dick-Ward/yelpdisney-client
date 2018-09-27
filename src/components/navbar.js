@@ -25,6 +25,7 @@ class Navbar extends React.Component{
     e.preventDefault()
     let query = this.state.query === '' ? "all" : this.state.query
     let park = this.state.park
+    this.props.resetRestaurants()
     this.props.applyParkFilter(park)
     this.props.searchRestaurants(query)
     this.props.history.push('/restaurants')
