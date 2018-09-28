@@ -63,6 +63,9 @@ render(){
  }
 }
 
+function mapStateToProps(state){
+  return {fetchComplete: state.fetchComplete}
+}
 
 
-export default withRouter(connect(null, actions)(Navbar))
+export default withRouter(connect(mapStateToProps, actions)(Navbar))
