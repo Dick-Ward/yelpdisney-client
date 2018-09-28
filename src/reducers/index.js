@@ -3,7 +3,8 @@ const initialState = {
   selectedRestaurant: "none",
   parkFilter: "",
   cuisineFilter: "",
-  categoryFilter: ""
+  categoryFilter: "",
+  fetchComplete: null
   }
 
 const indexReducer = (state = initialState, action) => {
@@ -20,6 +21,8 @@ const indexReducer = (state = initialState, action) => {
       return {...state, cuisineFilter: action.payload}
     case "APPLY_CATEGORY_FILTER":
       return {...state, categoryFilter: action.payload}
+    case "TOGGLE_FETCH_COMPLETE":
+      return {...state, fetchComplete: action.payload}
     default:
       return state;
   }
