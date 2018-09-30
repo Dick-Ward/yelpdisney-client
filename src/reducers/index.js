@@ -4,6 +4,7 @@ const initialState = {
   parkFilter: "",
   cuisineFilter: "",
   categoryFilter: "",
+  cuisineOptions: [{key: "All Cuisine Types", text: "All Cuisine Types", value: ""}],
   fetchComplete: null
   }
 
@@ -23,6 +24,8 @@ const indexReducer = (state = initialState, action) => {
       return {...state, categoryFilter: action.payload}
     case "TOGGLE_FETCH_COMPLETE":
       return {...state, fetchComplete: action.payload}
+    case "SET_CUISINE_OPTIONS":
+      return {...state, cuisineOptions: action.payload}
     default:
       return state;
   }

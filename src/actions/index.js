@@ -4,10 +4,12 @@ import {
    APPLY_PARK_FILTER,
    APPLY_CUISINE_FILTER,
    APPLY_CATEGORY_FILTER,
-   TOGGLE_FETCH_COMPLETE
+   TOGGLE_FETCH_COMPLETE,
+   SET_CUISINE_OPTIONS
   }
   from "./types";
 import api from "../services/api";
+import Options from "../services/data"
 
 export const getRestaurants = () => dispatch => {
   api.getRestaurants.then(restaurantList =>
@@ -20,9 +22,19 @@ export const resetRestaurants= () => dispatch => {
 
 export const searchRestaurants = (query) => dispatch => {
   dispatch({type: TOGGLE_FETCH_COMPLETE, payload: false})
-  api.searchRestaurants(query).then(restaurantList =>
+  api.searchRestaurants(query).then(restaurantList =>{
+    let cuisineTypes = restaurantList.map(restaurant => {
+      if (restaurant.cuisine){
+        console.log(restaurant.cuisine)
+        return restaurant.cuisine
+      }
+    })
+    let uniqueTypes = [...new Set(cuisineTypes)]
+    let parsedCuisine = Options.parseCuisineOptions(uniqueTypes)
+    parsedCuisine.pop()
     dispatch({ type: GET_RESTAURANTS, payload: restaurantList })
-  ).then(success => dispatch({type: TOGGLE_FETCH_COMPLETE, payload: true}))
+    dispatch({type:SET_CUISINE_OPTIONS, payload: parsedCuisine})})
+    .then(success => dispatch({type: TOGGLE_FETCH_COMPLETE, payload: true}))
 
 }
 
@@ -47,6 +59,7 @@ export const applyCuisineFilter = (cuisine) => dispatch => {
 export const applyCategoryFilter = (category) => dispatch => {
   dispatch({ type: APPLY_CATEGORY_FILTER, payload: category })
 }
+
 export const toggleFetchComplete = (fetchComplete) => dispatch => {
   dispatch({ type: TOGGLE_FETCH_COMPLETE, payload: !fetchComplete})
 }
