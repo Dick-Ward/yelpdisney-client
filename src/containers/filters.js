@@ -18,6 +18,7 @@ class Filters extends React.Component{
   }
 
   render(){
+    console.log(this.props.cuisineOptions)
     return(
       <div className="filterContainer">
         <h5>Filter Results By:</h5>
@@ -32,7 +33,7 @@ class Filters extends React.Component{
         />
         <Dropdown
           placeholder={'Cuisine'}
-          options={Options.cuisineOptions}
+          options={this.props.cuisineOptions}
           selection
           onChange={this.handleChange}
           value={this.props.cuisineFilter}
@@ -57,7 +58,8 @@ function mapStateToProps(state){
   return {
     parkFilter: state.parkFilter,
     cuisineFilter: state.cuisineFilter,
-    categoryFilter: state.categoryFilter
+    categoryFilter: state.categoryFilter,
+    cuisineOptions: state.cuisineOptions
   }
 }
 
