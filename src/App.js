@@ -28,12 +28,12 @@ class App extends Component {
           </div>
           <Switch>
             <Route path="/restaurants/:permalink" render={ (renderProps) => {
-
-              return <RestaurantPage
+              return (
+              <RestaurantPage
                 restaurant={this.props.selectedRestaurant}
                 selectRestaurant={this.props.selectRestaurant}
                 renderProps={renderProps}
-                     />
+                     />)
             }}/>
             <Route path="/restaurants" component={RestaurantList}/>
             <Route path="/" component={Splash}/>

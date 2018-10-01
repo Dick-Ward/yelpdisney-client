@@ -18,7 +18,6 @@ class Filters extends React.Component{
   }
 
   render(){
-    console.log(this.props.cuisineOptions)
     return(
       <div className="filterContainer">
         <h5>Filter Results By:</h5>
