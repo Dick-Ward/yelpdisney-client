@@ -25,13 +25,13 @@ export const searchRestaurants = (query) => dispatch => {
   api.searchRestaurants(query).then(restaurantList =>{
     let cuisineTypes = restaurantList.map(restaurant => {
       if (restaurant.cuisine){
-        console.log(restaurant.cuisine)
+
         return restaurant.cuisine
       }
     })
     let uniqueTypes = [...new Set(cuisineTypes)]
     let parsedCuisine = Options.parseCuisineOptions(uniqueTypes)
-    parsedCuisine.pop()
+
     dispatch({ type: GET_RESTAURANTS, payload: restaurantList })
     dispatch({type:SET_CUISINE_OPTIONS, payload: parsedCuisine})})
     .then(success => dispatch({type: TOGGLE_FETCH_COMPLETE, payload: true}))
