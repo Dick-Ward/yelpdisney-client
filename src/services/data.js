@@ -1,8 +1,14 @@
 
 const parseCuisineOptions = (cuisineTypes) =>{
   let cuisineOptions = cuisineTypes.sort().map(cuisine =>{
-    return {key: `cuisine${cuisine}`, text: cuisine, value: cuisine}
-  })
+    if(cuisine){
+      return {key: `cuisine${cuisine}`, text: cuisine, value: cuisine}
+    } else {
+      return undefined
+    }
+  }
+)
+  cuisineOptions = cuisineOptions.filter(opt => opt)
   cuisineOptions.unshift({key: "All Cuisine Types", text: "All Cuisine Types", value: ""})
   return cuisineOptions
 }
