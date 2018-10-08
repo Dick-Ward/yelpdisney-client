@@ -5,6 +5,7 @@ import Rating from "../components/rating"
 import {Button} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
 import Options from "../services/data"
+import {startCase, upperFirst, toLower} from 'lodash';
 
 
 class RestaurantPage extends Component{
@@ -23,11 +24,19 @@ class RestaurantPage extends Component{
 
     const {restaurant} = this.props
 
+    const unparsedDetails = ["entree_range", "breakfast_hours","lunch_hours", "dinner_hours", "operator_url", "house_specialties", "parking"]
+    const unwantedDetails = ["average_rating", "average_value", "average_quality", "average_service", "average_cleanliness", "reviews", "name", "id", "permalink", "short_name", "code", "operator_id", "operator_type"]
+
     const getRestaurantDetails = () =>{
       let details = []
       for (let detail in restaurant){
-        if (restaurant[detail] && detail !== "reviews"){
-          details.push({detail, information: restaurant[detail]})
+        if(restaurant[detail] && restaurant[detail] !== "Resort Dining"){
+          if(unparsedDetails.includes(detail)){
+            details.push({detail: startCase(detail), information: restaurant[detail]})
+          }
+          else if(!unwantedDetails.includes(detail)){
+            details.push({detail: startCase(detail), information: startCase(restaurant[detail])})
+          }
         }
       }
       return details.map(detail =>{
