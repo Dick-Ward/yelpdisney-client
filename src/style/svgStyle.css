@@ -1,0 +1,15 @@
+.Overall{
+  clip-path: url(#svgPathOverall);
+}
+.Quality{
+  clip-path: url(#svgPathQuality);
+}
+.Cleanliness{
+  clip-path: url(#svgPathCleanliness);
+}
+.Service{
+  clip-path: url(#svgPathService);
+}
+.Value{
+  clip-path: url(#svgPathValue);
+}
