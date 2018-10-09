@@ -34,7 +34,7 @@ const RatingContainer = props =>{
 
         <Grid.Row >
           <Grid.Column width={4} className="rating-text">
-          <SmallRating rating={props.quality} ratingOf={"quality"} />
+          <SmallRating rating={props.quality} ratingOf={"Quality"} />
           </Grid.Column>
           <Grid.Column width={4} className="rating-text">
           <div className="vertical">
