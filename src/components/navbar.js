@@ -35,6 +35,7 @@ render(){
 
   return(
     <React.Fragment>
+  
       <div className="navbar">Yelp Disney</div>
       <Form className="navSearch" onSubmit={this.handleSubmit}>
         <Form.Group >
