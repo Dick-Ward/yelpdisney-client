@@ -4,8 +4,7 @@ import Review from "../components/review"
 import RatingContainer from "../components/rating_container"
 import {Button, Grid} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
-import Options from "../services/data"
-import {startCase, upperFirst, toLower} from 'lodash';
+import {startCase} from 'lodash';
 
 
 class RestaurantPage extends Component{
@@ -69,13 +68,15 @@ if (this.props.restaurant !== "none"){
             {getRestaurantDetails()}
         </Grid.Column>
         <Grid.Column width={8}>
-            <RatingContainer  rating={restaurant.average_rating} quality={restaurant.average_quality} cleanliness={restaurant.average_cleanliness} service={restaurant.average_service} value={restaurant.average_value}/>
-
-
-
-
-            {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
+            <RatingContainer
+              rating={restaurant.average_rating}
+              quality={restaurant.average_quality}
+              cleanliness={restaurant.average_cleanliness}
+              service={restaurant.average_service}
+              value={restaurant.average_value}
+            />
             <button onClick={handleClick}>New Review</button>
+            {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
             {this.state.reviewFormOpen === true && <div><ReviewForm restaurant_id={restaurant.id}/> </div>}
           </Grid.Column>
         </Grid>

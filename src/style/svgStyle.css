@@ -1,4 +1,6 @@
 .Overall{
+  width: 62px;
+  height: 60px;
   clip-path: url(#svgPathOverall);
 }
 .Overall > span {
@@ -10,6 +12,8 @@
 }
 
 .Quality{
+  width: 62px;
+  height: 60px;
   clip-path: url(#svgPathQuality);
 }
 .Quality > span {
@@ -21,6 +25,8 @@
 }
 
 .Cleanliness{
+  width: 62px;
+  height: 60px;
   clip-path: url(#svgPathCleanliness);
 }
 .Cleanliness > span {
@@ -32,8 +38,11 @@
 }
 
 .Service{
+  width: 62px;
+  height: 60px;
   clip-path: url(#svgPathService);
-}.Service > span {
+}
+.Service > span {
   display: block;
   height: 100%;
   box-shadow:
@@ -42,8 +51,11 @@
 }
 
 .Value{
+  width: 62px;
+  height: 60px;
   clip-path: url(#svgPathValue);
-}.Value > span {
+}
+.Value > span {
   display: block;
   height: 100%;
   box-shadow:

@@ -3,9 +3,7 @@ import {Grid } from 'semantic-ui-react'
 import SmallRating from './small_rating'
 
 const RatingContainer = props =>{
-  console.log(props)
   return (
-
       <Grid >
           <Grid.Column width={6} className="rating-text">
 

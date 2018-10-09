@@ -1,7 +1,6 @@
 import React from 'react'
 
 const SmallRating = props => {
-console.log(props)
   return (
     <React.Fragment>
     <svg style={{width: 0, height: 0}}>
