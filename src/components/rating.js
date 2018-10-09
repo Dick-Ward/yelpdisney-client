@@ -2,6 +2,7 @@ import React from 'react'
 import { Progress, Container, Grid } from 'semantic-ui-react'
 
 const Rating = props =>{
+  console.log(props)
   return (
     <Container>
       <Grid >
@@ -19,7 +20,9 @@ const Rating = props =>{
                 </clipPath>
               </defs>
             </svg>
-            <Progress className="vertical mickeyClipped" color="purple" value={props.rating} total='5' size='big'/>
+            <div className="vertical">
+            <span style={{width: `${props.rating/5*100}%`, backgroundColor:"blue"}} />
+            </div>
             {props.rating}
             <br/>
             Overall
@@ -29,25 +32,33 @@ const Rating = props =>{
         </Grid.Row>
         <Grid.Row >
           <Grid.Column width={4} className="rating-text">
-            <Progress className="vertical" color="blue" value={props.quality} total='5' size='big'/>
-            {props.quality}
+          <div className="vertical">
+          <span style={{width: `${props.quality/5*100}%`, backgroundColor:"red"}} />
+          </div>
+          {props.quality}
             <br/>
             Quality
           </Grid.Column>
           <Grid.Column width={4} className="rating-text">
-            <Progress className="vertical" color="red" value={props.cleanliness} total='5' size='big'/>
+          <div className="vertical">
+          <span style={{width: `${props.cleanliness/5*100}%`, backgroundColor: "orange"}} />
+          </div>
             {props.cleanliness}
             <br/>
             Cleanliness
           </Grid.Column>
           <Grid.Column width={4} className="rating-text">
-            <Progress className="vertical" color="green" value={props.service} total='5' size='big'/>
-            {props.service}
+          <div className="vertical">
+          <span style={{width: `${props.service/5*100}%`, backgroundColor:"purple"}} />
+          </div>
+          {props.service}
             <br/>
             Service
           </Grid.Column>
           <Grid.Column width={4} className="rating-text">
-            <Progress className="vertical" color="yellow" value={props.value} total='5' size='big'/>
+          <div className="vertical">
+          <span style={{width: `${props.value/5*100}%`, backgroundColor:"green"}} />
+          </div>
             {props.value}
             <br/>
                   Value
