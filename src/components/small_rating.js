@@ -5,9 +5,9 @@ const SmallRating = props => {
     <React.Fragment>
     <svg style={{width: 0, height: 0}}>
       <clipPath id={`svgPath${props.ratingOf}`}>
-         <ellipse cx="47" cy="14" rx="13" ry="13"/>
-         <ellipse cx="47" cy="46" rx="13" ry="13"/>
-         <ellipse cx="20" cy="30" rx="20" ry="20"/>
+      <ellipse cx="71" cy="20" rx="19.5" ry="19.5"/>
+      <ellipse cx="71" cy="70" rx="19.5" ry="19.5"/>
+      <ellipse cx="30" cy="45" rx="30" ry="30"/>
       </clipPath>
     </svg>
     <div>
