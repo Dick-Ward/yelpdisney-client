@@ -99,10 +99,11 @@ left: 10px;
 
 .vertical {
   transform: rotate(-90deg);
-  width: 60px;
+  width: 78px;
   height: 60px;
   background: #ccc;
   box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+  margin: auto;
 }
 
 .vertical > span {

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import ReviewForm from "./review_form"
 import Review from "../components/review"
-import Rating from "../components/rating"
-import {Button} from 'semantic-ui-react'
+import RatingContainer from "../components/rating_container"
+import {Button, Grid} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
 import Options from "../services/data"
 import {startCase, upperFirst, toLower} from 'lodash';
@@ -56,21 +56,29 @@ if (this.props.restaurant !== "none"){
 
 
       return (
-        <div className="restaurant-review-card">
-          <Button onClick={this.back} basic size='mini'>Back</Button>
-          <h3>{restaurant.name} </h3>
-          <Rating style={{width: "100px"}} rating={restaurant.average_rating} quality={restaurant.average_quality} cleanliness={restaurant.average_cleanliness} service={restaurant.average_service} value={restaurant.average_value}/>
+        <Grid>
+
+        <Grid.Column width={1}>
+        </Grid.Column>
+        <Grid.Column width={1}>
+        <Button onClick={this.back} basic size='mini'>Back</Button>
+        </Grid.Column>
+        <Grid.Column width={4}>
+
+            <h3>{restaurant.name} </h3>
+            {getRestaurantDetails()}
+        </Grid.Column>
+        <Grid.Column width={8}>
+            <RatingContainer  rating={restaurant.average_rating} quality={restaurant.average_quality} cleanliness={restaurant.average_cleanliness} service={restaurant.average_service} value={restaurant.average_value}/>
 
 
 
 
-          {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
-          <button onClick={handleClick}>New Review</button>
-          {getRestaurantDetails()}
-          {this.state.reviewFormOpen === true && <div><ReviewForm restaurant_id={restaurant.id}/> </div>}
-
-
-        </div>
+            {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
+            <button onClick={handleClick}>New Review</button>
+            {this.state.reviewFormOpen === true && <div><ReviewForm restaurant_id={restaurant.id}/> </div>}
+          </Grid.Column>
+        </Grid>
       )}else {
         return (
           <div> Loading...</div>
