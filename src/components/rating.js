@@ -9,7 +9,17 @@ const Rating = props =>{
           <Grid.Column width={6} className="rating-text">
           </Grid.Column>
           <Grid.Column width={4} className="rating-text">
-            <Progress className="vertical" color="purple" value={props.rating} total='5' size='big'/>
+            <svg>
+              <defs>
+                <clipPath id="svgPath">
+                 <ellipse cx="47" cy="14" rx="13" ry="13"/>
+                 <ellipse cx="47" cy="46" rx="13" ry="13"/>
+                 <ellipse cx="20" cy="30" rx="20" ry="20"/>
+
+                </clipPath>
+              </defs>
+            </svg>
+            <Progress className="vertical mickeyClipped" color="purple" value={props.rating} total='5' size='big'/>
             {props.rating}
             <br/>
             Overall

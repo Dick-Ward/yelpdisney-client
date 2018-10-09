@@ -99,8 +99,12 @@ left: 10px;
 
 .vertical {
   transform: rotate(-90deg);
-  width: 150px;
+  width: 60px;
   height: 62px;
+  clip-path: url(#svgPath)
+}
+
+.mickeyClipped{
 }
 
 .rating-text {
