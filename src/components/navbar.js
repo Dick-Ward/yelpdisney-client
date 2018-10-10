@@ -34,9 +34,9 @@ class Navbar extends React.Component{
 render(){
 
   return(
-    <React.Fragment>
-  
-      <div className="navbar">Yelp Disney</div>
+    <div className="navbar">
+
+      <div className="logo">Yelp Disney</div>
       <Form className="navSearch" onSubmit={this.handleSubmit}>
         <Form.Group >
           <label>{`Search `}
@@ -59,7 +59,7 @@ render(){
       </Form>
       <Link className="homeLink" to="/">Home</Link>
 
-    </React.Fragment>
+    </div>
   )
  }
 }

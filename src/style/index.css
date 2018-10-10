@@ -12,11 +12,6 @@ body {
   src: local("Walt"), url("../fonts/waltograph42.otf")
 }
 
-.bottom-bordered {
-  border-bottom-style: inset;
-  border-bottom-color: RGBa(200, 75, 75, .5);
-}
-
 .filter {
   width: 50%;
 }
@@ -32,6 +27,11 @@ body {
   border-color: grey;
 }
 
+.homeLink {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
 
 .in {
   display: flex;
@@ -49,7 +49,7 @@ body {
   margin-bottom: 30px;
 }
 
-.navbar {
+.logo {
   font-family: "Walt";
   font-size: 2em;
   float: right;
@@ -58,6 +58,28 @@ body {
   color: RGBa(50,50,200, .8);
 }
 
+.navbar {
+  border-bottom-style: inset;
+  border-bottom-color: RGBa(255, 100, 100, 1);
+  background-color: RGB(255,225,225);
+  margin-bottom: 10px;
+}
+.ratingContainer{
+  width: 80%;
+  margin: auto;
+  border: solid;
+  border-width: thin;
+  border-radius: 10px;
+  border-color: RGBa(220,220,255,.1);
+  background-color: RGBa(220,220,255,.2);
+  position: absolute;
+  top: 60px;
+  left: 40px;
+}
+
+.rating-text {
+  text-align: center;
+}
 .restaurant-review-card {
   width: 80%;
   border: solid;
@@ -67,12 +89,14 @@ body {
   padding: 20px;
 }
 
+.reviewContainer {
+  position: absolute;
+  top: 460px;
+  left: 40px;
+}
+
 .vertical {
   transform: rotate(-90deg);
   background: #ccc;
   margin: auto;
-}
-
-.rating-text {
-  text-align: center;
 }

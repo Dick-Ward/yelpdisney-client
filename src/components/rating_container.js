@@ -4,7 +4,7 @@ import SmallRating from './small_rating'
 
 const RatingContainer = props =>{
   return (
-
+        <div className="ratingContainer">
           <Grid >
               <Grid.Column width={6} className="rating-text">
               </Grid.Column>
@@ -28,22 +28,23 @@ const RatingContainer = props =>{
               </Grid.Column>
 
               <Grid.Row >
-              <Grid.Column width={2} />
-                <Grid.Column width={3} className="rating-text">
+
+                <Grid.Column width={4} className="rating-text">
                   <SmallRating rating={props.quality} ratingOf={"Quality"} color={"red"} />
                 </Grid.Column>
-                <Grid.Column width={3} className="rating-text">
+                <Grid.Column width={4} className="rating-text">
                   <SmallRating rating={props.cleanliness} ratingOf={"Cleanliness"} color={"purple"}/>
                 </Grid.Column>
-                <Grid.Column width={3} className="rating-text">
+                <Grid.Column width={4} className="rating-text">
                   <SmallRating rating={props.service} ratingOf={"Service"} color={"green"}/>
                 </Grid.Column>
-                <Grid.Column width={3} className="rating-text">
+                <Grid.Column width={4} className="rating-text">
                   <SmallRating rating={props.value} ratingOf={"Value"} color={"orange"}/>
                 </Grid.Column>
-                <Grid.Column width={2} />
+
               </Grid.Row>
             </Grid>
+          </div>
 
         )
       }

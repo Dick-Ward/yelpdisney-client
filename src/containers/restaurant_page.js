@@ -65,12 +65,15 @@ if (this.props.restaurant !== "none"){
         </Grid.Column>
         <Grid.Column width={4}>
 
-            <div className="restaurantTitle">{restaurant.name} </div>
+
             <div className="restaurantDetails">
               {getRestaurantDetails()}
             </div>
         </Grid.Column>
         <Grid.Column width={8}>
+        <div>
+          <div className="restaurantTitle">{restaurant.name} </div>
+          </div>
             <RatingContainer
               rating={restaurant.average_rating}
               quality={restaurant.average_quality}
@@ -78,9 +81,11 @@ if (this.props.restaurant !== "none"){
               service={restaurant.average_service}
               value={restaurant.average_value}
             />
+            <div className="reviewContainer">
             <button onClick={handleClick}>New Review</button>
             {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
             {this.state.reviewFormOpen === true && <div><ReviewForm restaurant_id={restaurant.id}/> </div>}
+            </div>
           </Grid.Column>
         </Grid>
       )}else {
