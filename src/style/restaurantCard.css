@@ -1,0 +1,30 @@
+.cardTitle{
+  font-size: 1.5em;
+  font-family: "Dosis";
+  margin: 5px;
+}
+
+.restaurant-card {
+  min-width: 420px;
+  border: solid;
+  border-radius: 10px;
+  border-width: thin;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.restaurant-card:hover{
+  cursor: pointer;
+}
+
+.cardParkName{
+  text-align: right;
+  font-family: "Dosis";
+  font-size: 1.2em;
+}
+
+.cardInfo{
+  font-family: "Roboto";
+  margin-left: 20px;
+}

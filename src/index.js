@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./style/index.css";
 import "./style/svgStyle.css";
+import "./style/restaurant.css";
+import "./style/restaurantCard.css";
 import AppContainer from "./containers/app_container";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
