@@ -20,11 +20,10 @@
 
 .cardParkName{
   text-align: right;
-  font-family: "Dosis";
+  font-family: "Dosis", sans-serif;
   font-size: 1.2em;
 }
 
 .cardInfo{
-  font-family: "Roboto";
   margin-left: 20px;
 }
