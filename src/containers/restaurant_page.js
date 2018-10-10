@@ -20,16 +20,17 @@ class RestaurantPage extends Component{
 
 
   render(){
-
     const {restaurant} = this.props
+    console.log(restaurant)
 
-    const unparsedDetails = ["entree_range", "breakfast_hours","lunch_hours", "dinner_hours", "operator_url", "house_specialties", "parking"]
-    const unwantedDetails = ["average_rating", "average_value", "average_quality", "average_service", "average_cleanliness", "reviews", "name", "id", "permalink", "short_name", "code", "operator_id", "operator_type"]
+    const unparsedDetails = ["entree_range", "breakfast_hours","lunch_hours", "dinner_hours", "parking", "wine_list"]
+    const unwantedDetails = ["average_rating", "average_value", "average_quality", "average_service", "average_cleanliness", "reviews", "name", "id", "permalink", "short_name", "code", "operator_id", "operator_type", "sort_name", "park", "operator_url", "house_specialties"]
 
     const getRestaurantDetails = () =>{
       let details = []
       for (let detail in restaurant){
         if(restaurant[detail] && restaurant[detail] !== "Resort Dining"){
+
           if(unparsedDetails.includes(detail)){
             details.push({detail: startCase(detail), information: restaurant[detail]})
           }
@@ -64,8 +65,10 @@ if (this.props.restaurant !== "none"){
         </Grid.Column>
         <Grid.Column width={4}>
 
-            <h3>{restaurant.name} </h3>
-            {getRestaurantDetails()}
+            <div className="restaurantTitle">{restaurant.name} </div>
+            <ul className="restaurantDetails">
+              {getRestaurantDetails()}
+            </ul>
         </Grid.Column>
         <Grid.Column width={8}>
             <RatingContainer

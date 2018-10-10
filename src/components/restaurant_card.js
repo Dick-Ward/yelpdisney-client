@@ -13,12 +13,13 @@ const RestaurantCard = ({ restaurant, selectRestaurant, selectedRestaurant }) =>
 
         <div className="cardTitle">{restaurant.name} </div>
 
+        <div className="cardInfo">
+          {restaurant.cuisine !== "" ? <div >{restaurant.cuisine}</div> : <div>Cusine Not Listed</div> }
+          <div >{Options.parseCategoryCode(restaurant.category_code)}</div>
+        </div>
 
-        {restaurant.cuisine !== "" ? <div >{restaurant.cuisine}</div> : <div>Cusine Not Listed</div> }
-        <div >{Options.parseCategoryCode(restaurant.category_code)}</div>
 
-
-        {restaurant.resort_name ? (<div className="right"> {restaurant.resort_name}</div>) : (<div className="right"> {restaurant.park}</div>)}
+        {restaurant.resort_name ? (<div className="cardParkName"> {restaurant.resort_name}</div>) : (<div className="cardParkName"> {restaurant.park}</div>)}
 
       </Link>
       </div>
