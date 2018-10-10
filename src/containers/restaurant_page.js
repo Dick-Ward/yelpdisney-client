@@ -66,9 +66,9 @@ if (this.props.restaurant !== "none"){
         <Grid.Column width={4}>
 
             <div className="restaurantTitle">{restaurant.name} </div>
-            <ul className="restaurantDetails">
+            <div className="restaurantDetails">
               {getRestaurantDetails()}
-            </ul>
+            </div>
         </Grid.Column>
         <Grid.Column width={8}>
             <RatingContainer
