@@ -16,9 +16,9 @@ class App extends Component {
     return (
       <React.Fragment>
         <div>
-          <div className="bottom-bordered">
+
             <Navbar />
-          </div>
+
           <Switch>
             <Route path="/restaurants/:permalink" render={ (renderProps) => {
               return (

@@ -1,16 +1,10 @@
 
-.homeLink {
-  position: absolute;
-  top: 20px;
-  left: 10px;
-}
 .restaurantTitle {
   font-family: "Dosis", sans-serif;
-  font-size: 2em;
+  font-size: 3em;
   margin-top: 5px;
-  margin-bottom: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  text-align: center;
+  margin-right: 60px;
 }
 .restaurantDetails {
   font-family: 'Roboto', sans-serif;
@@ -22,7 +16,10 @@
   border-width: thin;
   border-color: RGBA(200,200,255,.1);
   border-radius: 10px;
-  background-color: RGBa(200,200,255,.1);
+  background-color: RGBa(220,220,255,.1);
+  position: absolute;
+  top: 60px;
+  width: 95%
 }
 .restaurantDetails > :first-child {
   border: solid;
@@ -37,7 +34,6 @@
   border-radius: 0px 0px 10px 10px;
 }
 .restaurantDetails > p {
-  margin-left: 0px;
   background-color: RGBa(200,200,255,.1);
   border: solid;
   border-width: thin;
