@@ -1,4 +1,7 @@
-
+.backButton{
+  position: absolute;
+  left: 25px;
+}
 .restaurantTitle {
   font-family: "Dosis", sans-serif;
   font-size: 3em;
