@@ -13,6 +13,7 @@ class ReviewForm extends Component{
    }
 
   render(){
+    console.log(this.props)
 
 
     const handleSubmit = event => {
@@ -32,10 +33,10 @@ class ReviewForm extends Component{
         value: 1,
         content: ""
       })
+      this.props.closeForm()
     }
 
     const handleChange = event => {
-
       this.setState({
         [event.target.name]: event.target.value
       })
@@ -56,7 +57,7 @@ class ReviewForm extends Component{
           <br/>
           <label> Value: <input onChange={handleChange} name="value" type="number" min="1" max="5" value={this.state.value}/></label>
           <br/>
-      <label> Content: <textarea onChange={handleChange} name="content" rows="5" value={this.state.content}/></label>
+      <label> Content: <textarea maxLength="500" onChange={handleChange} name="content" rows="5" value={this.state.content}/></label>
       <input type="submit" />
       </form>
       </div>

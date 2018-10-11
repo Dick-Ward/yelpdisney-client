@@ -1,21 +1,17 @@
 *{
   font-family: "Roboto", sans-serif;
 }
-
 body {
   margin: 0;
   padding: 0;
 }
-
 @font-face{
   font-family: "Walt";
   src: local("Walt"), url("../fonts/waltograph42.otf")
 }
-
 .filter {
   width: 50%;
 }
-
 .filterContainer{
   min-width: 220px;
   width: 65%;
@@ -26,29 +22,24 @@ body {
   border-width: thin;
   border-color: grey;
 }
-
 .homeLink {
   position: absolute;
   top: 20px;
   left: 10px;
 }
-
 .in {
   display: flex;
   text-align: center;
   margin: auto;
   margin-left: 8px;
   margin-right: 8px;
-
 }
-
 .navSearch {
   position: absolute;
   left: 100px;
   top: 10px;
   margin-bottom: 30px;
 }
-
 .logo {
   font-family: "Walt";
   font-size: 2em;
@@ -57,7 +48,6 @@ body {
   margin-top: 20px;
   color: RGBa(50,50,200, .8);
 }
-
 .navbar {
   border-bottom-style: inset;
   border-bottom-color: RGBa(255, 100, 100, 1);
@@ -76,7 +66,6 @@ body {
   top: 60px;
   left: 40px;
 }
-
 .rating-text {
   text-align: center;
 }
@@ -88,13 +77,31 @@ body {
   margin: 10px;
   padding: 20px;
 }
-
+.reviewCard{
+  border: solid;
+  border-radius: 10px;
+  border-width: thin;
+  border-color: RGBa(220,220,220,.5);
+  padding: 5px;
+  margin-top: 10px;
+  word-wrap: break-word;
+}
+.reviewCard > p {
+  margin: 2px;
+  font-style: italic;
+}
+.reviewCard > div {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .reviewContainer {
   position: absolute;
   top: 460px;
   left: 40px;
+  width: 80%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-
 .vertical {
   transform: rotate(-90deg);
   background: #ccc;

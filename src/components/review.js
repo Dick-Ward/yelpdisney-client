@@ -1,12 +1,16 @@
 import React from 'react'
 
 const Review = ({review}) =>{
+  if (review.content){
   return(
-    <div>
-      {review.content !== "" ? <div>Review: {review.content}</div> : null}
-      <br/>
+    <div className="reviewCard">
+       <p>Reviewer Name</p>
+       <div>{review.content}</div>
     </div>
-  )
+  )} else {
+    return null
+  }
+
 }
 
 export default Review

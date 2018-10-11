@@ -48,6 +48,10 @@ class RestaurantPage extends Component{
       this.setState({reviewFormOpen: true})
     }
 
+    const closeForm = () =>{
+      this.setState({reviewFormOpen: false})
+    }
+
 if (this.props.restaurant !== "none"){
     const reviews = restaurant.reviews.map(review =>{
       return <Review key={review.id} review={review}/>
@@ -61,11 +65,11 @@ if (this.props.restaurant !== "none"){
         <Grid.Column width={1}>
         </Grid.Column>
         <Grid.Column width={1}>
-        <Button onClick={this.back} basic size='mini'>Back</Button>
         </Grid.Column>
         <Grid.Column width={4}>
 
 
+        <Button onClick={this.back} className="backButton" basic size='mini'>Back</Button>
             <div className="restaurantDetails">
               {getRestaurantDetails()}
             </div>
@@ -83,8 +87,8 @@ if (this.props.restaurant !== "none"){
             />
             <div className="reviewContainer">
             <button onClick={handleClick}>New Review</button>
-            {reviews.length > 0 ? <div>{reviews}</div>: "Be the first to review this restaurant!"}
-            {this.state.reviewFormOpen === true && <div><ReviewForm restaurant_id={restaurant.id}/> </div>}
+            {this.state.reviewFormOpen === true && <div><ReviewForm closeForm={closeForm} restaurant_id={restaurant.id}/> </div>}
+            {reviews.length > 0 ? <div >{reviews}</div>: "Be the first to review this restaurant!"}
             </div>
           </Grid.Column>
         </Grid>
