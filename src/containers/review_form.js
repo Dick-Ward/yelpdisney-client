@@ -1,6 +1,7 @@
 import React, { Component} from 'react'
 import {connect} from 'react-redux'
 import * as actions from "../actions"
+import {Form} from 'semantic-ui-react'
 
 class ReviewForm extends Component{
 
@@ -43,23 +44,27 @@ class ReviewForm extends Component{
     }
 
     return(
-      <div>
-        <form onSubmit={handleSubmit}>
-          <br/>
-          <label> Quality: <input onChange={handleChange} name="quality" type="number" min="1" max="5" value={this.state.quality}/></label>
-          <br/>
-          <br/>
-          <label> Cleanliness: <input onChange={handleChange} name="cleanliness" type="number" min="1" max="5" value={this.state.cleanliness}/></label>
-          <br/>
-          <br/>
-          <label> Service: <input onChange={handleChange} name="service" type="number" min="1" max="5" value={this.state.service}/></label>
-          <br/>
-          <br/>
-          <label> Value: <input onChange={handleChange} name="value" type="number" min="1" max="5" value={this.state.value}/></label>
-          <br/>
-      <label> Content: <textarea maxLength="500" onChange={handleChange} name="content" rows="5" value={this.state.content}/></label>
-      <input type="submit" />
-      </form>
+      <div className="reviewForm">
+        <Form onSubmit={handleSubmit}>
+        <Form.Group>
+         <Form.Field>
+          <label> Quality: {this.state.quality}<br/><input onChange={handleChange} name="quality" type="range" min="1" max="5" value={this.state.quality}/></label>
+        </Form.Field>
+         <Form.Field>
+          <label> Cleanliness: {this.state.cleanliness}<br/><input onChange={handleChange} name="cleanliness" type="range" min="1" max="5" value={this.state.cleanliness}/></label>
+         </Form.Field>
+         <Form.Field>
+          <label> Service: {this.state.service}<br/><input onChange={handleChange} name="service" type="range" min="1" max="5" value={this.state.service}/></label>
+         </Form.Field>
+         <Form.Field>
+          <label> Value: {this.state.value}<br/><input onChange={handleChange} name="value" type="range" min="1" max="5" value={this.state.value}/></label>
+         </Form.Field>
+        </Form.Group>
+
+          <label > Content: <Form.TextArea maxLength="500" onChange={handleChange} name="content" rows="5" value={this.state.content}/></label>
+
+          <Form.Button>Submit</Form.Button>
+        </Form>
       </div>
     )
   }
