@@ -87,7 +87,7 @@ if (this.props.restaurant !== "none"){
             />
             <div className="reviewContainer">
             <button onClick={handleClick}>New Review</button>
-            {this.state.reviewFormOpen === true && <div><ReviewForm closeForm={closeForm} restaurant_id={restaurant.id}/> </div>}
+            {this.state.reviewFormOpen === true && <ReviewForm closeForm={closeForm} restaurant_id={restaurant.id}/>}
             {reviews.length > 0 ? <div >{reviews}</div>: "Be the first to review this restaurant!"}
             </div>
           </Grid.Column>
