@@ -10,13 +10,13 @@ class RestaurantList extends Component {
 
   conditionalRestaurants = () =>{
     if (this.props.restaurantList.length === 0 && this.props.fetchComplete === false){
-      return <div> Loading... </div>
+      return <div style={{textAlign: "center"}}> Loading... </div>
     } else if (this.props.restaurantList.length === 0 && this.props.fetchComplete === true) {
-        return <div> No restaurants found </div>
+        return <div style={{textAlign: "center"}}> No restaurants found </div>
     } else if (this.props.fetchComplete === null) {
-        return <div>Search for a restaurant</div>
+        return <div style={{textAlign: "center"}}>Search for a restaurant</div>
     } else if (this.restaurants().filter(restaurant => restaurant).length === 0){
-        return <div>No results found</div>}
+        return <div style={{textAlign: "center"}}>No results found</div>}
       else {
         return <div>{this.restaurants()}</div>
       }
@@ -42,16 +42,17 @@ class RestaurantList extends Component {
 
     return (
       <Grid >
-        <Grid.Column width={4}>
+        <Grid.Column width={2}>
+        </Grid.Column>
+        <Grid.Column width={3}>
           <Filters />
         </Grid.Column>
         <Grid.Column width={8}>
           <div className="restaurantListContainer">
-            <br/>
             {this.conditionalRestaurants()}
           </div>
         </Grid.Column>
-        <Grid.Column width={4}>
+        <Grid.Column width={3}>
         </Grid.Column>
       </Grid>
 

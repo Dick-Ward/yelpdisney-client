@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as actions from "../actions"
 import Options from "../services/data"
-import {Form, Input, Button, Dropdown} from 'semantic-ui-react'
+import {Form, Input, Button, Dropdown, Grid} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
 
 class Navbar extends React.Component{
@@ -35,30 +35,36 @@ render(){
 
   return(
     <div className="navbar">
+      <Grid>
+        <Grid.Column width={2}>
+        </Grid.Column>
+        <Grid.Column width={4}>
+          <Link className="homeLink" to="/"><div className="logo">Yelp Disney</div></Link>
+        </Grid.Column>
+        <Grid.Column width={4}>
+          <Form className="navSearch" onSubmit={this.handleSubmit}>
+            <Form.Group >
 
-      <div className="logo">Yelp Disney</div>
-      <Form className="navSearch" onSubmit={this.handleSubmit}>
-        <Form.Group >
-          <label>{`Search `}
-            <Input
-              type="text"
-              onChange={this.handleSearchChange}
-              value={this.state.query}
-              placeholder="New Search"
-            />
-          </label>
-          <div className="in">in</div>
-          <Dropdown
-            placeholder={'All Parks'}
-            options={Options.parkOptions}
-            selection
-            onChange={this.handleFilterChange}
-          />
-          <Button>Submit</Button>
-        </Form.Group>
-      </Form>
-      <Link className="homeLink" to="/">Home</Link>
+              <Input
+                type="text"
+                onChange={this.handleSearchChange}
+                value={this.state.query}
+                placeholder="New Search"
+              />
 
+              <Button>Go</Button>
+            </Form.Group>
+          </Form>
+        </Grid.Column>
+        <Grid.Column width={4}>
+          <Button.Group className="navbarLogin">
+            <Button basic>Log In </Button>
+            <Button basic>Sign Up </Button>
+          </Button.Group>
+      </Grid.Column>
+        <Grid.Column width={2}>
+        </Grid.Column>
+      </Grid>
     </div>
   )
  }

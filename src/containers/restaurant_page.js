@@ -62,22 +62,21 @@ if (this.props.restaurant !== "none"){
       return (
         <Grid>
 
-        <Grid.Column width={1}>
-        </Grid.Column>
-        <Grid.Column width={1}>
-        </Grid.Column>
-        <Grid.Column width={4}>
+          <Grid.Column width={2}>
+          </Grid.Column>
+
+          <Grid.Column width={4}>
 
 
-        <Button onClick={this.back} className="backButton" basic size='mini'>Back</Button>
+            <Button onClick={this.back} className="backButton" basic size='mini'>Back</Button>
             <div className="restaurantDetails">
               {getRestaurantDetails()}
             </div>
-        </Grid.Column>
-        <Grid.Column width={8}>
-        <div>
-          <div className="restaurantTitle">{restaurant.name} </div>
-          </div>
+          </Grid.Column>
+          <Grid.Column width={8}>
+            <div>
+              <div className="restaurantTitle">{restaurant.name} </div>
+            </div>
             <RatingContainer
               rating={restaurant.average_rating}
               quality={restaurant.average_quality}
@@ -86,10 +85,12 @@ if (this.props.restaurant !== "none"){
               value={restaurant.average_value}
             />
             <div className="reviewContainer">
-            <button onClick={handleClick}>New Review</button>
-            {this.state.reviewFormOpen === true && <ReviewForm closeForm={closeForm} restaurant_id={restaurant.id}/>}
-            {reviews.length > 0 ? <div >{reviews}</div>: "Be the first to review this restaurant!"}
+              <button onClick={handleClick}>New Review</button>
+              {this.state.reviewFormOpen === true && <ReviewForm closeForm={closeForm} restaurant_id={restaurant.id}/>}
+              {reviews.length > 0 ? <div >{reviews}</div>: "Be the first to review this restaurant!"}
             </div>
+          </Grid.Column>
+          <Grid.Column width={2}>
           </Grid.Column>
         </Grid>
       )}else {
