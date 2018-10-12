@@ -32,32 +32,43 @@ class Splash extends React.Component {
 
     return(
       <div className="splash">
+        
+        <div className="splashLogin">
+          <Button.Group >
+            <Button color="teal">Log In </Button>
+            <Button.Or />
+            <Button color="teal">Sign Up </Button>
+          </Button.Group>
+        </div>
         <div className="splashTitle">Yelp Disney</div>
         <div className="splashBorder">
           <div className="splashSearch">
-            <Form className="splashSearchForm" onSubmit={this.handleSubmit}>
-              <Form.Group >
-                <label >{`Search `}
-                  <Input
-                    type="text"
-                    onChange={this.handleSearchChange}
-                    value={this.state.query}
-                    placeholder="New Search"
+            <div className="splashInput">
+              <Form className="splashSearchForm" onSubmit={this.handleSubmit}>
+                <Form.Group >
+                  <label >{`Search `}
+                    <Input
+                      type="text"
+                      onChange={this.handleSearchChange}
+                      value={this.state.query}
+                      placeholder="New Search"
+                    />
+                  </label>
+                  <div className="splashIn">in</div>
+                  <Dropdown
+                    className="splashDrop"
+                    placeholder={'All Parks'}
+                    options={Options.parkOptions}
+                    selection
+                    onChange={this.handleFilterChange}
                   />
-                </label>
-                <div className="splashIn">in</div>
-                <Dropdown
-                  className="splashDrop"
-                  placeholder={'All Parks'}
-                  options={Options.parkOptions}
-                  selection
-                  onChange={this.handleFilterChange}
-                />
-                <Button className="splashSubmit">Submit</Button>
-              </Form.Group>
-            </Form>
+                  <Button className="splashSubmit">Submit</Button>
+                </Form.Group>
+              </Form>
+            </div>
           </div>
         </div>
+
       </div>
     )
   }

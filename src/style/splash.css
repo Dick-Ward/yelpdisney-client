@@ -10,6 +10,12 @@
   margin-right: 8px;
 }
 
+.splashLogin{
+  margin-top: 20px;
+  margin-right: 20px;
+  text-align: right;
+}
+
 .splashSearch{
   position: absolute;
   top: 50%;

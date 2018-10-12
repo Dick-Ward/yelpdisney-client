@@ -3,27 +3,55 @@
   font-size: 1.5em;
   font-family: "Dosis";
   margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  display: inline-block;
+  color: white;
+  text-shadow:
+   -1px -1px 0 #666,
+    1px -1px 0 #666,
+    -1px 1px 0 #666,
+     1px 1px 0 #666;
+  background-color: RGBa(150,200,255,1);
 }
 
 .restaurant-card {
   border: solid;
   border-radius: 10px;
   border-width: thin;
-  margin-top: 5px;
+  border-color: RGBa(200,200,255,1);
+  margin-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+
+}
+.restaurant-card:hover{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .restaurant-card:hover{
   cursor: pointer;
 }
-
 .cardParkName{
-  text-align: right;
+ text-align: right;
+ padding-bottom: 5px;
+}
+
+.cardParkName > div{
   font-family: "Dosis", sans-serif;
   font-size: 1.2em;
+  background-color: white;
+  display: inline-block;
+  padding: 2px;
+  border-radius: 5px;
 }
 
 .cardInfo{
   margin-left: 20px;
+  display: inline-block;
+
+  padding: 2px;
+  border-radius: 5px;
+  color: black;
 }
