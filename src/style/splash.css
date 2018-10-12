@@ -1,3 +1,12 @@
+.splash{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+}
+
 .splashDrop{
   margin-right: 10px;
 }
@@ -11,8 +20,9 @@
 }
 
 .splashLogin{
-  margin-top: 20px;
-  margin-right: 20px;
+  position: absolute;
+  top: 50px;
+  right: 20px;
   text-align: right;
 }
 
@@ -33,10 +43,16 @@
 }
 
 .splashTitle{
+  color: RGBa(50,180,220,1);
   font-size: 10em;
   font-family: "Walt";
   position: absolute;
   top: 25%;
   width:100%;
   text-align: center;
+  text-shadow:
+   -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff
 }

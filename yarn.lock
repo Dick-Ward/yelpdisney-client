@@ -7023,6 +7023,10 @@ react-scripts@2.0.3:
   optionalDependencies:
     fsevents "1.2.4"
 
+react-video-cover@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-video-cover/-/react-video-cover-1.2.0.tgz#3763b67effafaa6659973813cc2f53a90a0f9e1e"
+
 react@^16.4.0:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"

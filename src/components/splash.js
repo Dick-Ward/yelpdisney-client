@@ -4,6 +4,7 @@ import * as actions from '../actions/index'
 import Options from '../services/data'
 import {Form, Input, Dropdown, Button} from 'semantic-ui-react'
 import "../style/splash.css"
+import VideoCover from 'react-video-cover'
 
 class Splash extends React.Component {
   state = {
@@ -30,9 +31,18 @@ class Splash extends React.Component {
   }
   render(){
 
+    const videoOptions = {
+      src: '/DisneyWalkup.mp4',
+      autoPlay: true,
+      loop: true
+    }
+
     return(
       <div className="splash">
-        
+        <VideoCover
+          videoOptions={videoOptions}
+          style={{zIndex: "-1"}}
+        />
         <div className="splashLogin">
           <Button.Group >
             <Button color="teal">Log In </Button>
