@@ -6,6 +6,7 @@ import LogIn from '../components/log_in'
 import SignUp from '../components/sign_up'
 import {connect} from 'react-redux'
 import * as actions from '../actions'
+import {withRouter} from 'react-router'
 
 
 class AppContainer extends React.Component{
@@ -15,18 +16,17 @@ class AppContainer extends React.Component{
         <Switch>
           <Route exact path="/" component={Splash} />
           <Route path="/login" component={LogIn}/>
-          <Route exact path="/signup" component={SignUp}/>
+          <Route path="/signup" component={SignUp}/>
           <Route component={App} />
         </Switch>
         </div>
     )
   }
-  componentDidMount(){
-    this.props.getCurrentUser()
-  }
 
-
+ componentDidMount(){
+   this.props.getCurrentUser()
+ }
 
 }
 
-export default connect(null, actions)(AppContainer)
+export default withRouter(connect(null, actions)(AppContainer))

@@ -64,8 +64,8 @@ render(){
             <div>Welcome {this.props.user.username} <a onClick={this.handleLogout}>Logout?</a></div>
           :
           <Button.Group className="navbarLogin">
-            <Button basic>Log In </Button>
-            <Button basic>Sign Up </Button>
+            <Link to="/login"><Button basic>Log In </Button></Link>
+            <Link to="/signup"><Button basic>Sign Up </Button></Link>
           </Button.Group>
           }
       </Grid.Column>

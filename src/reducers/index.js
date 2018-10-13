@@ -30,7 +30,6 @@ const indexReducer = (state = initialState, action) => {
     case "SET_CUISINE_OPTIONS":
       return {...state, cuisineOptions: action.payload}
     case "SET_CURRENT_USER":
-    console.log(action.payload.user)
       return {...state, user: action.payload.user, token: action.payload.token}
     case "HANDLE_ERROR":
       return {...state, error: action.payload}
