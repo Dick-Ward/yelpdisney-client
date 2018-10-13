@@ -32,7 +32,7 @@ class Splash extends React.Component {
   render(){
 
     const videoOptions = {
-      src: '/DisneyWalkup.mp4',
+      src: '/DisneyWalkup.webm',
       autoPlay: true,
       loop: true
     }
