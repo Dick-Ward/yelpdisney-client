@@ -92,7 +92,11 @@ export const signup = (username, email, password, history) => dispatch => {
       dispatch({ type: SET_CURRENT_USER, payload: user })
       dispatch({ type: HANDLE_ERROR, payload: error })
       history.push("/")
-
     }
   })
+}
+
+export const logout = () => dispatch => {
+  localStorage.removeItem("token")
+  dispatch({ type: SET_CURRENT_USER, payload: {user: null, token: null}})
 }
