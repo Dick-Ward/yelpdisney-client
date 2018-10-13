@@ -8,14 +8,16 @@ class SignUp extends React.Component {
 
   state = {
     username: "",
+    email: "",
     password: ""
   }
 
   handleSubmit = e =>{
     e.preventDefault()
-    this.props.login(
+    this.props.signup(
       this.state.username,
       this.state.password,
+      this.state.email,
       this.props.history
     )
   }
@@ -27,15 +29,15 @@ class SignUp extends React.Component {
     }
 
   render(){
-    console.log(this.props.error)
     return(
       <Form  error onSubmit={this.handleSubmit}>
         <Form.Group>
           <Form.Input name="username" label="Username" placeholder="Username" onChange={this.handleChange} value={this.state.username} />
+          <Form.Input name="email" label="Email" placeholder="Email" onChange={this.handleChange} value={this.state.email}/>
           <Form.Input name="password" label="Password" placeholder="Password" onChange={this.handleChange} value={this.state.password}/>
         </Form.Group>
         <Button type="submit">Submit</Button>
-        {this.props.error ? <Message error header='Login Error' content={this.props.error}/> : null}
+        {this.props.error ? <Message error header='Signup Error' content={this.props.error}/> : null}
       </Form>
     )
   }

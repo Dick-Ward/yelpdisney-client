@@ -51,6 +51,7 @@ const searchRestaurants = (query) =>
 
 const api = {
   login,
+  signup,
   getRestaurants,
   getRestaurant,
   submitReview,

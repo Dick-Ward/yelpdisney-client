@@ -7,10 +7,10 @@ import {
    TOGGLE_FETCH_COMPLETE,
    SET_CUISINE_OPTIONS,
    SET_CURRENT_USER,
-   HANDLE_ERROR
+   HANDLE_ERROR,
   }
-  from "./types";
-import api from "../services/api";
+  from "./types"
+import api from "../services/api"
 import Options from "../services/data"
 
 export const getRestaurants = () => dispatch => {
@@ -68,13 +68,31 @@ export const login = (username, password, history) => dispatch => {
       localStorage.removeItem("token")
       const error = user.error
       dispatch({ type: SET_CURRENT_USER, payload: {user: null, token: null}})
-      dispatch({ type: HANDLE_ERROR, payload: error });
+      dispatch({ type: HANDLE_ERROR, payload: error })
     } else {
-      localStorage.setItem("token", user.token);
-      const error = null;
-      dispatch({ type: SET_CURRENT_USER, payload: user });
-      dispatch({ type: HANDLE_ERROR, payload: error });
-      history.push("/");
+      localStorage.setItem("token", user.token)
+      const error = null
+      dispatch({ type: SET_CURRENT_USER, payload: user })
+      dispatch({ type: HANDLE_ERROR, payload: error })
+      history.push("/")
     }
-  });
+  })
+}
+
+export const signup = (username, email, password, history) => dispatch => {
+  api.signup(username, email, password).then(user =>{
+    if (user.error){
+      localStorage.removeItem("token")
+      const error = user.error
+      dispatch({ type: SET_CURRENT_USER, payload: {user: null, token: null}})
+      dispatch({ type: HANDLE_ERROR, payload: error })
+    } else {
+      localStorage.setItem("token", user.token)
+      const error = null
+      dispatch({ type: SET_CURRENT_USER, payload: user })
+      dispatch({ type: HANDLE_ERROR, payload: error })
+      history.push("/")
+
+    }
+  })
 }
