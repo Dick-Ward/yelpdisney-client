@@ -21,7 +21,6 @@ class RestaurantPage extends Component{
 
   render(){
     const {restaurant} = this.props
-    console.log(restaurant)
 
     const unparsedDetails = ["entree_range", "breakfast_hours","lunch_hours", "dinner_hours", "parking", "wine_list"]
     const unwantedDetails = ["average_rating", "average_value", "average_quality", "average_service", "average_cleanliness", "reviews", "name", "id", "permalink", "short_name", "code", "operator_id", "operator_type", "sort_name", "park", "operator_url", "house_specialties"]

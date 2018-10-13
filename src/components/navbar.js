@@ -2,8 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as actions from "../actions"
-import Options from "../services/data"
-import {Form, Input, Button, Dropdown, Grid} from 'semantic-ui-react'
+import {Form, Input, Button, Grid} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
 
 class Navbar extends React.Component{

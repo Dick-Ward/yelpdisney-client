@@ -88,10 +88,16 @@ body {
 .reviewCard > p {
   margin: 2px;
   font-style: italic;
+  font-weight: bold;
 }
 .reviewCard > div {
   padding-left: 10px;
   padding-right: 10px;
+}
+.reviewCard > .date {
+  text-align: right;
+  font-size: .9em;
+  font-style: italic;
 }
 .reviewContainer {
   position: absolute;
