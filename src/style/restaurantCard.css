@@ -1,6 +1,6 @@
 
 .cardTitle{
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-family: "Dosis";
   margin: 5px;
   padding: 8px;
@@ -27,15 +27,15 @@
 
 }
 .restaurant-card:hover{
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .restaurant-card:hover{
   cursor: pointer;
 }
 .cardParkName{
- text-align: right;
- padding-bottom: 5px;
+  text-align: right;
+  padding-bottom: 5px;
 }
 
 .cardParkName > div{
