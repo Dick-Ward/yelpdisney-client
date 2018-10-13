@@ -5,16 +5,22 @@ import Options from '../services/data'
 import {Form, Input, Dropdown, Button} from 'semantic-ui-react'
 import "../style/splash.css"
 import VideoCover from 'react-video-cover'
+import SplashLogin from './splashLogin'
 
 
 class Splash extends React.Component {
   state = {
     query: '',
-    park: ''
+    park: '',
+    loginSelected: false
   }
 
   handleFilterChange = (e, {value}) =>{
     this.setState({ park: value });
+  }
+
+  handleLogout = () =>{
+    this.props.logout()
   }
 
   handleSearchChange = e =>{
@@ -30,9 +36,14 @@ class Splash extends React.Component {
     this.props.searchRestaurants(query)
     this.props.history.push('/restaurants')
   }
+
+  logInToggle = () =>{
+    this.setState({loginSelected: !this.state.loginSelected})
+  }
+
   render(){
 
-console.log(this.props.state)
+console.log(this.props.user)
     const videoOptions = {
       src: '/DisneyWalkup.webm',
       autoPlay: true,
@@ -46,11 +57,10 @@ console.log(this.props.state)
           style={{zIndex: "-1"}}
         />
         <div className="splashLogin">
-          <Button.Group >
-            <Button color="teal">Log In </Button>
-            <Button.Or />
-            <Button color="teal">Sign Up </Button>
-          </Button.Group>
+          {this.props.user ?
+            <div>Welcome {this.props.user.username} <a onClick={this.handleLogout}>Logout?</a></div>
+          :
+          <SplashLogin logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
         </div>
         <div className="splashTitle">Yelp Disney</div>
         <div className="splashBorder">
@@ -87,8 +97,11 @@ console.log(this.props.state)
 
 function mapStateToProps(state){
   return(
-    {state: state}
+    {
+      user: state.user
+    }
   )
 }
+
 
 export default connect(mapStateToProps, actions)(Splash)

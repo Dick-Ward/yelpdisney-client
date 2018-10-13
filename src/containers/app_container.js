@@ -4,6 +4,8 @@ import App from '../App'
 import Splash from '../components/splash'
 import LogIn from '../components/log_in'
 import SignUp from '../components/sign_up'
+import {connect} from 'react-redux'
+import * as actions from '../actions'
 
 
 class AppContainer extends React.Component{
@@ -13,12 +15,18 @@ class AppContainer extends React.Component{
         <Switch>
           <Route exact path="/" component={Splash} />
           <Route path="/login" component={LogIn}/>
-          <Route path="/signup" component={SignUp}/>
+          <Route exact path="/signup" component={SignUp}/>
           <Route component={App} />
         </Switch>
         </div>
     )
   }
+  componentDidMount(){
+    this.props.getCurrentUser()
+  }
+
+
+
 }
 
-export default AppContainer
+export default connect(null, actions)(AppContainer)

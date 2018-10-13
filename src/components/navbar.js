@@ -30,6 +30,10 @@ class Navbar extends React.Component{
     this.props.history.push('/restaurants')
   }
 
+  handleLogout = () =>{
+    this.props.logout()
+  }
+
 render(){
 
   return(
@@ -56,10 +60,14 @@ render(){
           </Form>
         </Grid.Column>
         <Grid.Column width={4}>
+          {this.props.user ?
+            <div>Welcome {this.props.user.username} <a onClick={this.handleLogout}>Logout?</a></div>
+          :
           <Button.Group className="navbarLogin">
             <Button basic>Log In </Button>
             <Button basic>Sign Up </Button>
           </Button.Group>
+          }
       </Grid.Column>
         <Grid.Column width={2}>
         </Grid.Column>
@@ -70,7 +78,10 @@ render(){
 }
 
 function mapStateToProps(state){
-  return {fetchComplete: state.fetchComplete}
+  return {
+    fetchComplete: state.fetchComplete,
+    user: state.user
+  }
 }
 
 

@@ -100,3 +100,9 @@ export const logout = () => dispatch => {
   localStorage.removeItem("token")
   dispatch({ type: SET_CURRENT_USER, payload: {user: null, token: null}})
 }
+
+export const getCurrentUser = () => dispatch => {
+  api.getCurrentUser().then(res =>{
+    dispatch({ type: SET_CURRENT_USER, payload: {user: res.user, token: localStorage.getItem("token")}})
+  })
+}

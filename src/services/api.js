@@ -28,6 +28,14 @@ const signup = (username, password, email) => {
   }).then(res => res.json());
 }
 
+const getCurrentUser = () => {
+  return fetch(`${API_URL}/profile/`, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }).then(res => res.json());
+}
+
 const getRestaurants = fetch(`${API_URL}/restaurants`)
       .then(res => res.json());
 
@@ -52,6 +60,7 @@ const searchRestaurants = (query) =>
 const api = {
   login,
   signup,
+  getCurrentUser,
   getRestaurants,
   getRestaurant,
   submitReview,
