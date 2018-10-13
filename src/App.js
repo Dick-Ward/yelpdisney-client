@@ -17,18 +17,19 @@ class App extends Component {
       <React.Fragment>
         <div>
 
-            <Navbar />
+          <Navbar />
 
           <Switch>
             <Route path="/restaurants/:permalink" render={ (renderProps) => {
               return (
-              <RestaurantPage
-                restaurant={this.props.selectedRestaurant}
-                selectRestaurant={this.props.selectRestaurant}
-                renderProps={renderProps}
-              />)
+                <RestaurantPage
+                  restaurant={this.props.selectedRestaurant}
+                  selectRestaurant={this.props.selectRestaurant}
+                  renderProps={renderProps}
+                />)
             }}/>
             <Route path="/restaurants" component={RestaurantList}/>
+            
           </Switch>
             </div>
             </React.Fragment>

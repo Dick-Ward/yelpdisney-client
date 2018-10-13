@@ -32,7 +32,7 @@ class Splash extends React.Component {
   }
   render(){
 
-
+console.log(this.props.state)
     const videoOptions = {
       src: '/DisneyWalkup.webm',
       autoPlay: true,
@@ -85,4 +85,10 @@ class Splash extends React.Component {
   }
 }
 
-export default connect(null, actions)(Splash)
+function mapStateToProps(state){
+  return(
+    {state: state}
+  )
+}
+
+export default connect(mapStateToProps, actions)(Splash)

@@ -5,7 +5,10 @@ const initialState = {
   cuisineFilter: "",
   categoryFilter: "",
   cuisineOptions: [{key: "All Cuisine Types", text: "All Cuisine Types", value: ""}],
-  fetchComplete: null
+  fetchComplete: null,
+  user: null,
+  token: null,
+  error: null
   }
 
 const indexReducer = (state = initialState, action) => {
@@ -26,6 +29,10 @@ const indexReducer = (state = initialState, action) => {
       return {...state, fetchComplete: action.payload}
     case "SET_CUISINE_OPTIONS":
       return {...state, cuisineOptions: action.payload}
+    case "SET_CURRENT_USER":
+      return {...state, user: action.payload.user, token: action.payload.token}
+    case "HANDLE_ERROR":
+      return {...state, error: action.payload}
     default:
       return state;
   }

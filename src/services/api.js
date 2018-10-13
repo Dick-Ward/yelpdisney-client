@@ -1,5 +1,33 @@
 const API_URL = "http://localhost:3000";
 
+const token = localStorage.getItem("token");
+
+const headers = {
+  "Content-Type": "application/json",
+  Acccepts: "application/json",
+  Authorization: token
+};
+
+const login = (username, password) => {
+  return fetch(`${API_URL}/login/`, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify({user: { username, password }})
+  }).then(res => res.json());
+};
+
+const signup = (username, password, email) => {
+  return fetch(`${API_URL}/users/`, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify({user: {
+      username,
+      password,
+      email
+    }})
+  }).then(res => res.json());
+}
+
 const getRestaurants = fetch(`${API_URL}/restaurants`)
       .then(res => res.json());
 
@@ -22,6 +50,7 @@ const searchRestaurants = (query) =>
 
 
 const api = {
+  login,
   getRestaurants,
   getRestaurant,
   submitReview,
