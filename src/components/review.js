@@ -3,7 +3,6 @@ import * as moment from 'moment'
 
 const Review = ({review}) =>{
   if (review.content){
-    console.log(review)
   return(
     <div className="reviewCard">
       <p>{review.username}</p>

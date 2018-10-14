@@ -42,8 +42,6 @@ class Splash extends React.Component {
   }
 
   render(){
-
-console.log(this.props.user)
     const videoOptions = {
       src: '/DisneyWalkup.webm',
       autoPlay: true,
