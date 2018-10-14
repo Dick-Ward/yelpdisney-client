@@ -14,8 +14,6 @@ class ReviewForm extends Component{
    }
 
   render(){
-    console.log(this.props)
-
 
     const handleSubmit = event => {
       event.preventDefault()
@@ -25,7 +23,8 @@ class ReviewForm extends Component{
         service: this.state.service,
         value: this.state.value,
         content: this.state.content,
-        restaurant_id: this.props.restaurant_id}
+        restaurant_id: this.props.restaurant_id,
+        user_id: this.props.user.id}
       this.props.submitReview(data)
       this.setState({
         quality: 1,
@@ -70,4 +69,12 @@ class ReviewForm extends Component{
   }
 }
 
-export default connect(null, actions)(ReviewForm)
+function mapStateToProps(state){
+  return(
+    {
+      user: state.user
+    }
+  )
+}
+
+export default connect(mapStateToProps, actions)(ReviewForm)

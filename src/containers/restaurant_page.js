@@ -5,6 +5,8 @@ import RatingContainer from "../components/rating_container"
 import {Button, Grid} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
 import {startCase} from 'lodash';
+import {connect} from 'react-redux'
+import * as moment from 'moment'
 
 
 class RestaurantPage extends Component{
@@ -44,7 +46,11 @@ class RestaurantPage extends Component{
     }
 
     const handleClick = () =>{
-      this.setState({reviewFormOpen: true})
+      if(this.props.user){
+        this.setState({reviewFormOpen: true})
+      } else {
+        this.props.history.push("/login")
+      }
     }
 
     const closeForm = () =>{
@@ -52,7 +58,8 @@ class RestaurantPage extends Component{
     }
 
 if (this.props.restaurant !== "none"){
-    const reviews = restaurant.reviews.map(review =>{
+    const sortedReviews = restaurant.reviews.sort(function(a, b){ return moment(b.created_at) - moment(a.created_at)})
+    const reviews = sortedReviews.map(review =>{
       return <Review key={review.id} review={review}/>
     })
 
@@ -101,6 +108,14 @@ if (this.props.restaurant !== "none"){
       componentDidMount(){
         this.props.selectRestaurant(this.props.renderProps.match.params)
       }
-  };
+  }
 
-export default withRouter(RestaurantPage);
+function mapStateToProps(state){
+  return(
+    {
+      user: state.user
+    }
+  )
+}
+
+export default withRouter(connect(mapStateToProps)(RestaurantPage))
