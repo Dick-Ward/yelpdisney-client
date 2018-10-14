@@ -49,7 +49,7 @@ class RestaurantPage extends Component{
       if(this.props.user){
         this.setState({reviewFormOpen: true})
       } else {
-        this.props.history.push("/login")
+        alert("You must be logged in to leave a review")
       }
     }
 
