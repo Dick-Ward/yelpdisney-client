@@ -58,7 +58,7 @@ console.log(this.props.user)
         />
         <div className="splashLogin">
           {this.props.user ?
-            <div>Welcome {this.props.user.username} <a onClick={this.handleLogout}>Logout?</a></div>
+            <div className="splashGreeting">Welcome {this.props.user.username}! <Button size="small" onClick={this.handleLogout}>Logout?</Button></div>
           :
           <SplashLogin logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
         </div>

@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import * as actions from "../actions"
 import {withRouter} from 'react-router'
 
-class LogIn extends React.Component {
+class HorizontalLogIn extends React.Component {
 
   state = {
     username: "",
@@ -33,8 +33,15 @@ class LogIn extends React.Component {
     return(
       <div>
         <Form error onSubmit={this.handleSubmit}>
-          <Form.Input name="username" placeholder="Username" onChange={this.handleChange} value={this.state.username} />
-          <Form.Input name="password" type="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} />
+
+          <Form.Group>
+            <Form.Field>
+              <Form.Input name="username" placeholder="Username" onChange={this.handleChange} value={this.state.username} />
+            </Form.Field>
+            <Form.Field>
+              <Form.Input name="password" type="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} />
+            </Form.Field>
+          </Form.Group>
           <Button type="submit">Submit</Button>
           {this.props.error ? <Message error header='Login Error' content={this.props.error}/> : null}
         </Form>
@@ -54,4 +61,4 @@ function mapStateToProps(state){
   )
 }
 
-export default withRouter(connect(mapStateToProps, actions)(LogIn))
+export default withRouter(connect(mapStateToProps, actions)(HorizontalLogIn))

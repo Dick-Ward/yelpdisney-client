@@ -74,7 +74,6 @@ export const login = (username, password, history) => dispatch => {
       const error = null
       dispatch({ type: SET_CURRENT_USER, payload: user })
       dispatch({ type: HANDLE_ERROR, payload: error })
-      history.push("/")
     }
   })
 }

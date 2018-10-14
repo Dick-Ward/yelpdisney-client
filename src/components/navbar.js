@@ -4,12 +4,14 @@ import {connect} from 'react-redux'
 import * as actions from "../actions"
 import {Form, Input, Button, Grid} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
+import NavbarLogin from './navbarLogin'
 
 class Navbar extends React.Component{
 
   state = {
     query: '',
-    park: ''
+    park: '',
+    loginSelected: false
   }
 
   handleFilterChange = (e, {value}) =>{
@@ -34,8 +36,11 @@ class Navbar extends React.Component{
     this.props.logout()
   }
 
-render(){
+  logInToggle = () =>{
+    this.setState({loginSelected: !this.state.loginSelected})
+  }
 
+render(){
   return(
     <div className="navbar">
       <Grid>
@@ -63,10 +68,7 @@ render(){
           {this.props.user ?
             <div className="logout">Welcome {this.props.user.username}! <Button basic size="small" onClick={this.handleLogout}>Logout?</Button></div>
           :
-          <Button.Group className="navbarLogin">
-            <Link to="/login"><Button basic>Log In </Button></Link>
-            <Link to="/signup"><Button basic>Sign Up </Button></Link>
-          </Button.Group>
+          <NavbarLogin logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>
           }
       </Grid.Column>
         <Grid.Column width={2}>

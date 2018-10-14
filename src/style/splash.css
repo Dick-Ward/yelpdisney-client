@@ -10,6 +10,10 @@
 .splashDrop{
   margin-right: 10px;
 }
+.splashGreeting{
+  background-color: white;
+  border-radius: 5px;
+}
 
 .splashIn {
   display: flex;
