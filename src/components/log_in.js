@@ -13,11 +13,14 @@ class LogIn extends React.Component {
 
   handleSubmit = e =>{
     e.preventDefault()
+    if (this.state.username !== "" && this.state.password !== ""){
     this.props.login(
       this.state.username,
       this.state.password,
       this.props.history
-    )
+    )} else {
+      this.props.setError("Please fill all fields")
+    }
   }
 
     handleChange = e =>{
@@ -30,14 +33,17 @@ class LogIn extends React.Component {
 
     return(
       <div>
-        <Form  error onSubmit={this.handleSubmit}>
+        <Form error onSubmit={this.handleSubmit}>
           <Form.Input name="username" placeholder="Username" onChange={this.handleChange} value={this.state.username} />
-          <Form.Input name="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} />
+          <Form.Input name="password" type="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} />
           <Button type="submit">Submit</Button>
           {this.props.error ? <Message error header='Login Error' content={this.props.error}/> : null}
         </Form>
       </div>
     )
+  }
+  componendWillUnmount(){
+    this.props.clearError()
   }
 }
 

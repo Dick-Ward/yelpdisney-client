@@ -106,3 +106,11 @@ export const getCurrentUser = () => dispatch => {
     dispatch({ type: SET_CURRENT_USER, payload: {user: res.user, token: localStorage.getItem("token")}})
   })
 }
+
+export const setError = error => dispatch =>{
+  dispatch({ type: HANDLE_ERROR, payload: error })
+}
+
+export const clearError = () => dispatch =>{
+  dispatch({ type: HANDLE_ERROR, payload: null })
+}
