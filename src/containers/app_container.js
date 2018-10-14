@@ -11,6 +11,7 @@ import {withRouter} from 'react-router'
 
 class AppContainer extends React.Component{
   render(){
+
     return(
       <div>
         <Switch>
@@ -26,7 +27,7 @@ class AppContainer extends React.Component{
  componentDidMount(){
    this.props.getCurrentUser()
  }
-
 }
+
 
 export default withRouter(connect(null, actions)(AppContainer))

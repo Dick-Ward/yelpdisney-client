@@ -61,7 +61,7 @@ render(){
         </Grid.Column>
         <Grid.Column width={4}>
           {this.props.user ?
-            <div>Welcome {this.props.user.username} <a onClick={this.handleLogout}>Logout?</a></div>
+            <div className="logout">Welcome {this.props.user.username}! <Button basic size="small" onClick={this.handleLogout}>Logout?</Button></div>
           :
           <Button.Group className="navbarLogin">
             <Link to="/login"><Button basic>Log In </Button></Link>

@@ -37,6 +37,10 @@ body {
   color: RGBa(50,50,200, .8);
   user-select: none;
 }
+.logout{
+  position: absolute;
+  top: 40px;
+}
 .navbar {
   border-bottom-style: inset;
   border-bottom-color: RGBa(255, 100, 100, 1);
