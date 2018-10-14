@@ -38,16 +38,20 @@ class SignUp extends React.Component {
 
   render(){
     return(
-      <Form  error onSubmit={this.handleSubmit}>
-        <Form.Group>
+      <div className="signup">
+        <div className="signupIntro">Thanks for joining Yelp Disney, the #1 site on the web built specifically
+          to rate the restaurants at Walt Disney World.  We're happy to have you here, and can't wait to hear
+          what you have to say!
+        </div>
+        <Form  error onSubmit={this.handleSubmit}>
           <Form.Input name="username" label="Username" placeholder="Username" onChange={this.handleChange} value={this.state.username} />
           <Form.Input name="email" label="Email" type="email" placeholder="Email" onChange={this.handleChange} value={this.state.email}/>
           <Form.Input name="password" label="Password" type="password" placeholder="Password" onChange={this.handleChange} value={this.state.password}/>
           <Form.Input name="passwordMatch" label="Confirm Password" type="password" placeholder="Password" onChange={this.handleChange} value={this.state.passwordMatch}/>
-        </Form.Group>
-        <Button type="submit">Submit</Button>
-        {this.props.error ? <Message error header='Signup Error' content={this.props.error}/> : null}
-      </Form>
+          <Button type="submit">Submit</Button>
+          {this.props.error ? <Message error header='Signup Error' content={this.props.error}/> : null}
+        </Form>
+      </div>
     )
   }
   componentWillUnmount(){
