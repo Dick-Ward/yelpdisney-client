@@ -13,6 +13,7 @@ class App extends Component {
     restaurantList: ""
   }
   render() {
+    console.log(this.props.state)
     return (
       <React.Fragment>
         <div>
@@ -29,7 +30,7 @@ class App extends Component {
                 />)
             }}/>
             <Route path="/restaurants" component={RestaurantList}/>
-            
+
           </Switch>
             </div>
             </React.Fragment>
@@ -40,8 +41,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    restaurantList: state.restaurantList,
-    selectedRestaurant: state.selectedRestaurant
+    restaurantList: state.restaurants.restaurantList,
+    selectedRestaurant: state.restaurants.selectedRestaurant,
   };
 }
 

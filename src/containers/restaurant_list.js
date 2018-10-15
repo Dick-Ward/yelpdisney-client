@@ -62,12 +62,12 @@ class RestaurantList extends Component {
 
 function mapStateToProps(state) {
   return {
-    restaurantList: state.restaurantList,
-    selectedRestaurant: state.selectedRestaurant,
-    parkFilter: state.parkFilter,
-    cuisineFilter: state.cuisineFilter,
-    categoryFilter: state.categoryFilter,
-    fetchComplete: state.fetchComplete
+    restaurantList: state.restaurants.restaurantList,
+    selectedRestaurant: state.restaurants.selectedRestaurant,
+    parkFilter: state.restaurants.parkFilter,
+    cuisineFilter: state.restaurants.cuisineFilter,
+    categoryFilter: state.restaurants.categoryFilter,
+    fetchComplete: state.restaurants.fetchComplete
   };
 }
 

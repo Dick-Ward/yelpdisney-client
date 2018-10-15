@@ -60,10 +60,10 @@ class Filters extends React.Component{
 
 function mapStateToProps(state){
   return {
-    parkFilter: state.parkFilter,
-    cuisineFilter: state.cuisineFilter,
-    categoryFilter: state.categoryFilter,
-    cuisineOptions: state.cuisineOptions
+    parkFilter: state.restaurants.parkFilter,
+    cuisineFilter: state.restaurants.cuisineFilter,
+    categoryFilter: state.restaurants.categoryFilter,
+    cuisineOptions: state.restaurants.cuisineOptions
   }
 }
 

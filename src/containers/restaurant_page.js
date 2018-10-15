@@ -31,10 +31,10 @@ class RestaurantPage extends Component{
       let details = []
       for (let detail in restaurant){
         if(restaurant[detail] && restaurant[detail] !== "Resort Dining"){
-          if (detail == "category_code"){
+          if (detail === "category_code"){
             details.push({detail: "Category", information: startCase(restaurant[detail])})
           }
-          else if (detail == "cost_code"){
+          else if (detail === "cost_code"){
             details.push({detail: "Cost", information: startCase(restaurant[detail])})
           }
           else if(unparsedDetails.includes(detail)){
@@ -127,7 +127,7 @@ if (this.props.restaurant !== "none"){
 function mapStateToProps(state){
   return(
     {
-      user: state.user
+      user: state.auth.user
     }
   )
 }

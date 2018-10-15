@@ -97,7 +97,7 @@ class Splash extends React.Component {
 function mapStateToProps(state){
   return(
     {
-      user: state.user
+      user: state.auth.user
     }
   )
 }

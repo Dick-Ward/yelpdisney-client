@@ -84,8 +84,8 @@ render(){
 
 function mapStateToProps(state){
   return {
-    fetchComplete: state.fetchComplete,
-    user: state.user
+    fetchComplete: state.restaurants.fetchComplete,
+    user: state.auth.user
   }
 }
 
