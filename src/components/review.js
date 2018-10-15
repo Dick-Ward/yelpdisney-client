@@ -1,5 +1,6 @@
 import React from 'react'
-import * as moment from 'moment'
+import Options from '../services/data'
+
 
 const Review = ({review}) =>{
   if (review.content){
@@ -8,7 +9,8 @@ const Review = ({review}) =>{
       <p>{review.username}</p>
       <div>{review.content}</div>
       <div className="date">
-        {moment(review.created_at, "YYYY-MM-DDTHH:mm").format("MM/DD/YY - h:mm a")}
+        {Options.timeConvert(review.created_at)}
+
       </div>
     </div>
   )} else {
