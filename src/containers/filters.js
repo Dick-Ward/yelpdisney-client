@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Dropdown} from 'semantic-ui-react'
+import {Dropdown, Button} from 'semantic-ui-react'
 import * as actions from '../actions'
 import Options from '../services/data'
 
@@ -15,6 +15,10 @@ class Filters extends React.Component{
     } else if (value.name === "categoryFilter") {
       this.props.applyCategoryFilter(value.value)
     }
+  }
+
+  handleClearFilters = () =>{
+    this.props.clearAllFilters()
   }
 
   render(){
@@ -48,6 +52,7 @@ class Filters extends React.Component{
           name="categoryFilter"
           className="filter"
         />
+        <Button onClick={this.handleClearFilters} size="mini">Clear Filters</Button>
       </div>
     )
   }

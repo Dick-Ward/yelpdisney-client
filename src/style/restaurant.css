@@ -21,7 +21,7 @@
   border-radius: 10px;
   background-color: RGBa(220,220,255,.1);
   position: absolute;
-  top: 60px;
+  top: 70px;
   width: 95%
 }
 .restaurantDetails > :first-child {
@@ -41,4 +41,9 @@
   border: solid;
   border-width: thin;
   border-color: RGBA(200,200,255,.1);
+}
+.restaurantParkName {
+  text-align: center;
+  margin-right: 60px;
+  margin-top: 10px;
 }

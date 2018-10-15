@@ -24,7 +24,7 @@ class RestaurantPage extends Component{
   render(){
     const {restaurant} = this.props
 
-    const unparsedDetails = ["entree_range", "breakfast_hours","lunch_hours", "dinner_hours", "parking", "wine_list"]
+    const unparsedDetails = ["opened_on", "entree_range", "breakfast_hours","lunch_hours", "dinner_hours", "parking", "wine_list"]
     const unwantedDetails = ["average_rating", "average_value", "average_quality", "average_service", "average_cleanliness", "reviews", "name", "id", "permalink", "short_name", "code", "operator_id", "operator_type", "sort_name", "park", "operator_url", "house_specialties", "resort_name"]
 
     const getRestaurantDetails = () =>{
@@ -94,6 +94,8 @@ if (this.props.restaurant !== "none"){
           <Grid.Column width={8}>
             <div>
               <div className="restaurantTitle">{restaurant.name} </div>
+              <div className="restaurantParkName"> {restaurant.resort_name ? (<div> at {restaurant.resort_name}</div>) : (<div>at {restaurant.park}</div>)}</div>
+
             </div>
             <RatingContainer
               rating={restaurant.average_rating}

@@ -34,6 +34,7 @@ class Splash extends React.Component {
     this.props.resetRestaurants()
     this.props.applyParkFilter(park)
     this.props.searchRestaurants(query)
+    this.props.clearAllFilters()
     this.props.history.push('/restaurants')
   }
 

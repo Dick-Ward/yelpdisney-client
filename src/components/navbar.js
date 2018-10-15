@@ -29,7 +29,7 @@ class Navbar extends React.Component{
     this.props.resetRestaurants()
     this.props.applyParkFilter(park)
     this.props.searchRestaurants(query)
-    this.props.history.push('/restaurants')
+    this.props.clearAllFilters()
   }
 
   handleLogout = () =>{

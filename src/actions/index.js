@@ -58,6 +58,12 @@ export const applyCategoryFilter = (category) => dispatch => {
   dispatch({ type: APPLY_CATEGORY_FILTER, payload: category })
 }
 
+export const clearAllFilters = () => dispatch =>{
+    dispatch({ type: APPLY_PARK_FILTER, payload: "" })
+    dispatch({ type: APPLY_CUISINE_FILTER, payload: "" })
+    dispatch({ type: APPLY_CATEGORY_FILTER, payload: "" })
+}
+
 export const toggleFetchComplete = (fetchComplete) => dispatch => {
   dispatch({ type: TOGGLE_FETCH_COMPLETE, payload: !fetchComplete})
 }
