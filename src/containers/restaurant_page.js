@@ -25,15 +25,23 @@ class RestaurantPage extends Component{
     const {restaurant} = this.props
 
     const unparsedDetails = ["entree_range", "breakfast_hours","lunch_hours", "dinner_hours", "parking", "wine_list"]
-    const unwantedDetails = ["average_rating", "average_value", "average_quality", "average_service", "average_cleanliness", "reviews", "name", "id", "permalink", "short_name", "code", "operator_id", "operator_type", "sort_name", "park", "operator_url", "house_specialties"]
+    const unwantedDetails = ["average_rating", "average_value", "average_quality", "average_service", "average_cleanliness", "reviews", "name", "id", "permalink", "short_name", "code", "operator_id", "operator_type", "sort_name", "park", "operator_url", "house_specialties", "resort_name"]
 
     const getRestaurantDetails = () =>{
       let details = []
       for (let detail in restaurant){
         if(restaurant[detail] && restaurant[detail] !== "Resort Dining"){
-
-          if(unparsedDetails.includes(detail)){
+          if (detail == "category_code"){
+            details.push({detail: "Category", information: startCase(restaurant[detail])})
+          }
+          else if (detail == "cost_code"){
+            details.push({detail: "Cost", information: startCase(restaurant[detail])})
+          }
+          else if(unparsedDetails.includes(detail)){
             details.push({detail: startCase(detail), information: restaurant[detail]})
+          }
+          else if (restaurant[detail] === true){
+            details.push({detail: startCase(detail), information: ""})
           }
           else if(!unwantedDetails.includes(detail)){
             details.push({detail: startCase(detail), information: startCase(restaurant[detail])})
@@ -41,7 +49,11 @@ class RestaurantPage extends Component{
         }
       }
       return details.map(detail =>{
+        if (detail.information !== ""){
         return <p key={detail.detail}>{detail.detail}: {detail.information}</p>
+      } else {
+        return <p key={detail.detail}>{detail.detail}</p>
+      }
       })
     }
 

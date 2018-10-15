@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as actions from "../actions"
-import {Form, Input, Button, Grid} from 'semantic-ui-react'
+import {Form, Input, Button, Grid, Icon} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
 import NavbarLogin from './navbarLogin'
 
@@ -63,7 +63,7 @@ render(){
                 />
               </Form.Field>
 
-              <Button>Go</Button>
+              <Button><Icon name="search"/></Button>
             </Form.Group>
           </Form>
         </Grid.Column>

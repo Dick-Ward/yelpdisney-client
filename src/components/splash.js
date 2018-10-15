@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import * as actions from '../actions/index'
 import Options from '../services/data'
-import {Form, Input, Dropdown, Button} from 'semantic-ui-react'
+import {Form, Input, Dropdown, Button, Icon} from 'semantic-ui-react'
 import "../style/splash.css"
 import VideoCover from 'react-video-cover'
 import SplashLogin from './splashLogin'
@@ -82,7 +82,7 @@ class Splash extends React.Component {
                     selection
                     onChange={this.handleFilterChange}
                   />
-                  <Button className="splashSubmit">Submit</Button>
+                  <Button className="splashSubmit"><Icon name="search"/></Button>
                 </Form.Group>
               </Form>
             </div>
