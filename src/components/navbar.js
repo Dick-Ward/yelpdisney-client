@@ -47,25 +47,27 @@ render(){
       <Grid>
         <Grid.Column width={2}>
         </Grid.Column>
-        <Grid.Column width={4}>
+        <Grid.Column width={3}>
           <Link className="homeLink" to="/"><div className="logo">Yelp Disney</div></Link>
         </Grid.Column>
-        <Grid.Column width={4}>
+        <Grid.Column width={6}>
           <Form className="navSearch" onSubmit={this.handleSubmit}>
             <Form.Group >
-
-              <Input
-                type="text"
-                onChange={this.handleSearchChange}
-                value={this.state.query}
-                placeholder="New Search"
-              />
+              <Form.Field>
+                <Input
+                  style={{width: "300px"}}
+                  type="text"
+                  onChange={this.handleSearchChange}
+                  value={this.state.query}
+                  placeholder="Leave Blank to Search All Restaurants"
+                />
+              </Form.Field>
 
               <Button>Go</Button>
             </Form.Group>
           </Form>
         </Grid.Column>
-        <Grid.Column width={4}>
+        <Grid.Column width={3}>
           {this.props.user ?
             <div className="logout">Welcome {this.props.user.username}! <Button basic size="small" onClick={this.handleLogout}>Logout?</Button></div>
           :
