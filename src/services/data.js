@@ -5,14 +5,14 @@ const parseCuisineOptions = (cuisineTypes) =>{
     if(cuisine){
       return {key: `cuisine${cuisine}`, text: cuisine, value: cuisine}
     } else {
-      return undefined
-    }
-  }
-)
+        return undefined
+      }
+    })
   cuisineOptions = cuisineOptions.filter(opt => opt)
   cuisineOptions.unshift({key: "All Cuisine Types", text: "All Cuisine Types", value: ""})
   return cuisineOptions
 }
+
 const categoryTypes = ["counter_service", "table_service", "bar_or_lounge", "room_service", "market", "food_cart"]
 
 const parseCategoryCode = (code) =>{
