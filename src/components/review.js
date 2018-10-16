@@ -1,5 +1,5 @@
 import React from 'react'
-import Options from '../services/data'
+import {timeConvert} from '../services/parse'
 
 
 const Review = ({review}) =>{
@@ -9,7 +9,7 @@ const Review = ({review}) =>{
       <p>{review.username}</p>
       <div>{review.content}</div>
       <div className="date">
-        {Options.timeConvert(review.created_at)}
+        {timeConvert(review.created_at)}
 
       </div>
     </div>

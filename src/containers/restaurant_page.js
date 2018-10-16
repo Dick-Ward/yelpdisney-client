@@ -4,9 +4,10 @@ import Review from "../components/review"
 import RatingContainer from "../components/rating_container"
 import {Button, Grid} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
-import {startCase} from 'lodash';
 import {connect} from 'react-redux'
 import * as moment from 'moment'
+import RestaurantDetails from '../components/restaurantDetails'
+
 
 
 class RestaurantPage extends Component{
@@ -19,43 +20,8 @@ class RestaurantPage extends Component{
     this.props.history.goBack()
   }
 
-
-
   render(){
     const {restaurant} = this.props
-
-    const unparsedDetails = ["opened_on", "entree_range", "breakfast_hours","lunch_hours", "dinner_hours", "parking", "wine_list"]
-    const unwantedDetails = ["average_rating", "average_value", "average_quality", "average_service", "average_cleanliness", "reviews", "name", "id", "permalink", "short_name", "code", "operator_id", "operator_type", "sort_name", "park", "operator_url", "house_specialties", "resort_name"]
-
-    const getRestaurantDetails = () =>{
-      let details = []
-      for (let detail in restaurant){
-        if(restaurant[detail] && restaurant[detail] !== "Resort Dining"){
-          if (detail === "category_code"){
-            details.push({detail: "Category", information: startCase(restaurant[detail])})
-          }
-          else if (detail === "cost_code"){
-            details.push({detail: "Cost", information: startCase(restaurant[detail])})
-          }
-          else if(unparsedDetails.includes(detail)){
-            details.push({detail: startCase(detail), information: restaurant[detail]})
-          }
-          else if (restaurant[detail] === true){
-            details.push({detail: startCase(detail), information: ""})
-          }
-          else if(!unwantedDetails.includes(detail)){
-            details.push({detail: startCase(detail), information: startCase(restaurant[detail])})
-          }
-        }
-      }
-      return details.map(detail =>{
-        if (detail.information !== ""){
-        return <p key={detail.detail}>{detail.detail}: {detail.information}</p>
-      } else {
-        return <p key={detail.detail}>{detail.detail}</p>
-      }
-      })
-    }
 
     const handleClick = () =>{
       if(this.props.user){
@@ -88,14 +54,13 @@ if (this.props.restaurant !== "none"){
 
             <Button onClick={this.back} className="backButton" basic size='mini'>Back</Button>
             <div className="restaurantDetails">
-              {getRestaurantDetails()}
+              <RestaurantDetails restaurant={restaurant} />
             </div>
           </Grid.Column>
           <Grid.Column width={8}>
             <div>
               <div className="restaurantTitle">{restaurant.name} </div>
               <div className="restaurantParkName"> {restaurant.resort_name ? (<div> at {restaurant.resort_name}</div>) : (<div>at {restaurant.park}</div>)}</div>
-
             </div>
             <RatingContainer
               rating={restaurant.average_rating}

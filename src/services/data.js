@@ -61,29 +61,13 @@ const parkOptions = [
   {key: 'Resort Dining', text: 'Resort Dining', value: 'Resort Dining'}
 ]
 
-const getTimeZone = () =>{
-  if (!sessionStorage.getItem('timezone')) {
-    let tz = moment.tz.guess() || 'UTC';
-    sessionStorage.setItem('timezone', tz);
-  }
-  return sessionStorage.getItem('timezone')
-}
-
-const timeConvert = time =>{
-  const timeZone = getTimeZone()
-  const newTime = moment(time).tz(timeZone).format("MM/DD/YY - h:mm a")
-  return newTime
-}
-
-
 
 
 const Options = {
   parkOptions,
   categoryOptions,
   parseCategoryCode,
-  parseCuisineOptions,
-  timeConvert
+  parseCuisineOptions
 }
 
 export default Options
