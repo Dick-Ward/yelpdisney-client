@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import RestaurantCard from "./restaurant_card";
-import * as actions from "../../actions"
 import {Grid} from 'semantic-ui-react'
-import Filters from "../global/filters"
+import * as actions from "../../actions"
+import RestaurantCard from "./RestaurantCard";
+import Filters from "../global/Filters"
 import Options from "../../services/data"
 
 class RestaurantList extends Component {

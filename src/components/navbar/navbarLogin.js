@@ -1,7 +1,7 @@
 import React from 'react'
-import HorizontalLogIn from './horizontalLogin'
 import {Button} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
+import HorizontalLogIn from './HorizontalLogin'
 
 const NavbarLogin = (props) =>{
   if (props.loginSelected){
@@ -13,7 +13,7 @@ const NavbarLogin = (props) =>{
         <Button.Group>
           <Button onClick={props.logInToggle}>Log In </Button>
           <Button.Or />
-          <Link to="/signup"><Button>Sign Up </Button></Link>
+          <Link to="/signup"><Button>Sign Up</Button></Link>
         </Button.Group>
       </div>
     </>

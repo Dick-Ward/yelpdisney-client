@@ -1,6 +1,6 @@
 import React from 'react'
 import {Grid } from 'semantic-ui-react'
-import SmallRating from './small_rating'
+import SmallRating from './SmallRating'
 
 const RatingContainer = props =>{
   return (

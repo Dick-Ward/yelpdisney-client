@@ -3,10 +3,10 @@ import {Button, Grid} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as moment from 'moment'
-import Review from "../reviews/review"
-import ReviewForm from "../reviews/review_form"
-import RatingContainer from "./rating_container"
-import RestaurantDetails from './restaurantDetails'
+import Review from "../reviews/Review"
+import ReviewForm from "../reviews/ReviewForm"
+import RatingContainer from "./RatingContainer"
+import RestaurantDetails from './RestaurantDetails'
 
 class RestaurantPage extends Component{
 

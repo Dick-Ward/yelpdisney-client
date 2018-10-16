@@ -1,11 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import * as actions from "../../actions"
 import Options from '../../services/data'
 import {Form, Input, Dropdown, Button, Icon} from 'semantic-ui-react'
-import "../../style/splash.css"
 import VideoCover from 'react-video-cover'
-import SplashLogin from './splashLogin'
+import SplashLogin from './SplashLoginButtons'
+import * as actions from "../../actions"
+import "../../style/splash.css"
 
 
 class Splash extends React.Component {

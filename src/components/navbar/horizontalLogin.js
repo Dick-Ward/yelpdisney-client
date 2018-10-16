@@ -1,8 +1,8 @@
 import React from 'react'
 import {Form, Button, Message} from 'semantic-ui-react'
 import {connect} from 'react-redux'
-import * as actions from "../../actions"
 import {withRouter} from 'react-router'
+import * as actions from "../../actions"
 
 class HorizontalLogIn extends React.Component {
 
