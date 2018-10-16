@@ -1,46 +1,30 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import * as actions from "./actions";
-import Navbar from "./components/navbar/navbar"
-import RestaurantList from "./components/listview/restaurant_list";
-import RestaurantPage from "./components/restaurants/restaurant_page";
-import {withRouter, Route, Switch} from 'react-router-dom'
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
+import ViewContainer from './components/viewContainer'
+import Splash from './components/splash/splash'
+import LogIn from './components/splash/log_in'
+import SignUp from './components/global/sign_up'
+import {connect} from 'react-redux'
+import * as actions from './actions'
+import {withRouter} from 'react-router'
 
-class App extends Component {
-
-  state = {
-    selectedPark: "",
-    restaurantList: ""
-  }
-  render() {
-    console.log(this.props.state)
-    return (
-      <React.Fragment>
-        <div>
-          <Navbar />
-          <Switch>
-            <Route path="/restaurants/:permalink" render={ (renderProps) => {
-              return (
-                <RestaurantPage
-                  restaurant={this.props.selectedRestaurant}
-                  selectRestaurant={this.props.selectRestaurant}
-                  renderProps={renderProps}
-                />)
-            }}/>
-            <Route path="/restaurants" component={RestaurantList}/>
-
-          </Switch>
+class App extends React.Component{
+  render(){
+    return(
+      <div>
+        <Switch>
+          <Route exact path="/" component={Splash} />
+          <Route path="/login" component={LogIn}/>
+          <Route path="/signup" component={SignUp}/>
+          <Route component={ViewContainer} />
+        </Switch>
         </div>
-      </React.Fragment>
     )
   }
+ componentDidMount(){
+   this.props.getCurrentUser()
+ }
 }
 
-function mapStateToProps(state) {
-  return {
-    restaurantList: state.restaurants.restaurantList,
-    selectedRestaurant: state.restaurants.selectedRestaurant,
-  };
-}
 
-export default withRouter(connect(mapStateToProps, actions)(App));
+export default withRouter(connect(null, actions)(App))
