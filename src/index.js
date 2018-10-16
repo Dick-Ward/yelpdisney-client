@@ -4,7 +4,7 @@ import "./style/index.css";
 import "./style/svgStyle.css";
 import "./style/restaurant.css";
 import "./style/restaurantCard.css";
-import AppContainer from "./containers/app_container";
+import AppContainer from "./components/app_container";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import restaurantsReducer from "./reducers/restaurants";

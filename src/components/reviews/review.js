@@ -1,5 +1,5 @@
 import React from 'react'
-import {timeConvert} from '../services/parse'
+import {timeConvert} from '../../services/parse'
 
 const Review = ({review}) =>{
   if (review.content){

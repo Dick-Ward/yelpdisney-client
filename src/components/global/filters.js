@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Dropdown, Button} from 'semantic-ui-react'
-import * as actions from '../actions'
-import Options from '../services/data'
+import * as actions from '../../actions'
+import Options from '../../services/data'
 
 class Filters extends React.Component{
 

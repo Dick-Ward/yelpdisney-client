@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "./actions";
-import RestaurantList from "./containers/restaurant_list";
-import Navbar from "./components/navbar"
-import RestaurantPage from "./containers/restaurant_page";
+import Navbar from "./components/navbar/navbar"
+import RestaurantList from "./components/listview/restaurant_list";
+import RestaurantPage from "./components/restaurants/restaurant_page";
 import {withRouter, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
@@ -17,9 +17,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <div>
-
           <Navbar />
-
           <Switch>
             <Route path="/restaurants/:permalink" render={ (renderProps) => {
               return (
@@ -32,11 +30,10 @@ class App extends Component {
             <Route path="/restaurants" component={RestaurantList}/>
 
           </Switch>
-            </div>
-            </React.Fragment>
-        );
+        </div>
+      </React.Fragment>
+    )
   }
-
 }
 
 function mapStateToProps(state) {

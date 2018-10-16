@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-import Options from "../services/data"
+import Options from "../../services/data"
 
 const RestaurantCard = ({ restaurant, selectRestaurant, selectedRestaurant }) => {
   return (

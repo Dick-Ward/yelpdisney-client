@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import * as actions from '../actions/index'
-import Options from '../services/data'
+import * as actions from "../../actions"
+import Options from '../../services/data'
 import {Form, Input, Dropdown, Button, Icon} from 'semantic-ui-react'
-import "../style/splash.css"
+import "../../style/splash.css"
 import VideoCover from 'react-video-cover'
 import SplashLogin from './splashLogin'
 
