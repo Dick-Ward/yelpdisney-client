@@ -1,0 +1,29 @@
+.navSearch {
+  position: absolute;
+  top: 15px;
+}
+.logo {
+  font-family: "Walt";
+  font-size: 2em;
+  color: RGBa(50,50,200, .8);
+  user-select: none;
+  position: absolute;
+  top: 45px;
+  left: 25px;
+}
+.logout{
+  position: absolute;
+  top: 35px;
+}
+.navbar {
+  border-bottom-style: inset;
+  border-bottom-color: RGBa(255, 100, 100, 1);
+  background-color: RGB(255,225,225);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.navbarLogin{
+  position: absolute;
+  top: 32px;
+  left: 60px
+}

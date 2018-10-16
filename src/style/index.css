@@ -1,108 +1,28 @@
+*{
+  font-family: "Roboto", sans-serif;
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
-
 @font-face{
   font-family: "Walt";
   src: local("Walt"), url("../fonts/waltograph42.otf")
 }
 
-.bottom-bordered {
-  border-bottom-style: inset;
-  border-bottom-color: RGBa(200, 75, 75, .5);
-}
-
-.cardTitle{
-  font-size: 1.25em;
-  font-weight: 600;
-}
-
-.filter {
-  width: 50%;
-}
-
-.filterContainer{
-  min-width: 220px;
-  width: 65%;
-  margin-left: 30px;
-  margin-top: 30px;
-  padding: 10px;
-  border: solid;
-  border-width: thin;
-  border-color: grey;
-}
-
-.homeLink {
-position: absolute;
-top: 20px;
-left: 10px;
-}
-
-.in {
-  display: flex;
-  text-align: center;
-  margin: auto;
-  margin-left: 8px;
-  margin-right: 8px;
-
-}
-
-.navSearch {
-  position: absolute;
-  left: 100px;
-  top: 10px;
-  margin-bottom: 30px;
-}
-
-.navbar {
-  font-family: "Walt";
-  font-size: 2em;
-  float: right;
-  margin-right: 40px;
-  margin-top: 20px;
-  color: RGBa(50,50,200, .8);
-}
-
-.restaurant-card {
-  min-width: 420px;
-  border: solid;
-  border-radius: 10px;
-  border-width: thin;
-  margin-top: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.restaurant-card:hover{
-  cursor: pointer;
-}
-
 .restaurantListContainer{
-
+  margin-top: 30px;
 }
-
-.restaurant-review-card {
-  width: 80%;
-  border: solid;
-  border-radius: 10px;
-  border-width: thin;
-  margin: 10px;
-  padding: 20px;
+.signup{
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 5%;
+  height: 100vh;
+  background: lightblue;
 }
-
-
-.right{
-  text-align: right;
-}
-
-.vertical {
-  transform: rotate(-90deg);
-  width: 150px;
-  height: 62px;
-}
-
-.rating-text {
+.signupIntro{
+  font-family: "Dosis";
+  font-size: 1.5em;
   text-align: center;
+  line-height: 1.2em;
 }

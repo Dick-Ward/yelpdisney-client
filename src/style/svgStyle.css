@@ -1,0 +1,50 @@
+.Overall{
+  width: 120px;
+  height: 120px;
+  clip-path: url(#svgPathOverall);
+}
+.Overall > span {
+  display: block;
+  height: 100%;
+}
+
+
+.Quality{
+  width: 92px;
+  height: 90px;
+  clip-path: url(#svgPathQuality);
+}
+.Quality > span {
+  display: block;
+  height: 100%;
+}
+
+.Cleanliness{
+  width: 92px;
+  height: 90px;
+  clip-path: url(#svgPathCleanliness);
+}
+.Cleanliness > span {
+  display: block;
+  height: 100%;
+}
+
+.Service{
+  width: 92px;
+  height: 90px;
+  clip-path: url(#svgPathService);
+}
+.Service > span {
+  display: block;
+  height: 100%;
+}
+
+.Value{
+  width: 92px;
+  height: 90px;
+  clip-path: url(#svgPathValue);
+}
+.Value > span {
+  display: block;
+  height: 100%;
+}

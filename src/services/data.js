@@ -1,17 +1,18 @@
+var moment = require('moment-timezone')
 
 const parseCuisineOptions = (cuisineTypes) =>{
   let cuisineOptions = cuisineTypes.sort().map(cuisine =>{
     if(cuisine){
       return {key: `cuisine${cuisine}`, text: cuisine, value: cuisine}
     } else {
-      return undefined
-    }
-  }
-)
+        return undefined
+      }
+    })
   cuisineOptions = cuisineOptions.filter(opt => opt)
   cuisineOptions.unshift({key: "All Cuisine Types", text: "All Cuisine Types", value: ""})
   return cuisineOptions
 }
+
 const categoryTypes = ["counter_service", "table_service", "bar_or_lounge", "room_service", "market", "food_cart"]
 
 const parseCategoryCode = (code) =>{
@@ -59,6 +60,8 @@ const parkOptions = [
   {key: 'Typhoon Lagoon', text: 'Typhoon Lagoon', value: 'Typhoon Lagoon'},
   {key: 'Resort Dining', text: 'Resort Dining', value: 'Resort Dining'}
 ]
+
+
 
 const Options = {
   parkOptions,
