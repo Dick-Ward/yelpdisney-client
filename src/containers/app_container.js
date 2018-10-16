@@ -8,10 +8,8 @@ import {connect} from 'react-redux'
 import * as actions from '../actions'
 import {withRouter} from 'react-router'
 
-
 class AppContainer extends React.Component{
   render(){
-
     return(
       <div>
         <Switch>
@@ -23,7 +21,6 @@ class AppContainer extends React.Component{
         </div>
     )
   }
-
  componentDidMount(){
    this.props.getCurrentUser()
  }

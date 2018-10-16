@@ -29,7 +29,6 @@ class LogIn extends React.Component {
     }
 
   render(){
-
     return(
       <div>
         <Form error onSubmit={this.handleSubmit}>

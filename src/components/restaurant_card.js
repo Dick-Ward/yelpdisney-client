@@ -3,9 +3,6 @@ import {Link} from 'react-router-dom'
 import Options from "../services/data"
 
 const RestaurantCard = ({ restaurant, selectRestaurant, selectedRestaurant }) => {
-
-
-
   return (
     <Link key={restaurant.id} to={`/restaurants/${restaurant.permalink}`}>
       <div className="restaurant-card">
@@ -19,7 +16,7 @@ const RestaurantCard = ({ restaurant, selectRestaurant, selectedRestaurant }) =>
         <div className="cardParkName">{restaurant.resort_name ? (<div> {restaurant.resort_name}</div>) : (<div > {restaurant.park}</div>)}</div>
       </div>
     </Link>
-      );
-      };
+      )
+    }
 
 export default RestaurantCard;

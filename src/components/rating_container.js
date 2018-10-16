@@ -26,9 +26,7 @@ const RatingContainer = props =>{
               </Grid.Column>
               <Grid.Column width={6} className="rating-text">
               </Grid.Column>
-
               <Grid.Row >
-
                 <Grid.Column width={4} className="rating-text">
                   <SmallRating rating={props.quality} ratingOf={"Quality"} color={"red"} />
                 </Grid.Column>
@@ -41,11 +39,9 @@ const RatingContainer = props =>{
                 <Grid.Column width={4} className="rating-text">
                   <SmallRating rating={props.value} ratingOf={"Value"} color={"orange"}/>
                 </Grid.Column>
-
               </Grid.Row>
             </Grid>
           </div>
-
         )
       }
 

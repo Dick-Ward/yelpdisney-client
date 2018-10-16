@@ -29,11 +29,9 @@ class HorizontalLogIn extends React.Component {
     }
 
   render(){
-
     return(
       <div>
         <Form error onSubmit={this.handleSubmit}>
-
           <Form.Group>
             <Form.Field>
               <Form.Input name="username" placeholder="Username" onChange={this.handleChange} value={this.state.username} />

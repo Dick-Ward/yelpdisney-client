@@ -55,8 +55,7 @@ class RestaurantList extends Component {
         <Grid.Column width={3}>
         </Grid.Column>
       </Grid>
-
-    );
+    )
   }
 }
 

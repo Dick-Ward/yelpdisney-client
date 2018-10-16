@@ -3,7 +3,6 @@ import LogIn from './log_in'
 import {Button} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 
-
 const SplashLogin = (props) =>{
   return(
     <>
@@ -16,7 +15,7 @@ const SplashLogin = (props) =>{
       </div>
       {props.loginSelected && <LogIn />}
     </>
-    )
+  )
 }
 
 export default SplashLogin

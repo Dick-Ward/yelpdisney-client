@@ -4,7 +4,6 @@ import {Dropdown, Button} from 'semantic-ui-react'
 import * as actions from '../actions'
 import Options from '../services/data'
 
-
 class Filters extends React.Component{
 
   handleChange = (event, value) => {
@@ -16,7 +15,6 @@ class Filters extends React.Component{
       this.props.applyCategoryFilter(value.value)
     }
   }
-
   handleClearFilters = () =>{
     this.props.clearAllFilters()
   }
