@@ -9,115 +9,9 @@ body {
   font-family: "Walt";
   src: local("Walt"), url("../fonts/waltograph42.otf")
 }
-.filter {
-  width: 50%;
-}
-.filterContainer{
-  min-width: 220px;
-  width: 65%;
-  margin-top: 30px;
-  padding: 10px;
-  border: solid;
-  border-width: thin;
-  border-color: grey;
-}
-.homeLink {
-  position: absolute;
-  top: 45px;
-  left: 25px;
-}
 
-.navSearch {
-  position: absolute;
-  top: 15px;
-}
-
-.logo {
-  font-family: "Walt";
-  font-size: 2em;
-  color: RGBa(50,50,200, .8);
-  user-select: none;
-}
-.logout{
-  position: absolute;
-  top: 35px;
-}
-.navbar {
-  border-bottom-style: inset;
-  border-bottom-color: RGBa(255, 100, 100, 1);
-  background-color: RGB(255,225,225);
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-}
-.navbarLogin{
-  position: absolute;
-  top: 32px;
-  left: 60px
-}
-.ratingContainer{
-  width: 80%;
-  margin: auto;
-  border: solid;
-  border-width: thin;
-  border-radius: 10px;
-  border-color: RGBa(220,220,255,.1);
-  background-color: RGBa(220,220,255,.2);
-  position: absolute;
-  top: 70px;
-  left: 40px;
-}
-.rating-text {
-  text-align: center;
-}
 .restaurantListContainer{
   margin-top: 30px;
-}
-.restaurant-review-card {
-  width: 80%;
-  border: solid;
-  border-radius: 10px;
-  border-width: thin;
-  margin: 10px;
-  padding: 20px;
-}
-.reviewCard{
-  border: solid;
-  border-radius: 10px;
-  border-width: thin;
-  border-color: RGBa(220,220,255,.2);
-  background-color: RGBa(220,220,255,.2);
-  padding: 5px;
-  margin-top: 10px;
-  word-wrap: break-word;
-}
-.reviewCard > p {
-  margin: 2px;
-  font-style: italic;
-  font-weight: bold;
-}
-.reviewCard > div {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.reviewCard > .date {
-  text-align: right;
-  font-size: .9em;
-  font-style: italic;
-}
-.reviewContainer {
-  position: absolute;
-  top: 460px;
-  left: 40px;
-  width: 80%;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.reviewForm{
-  margin-top: 20px;
-}
-.reviewText{
-  margin: 100px;
-  border: solid;
 }
 .signup{
   padding-left: 20%;
@@ -131,9 +25,4 @@ body {
   font-size: 1.5em;
   text-align: center;
   line-height: 1.2em;
-}
-.vertical {
-  transform: rotate(-90deg);
-  background: #ccc;
-  margin: auto;
 }

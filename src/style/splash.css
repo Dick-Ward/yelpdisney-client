@@ -4,9 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-
 }
-
 .splashDrop{
   margin-right: 10px;
 }
@@ -14,7 +12,6 @@
   background-color: white;
   border-radius: 5px;
 }
-
 .splashIn {
   display: flex;
   text-align: center;
@@ -22,7 +19,6 @@
   margin-left: 8px;
   margin-right: 8px;
 }
-
 .splashLogin{
   position: absolute;
   top: 30px;
@@ -32,7 +28,6 @@
 .splashLoginButtons{
   margin-bottom :15px;
 }
-
 .splashSearch{
   position: absolute;
   top: 50%;
@@ -43,12 +38,10 @@
   outline: solid;
   background-color: RGBa(50,220,180,1);
 }
-
 .splashSearchForm{
   width: 80%;
   margin: auto;
 }
-
 .splashTitle{
   color: RGBa(50,180,220,1);
   font-size: 10em;
