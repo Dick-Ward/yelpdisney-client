@@ -4,7 +4,7 @@ import "./style/index.css";
 import "./style/svgStyle.css";
 import "./style/restaurant.css";
 import "./style/restaurantCard.css";
-import AppContainer from "./components/app_container";
+import App from "./App";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import restaurantsReducer from "./reducers/restaurants";
@@ -20,7 +20,7 @@ const store = createStore(rootReducer, applyMiddleware(reduxThunk));
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <AppContainer />
+      <App />
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
