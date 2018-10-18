@@ -14,8 +14,7 @@ class ViewContainer extends Component {
   }
   render() {
     return (
-      <React.Fragment>
-        <div>
+        <div className="ViewContainer">
           <Navbar />
           <Switch>
             <Route path="/restaurants/:permalink" render={ (renderProps) => {
@@ -29,7 +28,6 @@ class ViewContainer extends Component {
             <Route path="/restaurants" component={RestaurantList}/>
           </Switch>
         </div>
-      </React.Fragment>
     )
   }
 }

@@ -18,7 +18,7 @@
 .navbar {
   border-bottom-style: inset;
   border-bottom-color: RGBa(255, 100, 100, 1);
-  background-color: RGB(255,225,225);
+  background-color: white;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }

@@ -30,6 +30,10 @@ class Navbar extends React.Component{
     this.props.applyParkFilter(park)
     this.props.searchRestaurants(query)
     this.props.clearAllFilters()
+    if(this.props.history.location.pathname !== "/restaurants"){
+      this.props.history.push("/restaurants")
+    }
+
   }
 
   handleLogout = () =>{
