@@ -16,14 +16,16 @@
   display: flex;
   text-align: center;
   margin: auto;
-  margin-left: 8px;
-  margin-right: 8px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: white;
 }
 .splashLogin{
   position: absolute;
   top: 30px;
   right: 20px;
   text-align: right;
+
 }
 .splashLoginButtons{
   margin-bottom :15px;
@@ -31,19 +33,19 @@
 .splashSearch{
   position: absolute;
   top: 50%;
-  left: 20%;
-  width: 60%;
-  padding: 20px;
-  padding-bottom: 10px;
-  outline: solid;
-  background-color: RGBa(50,220,180,1);
+  left: 30%;
+  width: 40%;
+  padding: 10px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: solid;
+  border-color: var(--brightblue);
 }
 .splashSearchForm{
-  width: 80%;
   margin: auto;
 }
 .splashTitle{
-  color: RGBa(50,180,220,1);
+  color: var(--brightblue);
   font-size: 10em;
   font-family: "Walt";
   position: absolute;

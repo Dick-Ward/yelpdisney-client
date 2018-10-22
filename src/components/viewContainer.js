@@ -5,6 +5,7 @@ import Navbar from "./navbar/Navbar"
 import RestaurantList from "./listview/RestaurantList";
 import RestaurantPage from "./restaurants/RestaurantPage";
 import {withRouter, Route, Switch} from 'react-router-dom'
+import Footer from "./global/Footer"
 
 class ViewContainer extends Component {
 

@@ -8,9 +8,9 @@ const SplashLogin = (props) =>{
     <>
       <div className="splashLoginButtons">
         <Button.Group>
-          <Button onClick={props.logInToggle} color="teal">Log In </Button>
+          <Button inverted onClick={props.logInToggle}>Log In </Button>
           <Button.Or />
-          <Link to="/signup"><Button color="teal">Sign Up </Button></Link>
+          <Link to="/signup"><Button inverted>Sign Up </Button></Link>
           </Button.Group>
       </div>
       {props.loginSelected && <LogIn />}
