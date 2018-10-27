@@ -5,25 +5,14 @@
   top: 0;
   left: 0;
 }
-.splashDrop{
-  margin-right: 10px;
-}
 .splashGreeting{
   background-color: white;
   border-radius: 5px;
 }
-.splashIn {
-  display: flex;
-  text-align: center;
-  margin: auto;
-  padding: 10px;
-  border-radius: 50%;
-  background-color: white;
-}
 .splashLogin{
   position: absolute;
   top: 30px;
-  right: 20px;
+  right: 20%;
   text-align: right;
 
 }
@@ -32,29 +21,25 @@
 }
 .splashSearch{
   position: absolute;
-  top: 50%;
-  left: 30%;
-  width: 40%;
-  padding: 10px;
-  padding-bottom: 5px;
-  border-radius: 5px;
-  border: solid;
-  border-color: var(--brightblue);
+  top: 60%;
+  width: 100%;
+  text-align: center;
 }
-.splashSearchForm{
+.splashSearch > form{
+  width: 60%;
   margin: auto;
 }
 .splashTitle{
-  color: var(--brightblue);
-  font-size: 10em;
-  font-family: "Walt";
   position: absolute;
-  top: 25%;
   width:100%;
+  top: 40%;
+  font-size: 14em;
+  font-family: "Walt";
+  letter-spacing: 10px;
   text-align: center;
-  text-shadow:
-   -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-     1px 1px 0 #fff
+}
+@media only screen and (min-height: 1200px){
+  .splashSearch{
+    top: 50%
+  }
 }
