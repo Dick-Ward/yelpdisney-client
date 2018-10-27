@@ -1,6 +1,5 @@
 import React from 'react'
 import {startCase} from 'lodash';
-import * as moment from 'moment'
 import {unparsedDetails, unwantedDetails} from '../../services/parse'
 
 const RestaurantDetails = ({restaurant}) =>{

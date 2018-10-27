@@ -1,5 +1,3 @@
-import React from 'react'
-import {startCase} from 'lodash';
 import * as moment from 'moment'
 
 export const unparsedDetails = ["opened_on", "entree_range", "breakfast_hours","lunch_hours", "dinner_hours", "parking", "wine_list"]
