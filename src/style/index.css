@@ -1,13 +1,26 @@
 *{
   font-family: "Roboto", sans-serif;
 }
-body {
+:root{
+  --whiteblue: #D3EFFF;
+  --lightblue: #7CD1FF;
+  --mutedblue: #1D96D7;
+  --brightblue: #19AEFF;
+  --darkblue: #083D59;
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(160deg, var(--whiteblue), var(--brightblue));
+}
+body, ul {
   margin: 0;
   padding: 0;
 }
 @font-face{
   font-family: "Walt";
   src: local("Walt"), url("../fonts/waltograph42.otf")
+}
+button{
+  color: var(--mutedblue)
 }
 
 .restaurantListContainer{
@@ -18,11 +31,16 @@ body {
   padding-right: 20%;
   padding-top: 5%;
   height: 100vh;
-  background: lightblue;
+  background: var(--brightblue);
 }
 .signupIntro{
   font-family: "Dosis";
   font-size: 1.5em;
   text-align: center;
   line-height: 1.2em;
+}
+.ViewContainer{
+  min-height: 100vh;
+  background-color: var(--brightblue);
+  background-image: linear-gradient(160deg, var(--whiteblue), var(--brightblue));
 }

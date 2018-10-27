@@ -67,15 +67,18 @@ class Splash extends React.Component {
             <div className="splashInput">
               <Form className="splashSearchForm" onSubmit={this.handleSubmit}>
                 <Form.Group >
-                  <label >{`Search `}
+                 <Form.Field>
                     <Input
                       type="text"
                       onChange={this.handleSearchChange}
                       value={this.state.query}
                       placeholder="New Search"
                     />
-                  </label>
+                    </Form.Field>
+
                   <div className="splashIn">in</div>
+                  <Form.Field>
+
                   <Dropdown
                     className="splashDrop"
                     placeholder={'All Parks'}
@@ -83,7 +86,12 @@ class Splash extends React.Component {
                     selection
                     onChange={this.handleFilterChange}
                   />
+                  </Form.Field>
+                  <Form.Field>
+
                   <Button className="splashSubmit"><Icon name="search"/></Button>
+                  </Form.Field>
+
                 </Form.Group>
               </Form>
             </div>

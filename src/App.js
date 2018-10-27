@@ -11,14 +11,14 @@ import {withRouter} from 'react-router'
 class App extends React.Component{
   render(){
     return(
-      <div>
+
         <Switch>
           <Route exact path="/" component={Splash} />
           <Route path="/login" component={LogIn}/>
           <Route path="/signup" component={SignUp}/>
           <Route component={ViewContainer} />
         </Switch>
-        </div>
+
     )
   }
  componentDidMount(){

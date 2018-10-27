@@ -5,6 +5,7 @@ import Navbar from "./navbar/Navbar"
 import RestaurantList from "./listview/RestaurantList";
 import RestaurantPage from "./restaurants/RestaurantPage";
 import {withRouter, Route, Switch} from 'react-router-dom'
+import Footer from "./global/Footer"
 
 class ViewContainer extends Component {
 
@@ -14,8 +15,7 @@ class ViewContainer extends Component {
   }
   render() {
     return (
-      <React.Fragment>
-        <div>
+        <div className="ViewContainer">
           <Navbar />
           <Switch>
             <Route path="/restaurants/:permalink" render={ (renderProps) => {
@@ -29,7 +29,6 @@ class ViewContainer extends Component {
             <Route path="/restaurants" component={RestaurantList}/>
           </Switch>
         </div>
-      </React.Fragment>
     )
   }
 }
