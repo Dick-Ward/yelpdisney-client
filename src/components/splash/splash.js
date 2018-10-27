@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Options from '../../services/data'
 import {Form, Input, Dropdown, Button, Icon, Label} from 'semantic-ui-react'
 import VideoCover from 'react-video-cover'
-import SplashLogin from './SplashLoginButtons'
+import SplashLogin from './SplashLogin'
 import * as actions from "../../actions"
 import "../../style/splash.css"
 
@@ -43,6 +43,7 @@ class Splash extends React.Component {
   }
 
   render(){
+    console.log(this.state)
     const videoOptions = {
       src: '/DisneyWalkup.webm',
       autoPlay: true,
@@ -50,11 +51,12 @@ class Splash extends React.Component {
     }
 
     return(
-        <div className="splash">
-          <VideoCover
+        <div className="splash" style={{backgroundColor: "#666"}}>
+
+          {/* <VideoCover
             videoOptions={videoOptions}
             style={{zIndex: "-1"}}
-          />
+          /> */}
 
 
           <div className="splashTitle">Yelp Disney</div>
@@ -77,13 +79,13 @@ class Splash extends React.Component {
                 <Label basic>Find</Label>
                 <input />
 
-                <Dropdown  style={{width: "40%"}} search selection placeholder={'All Parks'}
+                <Dropdown style={{width: "40%"}} search selection placeholder={'All Parks'}
 
                   options={Options.parkOptions}
                   selection
                   onChange={this.handleFilterChange}/>
 
-                <Button attached="left" style={{backgroundColor: "white"}}><Icon size="large" name="search" /></Button>
+                <Input type="submit" icon="search large" value="" attached="left" style={{backgroundColor: "white"}} />
               </Input>
             </form>
 

@@ -1,56 +1,23 @@
 import React from 'react'
-import {Form, Button, Message} from 'semantic-ui-react'
-import {connect} from 'react-redux'
-import * as actions from "../../actions"
-import {withRouter} from 'react-router'
+import Login from '../global/Login'
+import Signup from '../global/Signup'
+import {Button, Modal} from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
-class LogIn extends React.Component {
-
-  state = {
-    username: "",
-    password: ""
-  }
-
-  handleSubmit = e =>{
-    e.preventDefault()
-    if (this.state.username !== "" && this.state.password !== ""){
-    this.props.login(
-      this.state.username,
-      this.state.password
-    )} else {
-      this.props.setError("Please fill all fields")
-    }
-  }
-
-    handleChange = e =>{
-      this.setState({
-        [e.target.name]: e.target.value
-      })
-    }
-
-  render(){
-    return(
+const SplashLogin = (props) =>{
+  return(
+    <>
       <div>
-        <Form error onSubmit={this.handleSubmit}>
-          <Form.Input name="username" placeholder="Username" onChange={this.handleChange} value={this.state.username} />
-          <Form.Input name="password" type="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} />
-          <Button type="submit">Submit</Button>
-          {this.props.error ? <Message error header='Login Error' content={this.props.error}/> : null}
-        </Form>
+        <Modal trigger={<span className="splashLoginText">Log In</span>} basic size="small">
+          <Login />
+        </Modal>
+        <span>{` or `}</span>
+        <Modal trigger={<span  className="splashLoginText">Sign Up</span>} basic size="small" >
+          <Signup />
+        </Modal>
       </div>
-    )
-  }
-  componentWillUnmount(){
-    this.props.clearError()
-  }
-}
-
-function mapStateToProps(state){
-  return (
-    {
-      error: state.auth.error
-    }
+    </>
   )
 }
 
-export default withRouter(connect(mapStateToProps, actions)(LogIn))
+export default SplashLogin

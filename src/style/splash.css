@@ -14,10 +14,14 @@
   top: 30px;
   right: 20%;
   text-align: right;
-
+  color: #dddddd;
 }
-.splashLoginButtons{
-  margin-bottom :15px;
+.splashLoginText{
+  text-decoration-line: underline;
+}
+.splashLoginText:hover{
+  cursor: pointer;
+  color: white
 }
 .splashSearch{
   position: absolute;
@@ -33,7 +37,7 @@
   position: absolute;
   width:100%;
   top: 40%;
-  font-size: 14em;
+  font-size: 25vh;
   font-family: "Walt";
   letter-spacing: 10px;
   text-align: center;
