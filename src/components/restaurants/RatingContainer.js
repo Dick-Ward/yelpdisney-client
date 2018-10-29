@@ -18,7 +18,7 @@ const RatingContainer = props =>{
                 </svg>
                 <div>
                   <div className="vertical Overall">
-                  <span style={{width: `${(props.rating/5*100)}%`, backgroundColor:"blue"}} />
+                  <span className="ratingFill" style={{width: `${(props.rating/5*100)}%`, backgroundColor:"blue"}} />
                   </div>
                   <div> Overall </div>
                   <div>{props.rating}</div>
