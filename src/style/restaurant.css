@@ -7,12 +7,11 @@
   margin: auto;
   border: solid;
   border-width: thin;
-  border-radius: 10px;
-  border-color: RGBa(220,220,255,.1);
   background-color: white;
   position: absolute;
   top: 70px;
   left: 40px;
+  background-color: var(--whiteBlue);
 }
 .rating-text {
   text-align: center;
@@ -32,30 +31,19 @@
   margin-left: 10px;
   border: solid;
   border-width: thin;
-  border-color: RGBA(200,200,255,.1);
-  border-radius: 10px;
-  background-color: RGBa(220,220,255,.1);
   position: absolute;
   top: 70px;
-  width: 95%
+  width: 95%;
+  background-color: var(--whiteBlue);
 }
 .restaurantDetails > :first-child {
-  border: solid;
-  border-width: thin;
-  border-color: RGBA(200,200,255,.1);
-  border-radius: 10px 10px 0px 0px;
+
 }
 .restaurantDetails > :last-child {
-  border: solid;
-  border-width: thin;
-  border-color: RGBA(200,200,255,.1);
-  border-radius: 0px 0px 10px 10px;
+
 }
 .restaurantDetails > p {
-  background-color: RGBa(200,200,255,.1);
-  border: solid;
-  border-width: thin;
-  border-color: RGBA(200,200,255,.1);
+
 }
 .restaurantParkName {
   text-align: center;

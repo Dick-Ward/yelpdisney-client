@@ -5,16 +5,10 @@
 .logo {
   font-family: "Walt";
   font-size: 2em;
-  color: var(--lightblue);
   user-select: none;
   position: absolute;
   top: 45px;
   left: 25px;
-  text-shadow:
-   -1px -1px 0 var(--mutedblue),
-    1px -1px 0 var(--mutedblue),
-    -1px 1px 0 var(--mutedblue),
-     1px 1px 0 var(--mutedblue)
 }
 .logout{
   position: absolute;
@@ -22,7 +16,6 @@
 }
 .navbar {
   border-bottom-style: inset;
-  border-bottom-color: var(--mutedblue);
   background-color: white;
   margin-bottom: 10px;
   padding-bottom: 10px;
