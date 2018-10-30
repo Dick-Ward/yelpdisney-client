@@ -63,7 +63,7 @@ class Splash extends React.Component {
 
           <div className="splashLogin">
             {this.props.user ?
-              <div className="splashGreeting">Welcome {this.props.user.username}! <Button size="small" onClick={this.handleLogout}>Logout?</Button></div>
+              <div>Welcome {this.props.user.username}! <span className="splashLoginText" onClick={this.handleLogout}>Logout?</span></div>
             :
             <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
           </div>
