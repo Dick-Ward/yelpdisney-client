@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom'
 import {Form, Input, Button, Grid, Icon} from 'semantic-ui-react'
 import * as actions from "../../actions"
 import NavbarLogin from './NavbarLogin'
+import LoginSignup from '../global/LoginSignup'
 
 class Navbar extends React.Component{
 
@@ -72,11 +73,12 @@ render(){
           </Form>
         </Grid.Column>
         <Grid.Column width={3}>
+        <div className="splashLogin">
           {this.props.user ?
-            <div className="logout">Welcome {this.props.user.username}! <Button basic size="small" onClick={this.handleLogout}>Logout?</Button></div>
+            <div>Welcome {this.props.user.username}! <span className="splashLoginText" onClick={this.handleLogout}>Logout?</span></div>
           :
-          <NavbarLogin logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>
-          }
+          <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
+        </div>
       </Grid.Column>
         <Grid.Column width={2}>
         </Grid.Column>
