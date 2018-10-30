@@ -19,9 +19,6 @@ body, ul {
   font-family: "Walt";
   src: local("Walt"), url("../fonts/waltograph42.otf")
 }
-button{
-  color: var(--mutedblue)
-}
 
 .restaurantListContainer{
   margin-top: 30px;
@@ -42,14 +39,18 @@ button{
   padding-bottom: 5%;
   background: var(--brightblue);
 }
-.signupIntro{
+.authIntro{
   font-family: "Dosis";
   font-size: 1.5em;
   text-align: center;
   line-height: 1.2em;
+  margin-bottom: 5px;
 }
 .ViewContainer{
   min-height: 100vh;
   background-color: var(--brightblue);
   background-image: linear-gradient(160deg, var(--whiteblue), var(--brightblue));
+}
+.clickable:hover{
+  cursor: pointer;
 }

@@ -1,23 +1,51 @@
 import React from 'react'
 import Login from '../global/Login'
 import Signup from '../global/Signup'
-import {Button, Modal} from 'semantic-ui-react'
-import {Link} from 'react-router-dom'
+import {Modal} from 'semantic-ui-react'
 
-const LoginSignup = (props) =>{
-  return(
+
+class LoginSignup extends React.Component{
+  state = {
+    modalOpen: false,
+    render: ""
+  }
+
+  handleClick = (e) =>{
+    this.setState(
+      {
+        modalOpen: true,
+       render: e.target.id
+     }
+    )
+  }
+
+  closeModal = () =>{
+    this.setState({modalOpen: false})
+  }
+
+  toggleRender = () =>{
+    if (this.state.render === "signup"){
+      this.setState({render: "login"})
+    }
+    else {
+      this.setState({render: "signup"})
+    }
+  }
+
+  render(){
+    return(
     <>
       <div>
-        <Modal trigger={<span className="splashLoginText">Log In</span>} basic size="small">
-          <Login />
-        </Modal>
+        <span id="login" onClick={this.handleClick} className="splashLoginText">Log In</span>
         <span>{` or `}</span>
-        <Modal trigger={<span  className="splashLoginText">Sign Up</span>} basic size="small">
-          <Signup />
+        <span id="signup" onClick={this.handleClick} className="splashLoginText">Sign Up</span>
+        <Modal onClose={this.closeModal} open={this.state.modalOpen} basic size="small">
+          {this.state.render === "signup" ? <Signup toggle={this.toggleRender} /> : <Login toggle={this.toggleRender} />}
         </Modal>
+
       </div>
     </>
-  )
+  )}
 }
 
 export default LoginSignup
