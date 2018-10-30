@@ -33,6 +33,7 @@ class RestaurantPage extends Component{
   render(){
 
     const {restaurant} = this.props
+    const park = restaurant.resort_name ? restaurant.resort_name : restaurant.park
 
     if (restaurant !== "none"){
 
@@ -40,36 +41,46 @@ class RestaurantPage extends Component{
         const reviews = sortedReviews.map(review =>{ return <Review key={review.id} review={review}/> })
 
       return (
+        <div>
         <Grid>
-          <Grid.Column width={2}>
+          <Grid.Row>
+            <Grid.Column  width={2}>
+            </Grid.Column>
+            <Grid.Column width={4} >
+              <Button onClick={this.back} className="backButton" basic size='mini'>Back</Button>
+              <div className="restaurantDetails">
+                <RestaurantDetails restaurant={restaurant} />
+              </div>
+            </Grid.Column>
+            <Grid.Column width={8}>
+              <RatingContainer
+                name={restaurant.name}
+                park={park}
+                rating={restaurant.average_rating}
+                quality={restaurant.average_quality}
+                cleanliness={restaurant.average_cleanliness}
+                service={restaurant.average_service}
+                value={restaurant.average_value}
+              />
+            </Grid.Column>
+            <Grid.Column width={2} >
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+          <Grid.Column  width={2}>
           </Grid.Column>
-          <Grid.Column width={4}>
-            <Button onClick={this.back} className="backButton" basic size='mini'>Back</Button>
-            <div className="restaurantDetails">
-              <RestaurantDetails restaurant={restaurant} />
-            </div>
-          </Grid.Column>
-          <Grid.Column width={8}>
-            <div>
-              <div className="restaurantTitle">{restaurant.name} </div>
-              <div className="restaurantParkName"> {restaurant.resort_name ? (<div> at {restaurant.resort_name}</div>) : (<div>at {restaurant.park}</div>)}</div>
-            </div>
-            <RatingContainer
-              rating={restaurant.average_rating}
-              quality={restaurant.average_quality}
-              cleanliness={restaurant.average_cleanliness}
-              service={restaurant.average_service}
-              value={restaurant.average_value}
-            />
+            <Grid.Column width={12}>
             <div className="reviewContainer">
-              <button onClick={this.newReview}>New Review</button>
-              {this.state.reviewFormOpen === true && <ReviewForm closeForm={this.closeForm} restaurant_id={restaurant.id}/>}
-              {reviews.length > 0 ? <div >{reviews}</div>: "Be the first to review this restaurant!"}
+            <button onClick={this.newReview}>New Review</button>
+            {this.state.reviewFormOpen === true && <ReviewForm closeForm={this.closeForm} restaurant_id={restaurant.id}/>}
+            {reviews.length > 0 ? <div >{reviews}</div>: "Be the first to review this restaurant!"}
             </div>
-          </Grid.Column>
-          <Grid.Column width={2}>
-          </Grid.Column>
+            </Grid.Column>
+            <Grid.Column  width={2}>
+            </Grid.Column>
+          </Grid.Row>
         </Grid>
+        </div>
       )
     } else {
         return (

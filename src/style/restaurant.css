@@ -1,16 +1,11 @@
 .backButton{
-  position: absolute;
-  left: 25px;
+
 }
 .ratingContainer{
-  width: 80%;
   margin: auto;
   border: solid;
   border-width: thin;
   background-color: white;
-  position: absolute;
-  top: 70px;
-  left: 40px;
   background-color: var(--whiteBlue);
 }
 .rating-text {
@@ -19,21 +14,16 @@
 .restaurantTitle {
   font-family: "Dosis", sans-serif;
   font-size: 3em;
-  margin-top: 5px;
   text-align: center;
-  margin-right: 60px;
+  margin-top: 20px;
 }
 .restaurantDetails {
+  margin-top: 10px;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   font-size: 1.1em;
-  padding: 0px;
-  margin-left: 10px;
   border: solid;
   border-width: thin;
-  position: absolute;
-  top: 70px;
-  width: 95%;
   background-color: var(--whiteBlue);
 }
 .restaurantDetails > :first-child {
@@ -47,7 +37,6 @@
 }
 .restaurantParkName {
   text-align: center;
-  margin-right: 60px;
   margin-top: 10px;
 }
 .vertical {

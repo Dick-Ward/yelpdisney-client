@@ -31,12 +31,8 @@
   font-style: italic;
 }
 .reviewContainer {
-  position: absolute;
-  top: 460px;
-  left: 40px;
-  width: 80%;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 100%;
+
 }
 .reviewForm{
   margin-top: 20px;

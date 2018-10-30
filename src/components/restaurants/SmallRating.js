@@ -12,7 +12,7 @@ const SmallRating = props => {
     </svg>
     <div>
       <div className={`vertical ${props.ratingOf}`}>
-      <span class="ratingFill" style={{width: `${(props.rating/5*100)}%`, backgroundColor: props.color}} />
+      <span className="ratingFill" style={{width: `${(props.rating/5*100)}%`, backgroundColor: props.color}} />
       </div>
       <div>{props.ratingOf}</div>
       <div>{props.rating}</div>

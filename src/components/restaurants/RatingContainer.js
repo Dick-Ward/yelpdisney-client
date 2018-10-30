@@ -5,6 +5,8 @@ import SmallRating from './SmallRating'
 const RatingContainer = props =>{
   return (
         <div className="ratingContainer">
+          <div className="restaurantTitle">{props.name} </div>
+          <div className="restaurantParkName"> {props.park} </div>
           <Grid >
               <Grid.Column width={6} className="rating-text">
               </Grid.Column>
