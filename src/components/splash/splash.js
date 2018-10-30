@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Options from '../../services/data'
 import {Form, Input, Dropdown, Button, Icon, Label} from 'semantic-ui-react'
 import VideoCover from 'react-video-cover'
-import SplashLogin from './SplashLogin'
+import LoginSignup from '../global/LoginSignup'
 import * as actions from "../../actions"
 import "../../style/splash.css"
 
@@ -65,7 +65,7 @@ class Splash extends React.Component {
             {this.props.user ?
               <div className="splashGreeting">Welcome {this.props.user.username}! <Button size="small" onClick={this.handleLogout}>Logout?</Button></div>
             :
-            <SplashLogin logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
+            <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
           </div>
 
           <div className="splashSearch">

@@ -4,7 +4,7 @@ import Signup from '../global/Signup'
 import {Button, Modal} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 
-const SplashLogin = (props) =>{
+const LoginSignup = (props) =>{
   return(
     <>
       <div>
@@ -12,7 +12,7 @@ const SplashLogin = (props) =>{
           <Login />
         </Modal>
         <span>{` or `}</span>
-        <Modal trigger={<span  className="splashLoginText">Sign Up</span>} basic size="small" >
+        <Modal trigger={<span  className="splashLoginText">Sign Up</span>} basic size="small">
           <Signup />
         </Modal>
       </div>
@@ -20,4 +20,4 @@ const SplashLogin = (props) =>{
   )
 }
 
-export default SplashLogin
+export default LoginSignup
