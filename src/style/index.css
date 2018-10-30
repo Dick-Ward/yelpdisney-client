@@ -26,11 +26,20 @@ button{
 .restaurantListContainer{
   margin-top: 30px;
 }
+.login{
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background: var(--brightblue);
+}
 .signup{
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 5%;
-  height: 100vh;
+  padding-bottom: 5%;
   background: var(--brightblue);
 }
 .signupIntro{

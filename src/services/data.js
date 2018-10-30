@@ -1,5 +1,3 @@
-var moment = require('moment-timezone')
-
 const parseCuisineOptions = (cuisineTypes) =>{
   let cuisineOptions = cuisineTypes.sort().map(cuisine =>{
     if(cuisine){

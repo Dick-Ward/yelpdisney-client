@@ -30,7 +30,6 @@ export const searchRestaurants = (query) => dispatch => {
     })
     let uniqueTypes = [...new Set(cuisineTypes)]
     let parsedCuisine = Options.parseCuisineOptions(uniqueTypes)
-
     dispatch({ type: GET_RESTAURANTS, payload: restaurantList })
     dispatch({type:SET_CUISINE_OPTIONS, payload: parsedCuisine})})
     .then(success => dispatch({type: TOGGLE_FETCH_COMPLETE, payload: true})

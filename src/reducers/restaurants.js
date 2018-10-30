@@ -24,6 +24,8 @@ const restaurantsReducer = (state = initialState, action) => {
       return {...state, categoryFilter: action.payload}
     case "TOGGLE_FETCH_COMPLETE":
       return {...state, fetchComplete: action.payload}
+    case "SET_CUISINE_OPTIONS":
+      return {...state, cuisineOptions: action.payload}
     default:
       return state;
   }

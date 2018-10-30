@@ -30,7 +30,10 @@ class LogIn extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="login">
+        <div className="signupIntro">Log in to rate and review restaurants!
+        </div>
+        
         <Form error onSubmit={this.handleSubmit}>
           <Form.Input name="username" placeholder="Username" onChange={this.handleChange} value={this.state.username} />
           <Form.Input name="password" type="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} />

@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Options from '../../services/data'
-import {Form, Input, Dropdown, Button, Icon} from 'semantic-ui-react'
+import {Form, Input, Dropdown, Button, Icon, Label} from 'semantic-ui-react'
 import VideoCover from 'react-video-cover'
-import SplashLogin from './SplashLoginButtons'
+import LoginSignup from '../global/LoginSignup'
 import * as actions from "../../actions"
 import "../../style/splash.css"
 
@@ -43,6 +43,7 @@ class Splash extends React.Component {
   }
 
   render(){
+    console.log(this.state)
     const videoOptions = {
       src: '/DisneyWalkup.webm',
       autoPlay: true,
@@ -50,54 +51,48 @@ class Splash extends React.Component {
     }
 
     return(
-      <div className="splash">
-        <VideoCover
-          videoOptions={videoOptions}
-          style={{zIndex: "-1"}}
-        />
-        <div className="splashLogin">
-          {this.props.user ?
-            <div className="splashGreeting">Welcome {this.props.user.username}! <Button size="small" onClick={this.handleLogout}>Logout?</Button></div>
-          :
-          <SplashLogin logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
-        </div>
-        <div className="splashTitle">Yelp Disney</div>
-        <div className="splashBorder">
-          <div className="splashSearch">
-            <div className="splashInput">
-              <Form className="splashSearchForm" onSubmit={this.handleSubmit}>
-                <Form.Group >
-                 <Form.Field>
-                    <Input
-                      type="text"
-                      onChange={this.handleSearchChange}
-                      value={this.state.query}
-                      placeholder="New Search"
-                    />
-                    </Form.Field>
+        <div className="splash" style={{backgroundColor: "#666"}}>
 
-                  <div className="splashIn">in</div>
-                  <Form.Field>
+          {/* <VideoCover
+            videoOptions={videoOptions}
+            style={{zIndex: "-1"}}
+          /> */}
 
-                  <Dropdown
-                    className="splashDrop"
-                    placeholder={'All Parks'}
-                    options={Options.parkOptions}
-                    selection
-                    onChange={this.handleFilterChange}
-                  />
-                  </Form.Field>
-                  <Form.Field>
 
-                  <Button className="splashSubmit"><Icon name="search"/></Button>
-                  </Form.Field>
+          <div className="splashTitle">Yelp Disney</div>
 
-                </Form.Group>
-              </Form>
-            </div>
+          <div className="splashLogin">
+            {this.props.user ?
+              <div className="splashGreeting">Welcome {this.props.user.username}! <Button size="small" onClick={this.handleLogout}>Logout?</Button></div>
+            :
+            <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
           </div>
-        </div>
-      </div>
+
+          <div className="splashSearch">
+            <form  onSubmit={this.handleSubmit}>
+              <Input  size="large" style={{width: "100%"}} type='text' placeholder='Prime Time Cafe,   Tiffins,   Indian,   pizza...'
+                onChange={this.handleSearchChange}
+                value={this.state.query}
+                labelPosition="left"
+
+              action>
+                <Label basic>Find</Label>
+                <input />
+
+                <Dropdown style={{width: "40%"}} search selection placeholder={'All Parks'}
+
+                  options={Options.parkOptions}
+                  selection
+                  onChange={this.handleFilterChange}/>
+
+                <Input type="submit" icon="search large" value="" attached="left" style={{backgroundColor: "white"}} />
+              </Input>
+            </form>
+
+
+          </div>
+          </div>
+
     )
   }
 }
