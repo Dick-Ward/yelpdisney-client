@@ -17,7 +17,6 @@ class RestaurantPage extends Component{
 
 
   render(){
-
     const {restaurant} = this.props
     const park = restaurant.resort_name ? restaurant.resort_name : restaurant.park
 
@@ -29,11 +28,11 @@ class RestaurantPage extends Component{
       return (
         <div>
         <Grid>
-          <Grid.Row>
+          <Grid.Row style={{height: "522px"}}>
             <Grid.Column  width={2}>
             </Grid.Column>
             <Grid.Column width={4} >
-              <span onClick={this.back} className="linkText" basic size='mini'>Back</span>
+              <span onClick={this.back} className="linkText" >Back</span>
               <div className="restaurantDetails">
                 <RestaurantDetails restaurant={restaurant} />
               </div>
