@@ -45,6 +45,15 @@ body, ul {
   line-height: 1.2em;
   margin-bottom: 5px;
 }
+.linkText{
+  font-size: 1.1em;
+  text-decoration-line: underline;
+  color: #dddddd;
+}
+.linkText:hover{
+  cursor: pointer;
+  color: white
+}
 .ViewContainer{
   min-height: 100vh;
 
