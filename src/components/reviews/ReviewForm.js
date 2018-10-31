@@ -44,21 +44,21 @@ class ReviewForm extends Component{
   render(){
     return(
       <div className="reviewForm">
-      <Form onSubmit={this.handleSubmit}>
-      <Grid >
-      <Grid.Row style={{height: "50px"}}>
-      </Grid.Row>
-      <Grid.Row style={{height: "205px"}}>
-          <Grid.Column width={1}>
-          </Grid.Column>
-          <Grid.Column width={14}>
-          <label> {`Add your review of ${this.props.name}`}
-            <Form.TextArea
-            className="textArea"
-            maxLength="500"
-            onChange={this.handleChange}
-            name="content" rows="5"
-            value={this.state.content}
+        <Form onSubmit={this.handleSubmit}>
+          <Grid >
+            <Grid.Row style={{height: "50px"}}>
+            </Grid.Row>
+            <Grid.Row style={{height: "205px"}}>
+              <Grid.Column width={1}>
+              </Grid.Column>
+              <Grid.Column width={14}>
+                <label> {`Add your review of ${this.props.name}`}
+                  <Form.TextArea
+                    className="textArea"
+                    maxLength="500"
+                    onChange={this.handleChange}
+                    name="content" rows="5"
+                    value={this.state.content}
             placeholder="You don’t have to write anything here, but we sure appreciate your thoughts!"
             />
           </label>
