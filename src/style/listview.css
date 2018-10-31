@@ -9,7 +9,6 @@
 }
 .restaurant-card {
   padding-left: 19px;
-  padding-right: 10px;
   border-bottom: solid;
   border-width: thin;
   border-color: grey;
@@ -40,7 +39,6 @@
   border-radius: 5px;
   color: black;
 }
-
 .filter {
   width: 50%;
 }
