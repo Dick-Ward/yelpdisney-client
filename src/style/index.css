@@ -18,7 +18,6 @@ body, ul {
   font-family: "Walt";
   src: local("Walt"), url("../fonts/waltograph42.otf")
 }
-
 .restaurantListContainer{
   margin-top: 30px;
 }
@@ -56,7 +55,6 @@ body, ul {
 }
 .ViewContainer{
   min-height: 100vh;
-
   background-image: linear-gradient(var(--backgroundDark), var(--backgroundLight));
 }
 .clickable:hover{

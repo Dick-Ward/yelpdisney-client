@@ -5,7 +5,17 @@ const Slider = props =>{
     <label>
       {props.ratingOf}: {Math.round(props.rating)}
       <br/>
-      <input style={{backgroundColor: props.color}} className="slider" step=".1" onChange={props.handleChange} name={props.ratingOf.toLowerCase()} type="range" min="1" max="5" value={props.rating}/>
+      <input
+        style={{backgroundColor: props.color}}
+        className="slider"
+        step=".01"
+        onChange={props.handleChange}
+        name={props.ratingOf.toLowerCase()}
+        type="range"
+        min="1"
+        max="5"
+        value={props.rating}
+        />
     </label>
   )
 }

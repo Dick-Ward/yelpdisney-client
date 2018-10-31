@@ -29,15 +29,6 @@
   background-color: var(--whiteBlue);
   text-align: center;
 }
-.restaurantDetails > :first-child {
-
-}
-.restaurantDetails > :last-child {
-
-}
-.restaurantDetails > p {
-
-}
 .restaurantParkName {
   text-align: center;
   margin-top: 20px;
