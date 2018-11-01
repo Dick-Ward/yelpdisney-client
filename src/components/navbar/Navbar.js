@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {Form, Input, Button, Grid, Icon} from 'semantic-ui-react'
 import * as actions from "../../actions"
-import NavbarLogin from './NavbarLogin'
 import LoginSignup from '../global/LoginSignup'
 
 class Navbar extends React.Component{
@@ -55,7 +54,7 @@ render(){
         <Grid.Column width={3}>
           <Link className="homeLink" to="/"><div className="logo">Yelp Disney</div></Link>
         </Grid.Column>
-        <Grid.Column width={6}>
+        <Grid.Column width={5}>
           <Form className="navSearch" onSubmit={this.handleSubmit}>
             <Form.Group >
               <Form.Field>
@@ -72,15 +71,15 @@ render(){
             </Form.Group>
           </Form>
         </Grid.Column>
-        <Grid.Column width={3}>
-        <div className="splashLogin">
+        <Grid.Column  width={3}>
+        <div className="navbarLogin">
           {this.props.user ?
-            <div>Welcome {this.props.user.username}! <span className="splashLoginText" onClick={this.handleLogout}>Logout?</span></div>
+            <div>Welcome {this.props.user.username}! <span className="navbarLoginText" onClick={this.handleLogout}>Logout?</span></div>
           :
           <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
         </div>
       </Grid.Column>
-        <Grid.Column width={2}>
+        <Grid.Column width={3}>
         </Grid.Column>
       </Grid>
     </div>

@@ -1,27 +1,33 @@
 .navSearch {
-  position: absolute;
-  top: 15px;
+  /* position: absolute;
+  top: 15px; */
 }
 .logo {
   font-family: "Walt";
-  font-size: 2em;
+  font-size: 6vh;
   user-select: none;
-  position: absolute;
-  top: 45px;
-  left: 25px;
-}
-.logout{
-  position: absolute;
-  top: 35px;
+  letter-spacing: 5px;
 }
 .navbar {
-  border-bottom-style: inset;
+  border-bottom: solid;
+  border-color: red;
   background-color: white;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+  line-height: 1.1;
+  padding-top: 10px;
 }
+
 .navbarLogin{
-  position: absolute;
-  top: 32px;
-  left: 60px
+  margin-top: 30px;
+  text-align: right;
+  font-size: 1.2em;
+  color: black;
+}
+.navbarLoginText{
+  text-decoration-line: underline;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.navbarLoginText:hover{
+  cursor: pointer;
+  color: #666;
 }

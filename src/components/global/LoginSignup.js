@@ -2,6 +2,7 @@ import React from 'react'
 import Login from '../global/Login'
 import Signup from '../global/Signup'
 import {Modal} from 'semantic-ui-react'
+import {withRouter} from 'react-router-dom'
 
 
 class LoginSignup extends React.Component{
@@ -33,12 +34,13 @@ class LoginSignup extends React.Component{
   }
 
   render(){
+    const className = this.props.location.pathname === "/" ? "splashLoginText" : "navbarLoginText"
     return(
     <>
       <div>
-        <span id="login" onClick={this.handleClick} className="splashLoginText">Log In</span>
+        <span id="login" onClick={this.handleClick} className={className}>Log In</span>
         <span>{` or `}</span>
-        <span id="signup" onClick={this.handleClick} className="splashLoginText">Sign Up</span>
+        <span id="signup" onClick={this.handleClick} className={className}>Sign Up</span>
         <Modal onClose={this.closeModal} open={this.state.modalOpen} basic size="small">
           {this.state.render === "signup" ? <Signup toggle={this.toggleRender} /> : <Login toggle={this.toggleRender} />}
         </Modal>
@@ -48,4 +50,4 @@ class LoginSignup extends React.Component{
   )}
 }
 
-export default LoginSignup
+export default withRouter(LoginSignup)

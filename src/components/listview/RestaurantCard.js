@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 import Options from "../../services/data"
-import SmallRating from "../restaurants/SmallRating"
 import {Grid} from 'semantic-ui-react'
 
 
@@ -23,7 +22,7 @@ const RestaurantCard = ({ restaurant, selectRestaurant, selectedRestaurant }) =>
         </div>
         </Grid.Column>
         <Grid.Column  width={3}>
-        {restaurant.average_rating != 0 ?<div className="cardRating">{restaurant.average_rating}</div> : <div>Not Yet Rated</div>}
+        {restaurant.average_rating !== 0 ?<div className="cardRating">{restaurant.average_rating}</div> : <div>Not Yet Rated</div>}
       </Grid.Column>
     </Grid>
     </Link>

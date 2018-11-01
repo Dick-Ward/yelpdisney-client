@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Button, Grid} from 'semantic-ui-react'
+import {Grid} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
 import * as moment from 'moment'
 import Review from "../reviews/Review"
@@ -26,7 +26,7 @@ class RestaurantPage extends Component{
         const reviews = sortedReviews.map(review =>{ return <Review key={review.id} review={review}/> })
 
       return (
-        <div>
+        <div className="restaurantPage">
         <Grid>
           <Grid.Row style={{height: "522px"}}>
             <Grid.Column  width={2}>

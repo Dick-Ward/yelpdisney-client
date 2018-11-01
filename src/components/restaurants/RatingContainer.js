@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Grid} from 'semantic-ui-react'
 import Rating from './Rating'
 import ReviewForm from "../reviews/ReviewForm"
 
