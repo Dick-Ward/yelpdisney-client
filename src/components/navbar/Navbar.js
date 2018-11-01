@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {Form, Input, Button, Grid, Icon} from 'semantic-ui-react'
+import {Form, Input, Grid} from 'semantic-ui-react'
 import * as actions from "../../actions"
 import LoginSignup from '../global/LoginSignup'
 
@@ -42,7 +42,6 @@ class Navbar extends React.Component{
   }
 
 render(){
-  console.log(this.state)
   return(
     <div className="navbar">
       <Grid>

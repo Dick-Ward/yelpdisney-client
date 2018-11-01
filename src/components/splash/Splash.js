@@ -6,8 +6,6 @@ import VideoCover from 'react-video-cover'
 import LoginSignup from '../global/LoginSignup'
 import * as actions from "../../actions"
 import "../../style/splash.css"
-import Navbar from "../navbar/Navbar"
-
 
 class Splash extends React.Component {
   state = {
