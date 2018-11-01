@@ -47,12 +47,12 @@ class RestaurantList extends Component {
         <Grid.Column width={3}>
           <Filters />
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column width={9}>
           <div className="restaurantListContainer">
             {this.conditionalRestaurants()}
           </div>
         </Grid.Column>
-        <Grid.Column width={3}>
+        <Grid.Column width={2}>
         </Grid.Column>
       </Grid>
     )

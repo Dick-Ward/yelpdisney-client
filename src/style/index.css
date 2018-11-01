@@ -19,7 +19,7 @@ body, ul {
   src: local("Walt"), url("../fonts/waltograph42.otf")
 }
 .restaurantListContainer{
-  margin-top: 30px;
+  margin-top: 25px;
 }
 .login{
   margin-left: 10%;

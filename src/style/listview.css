@@ -3,8 +3,9 @@
   font-size: 3em;
 }
 .cardTitle{
-  font-size: 2em;
+  font-size: 2.3em;
   font-family: "Dosis";
+  letter-spacing: 1px;
   padding-top: 8px;
   border-radius: 5px;
   display: inline-block;
@@ -30,11 +31,11 @@
 .cardParkName{
   text-align: left;
   padding-bottom: 5px;
-  margin-left: 50%;
+  margin-left: 40%;
 }
 .cardParkName > div{
   font-family: "Dosis", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: black;
 }
 .cardInfo{
@@ -43,13 +44,13 @@
   color: black;
 }
 .filter {
-  width: 50%;
+  width: 90%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 .filterContainer{
   min-width: 220px;
-  width: 65%;
+  width: 100%;
   margin-top: 30px;
   padding: 10px;
 }
