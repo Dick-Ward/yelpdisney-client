@@ -14,10 +14,6 @@ class Navbar extends React.Component{
     loginSelected: false
   }
 
-  handleFilterChange = (e, {value}) =>{
-      this.setState({ park: value });
-  }
-
   handleSearchChange = e =>{
     this.setState({ query: e.target.value})
   }
@@ -46,6 +42,7 @@ class Navbar extends React.Component{
   }
 
 render(){
+  console.log(this.state)
   return(
     <div className="navbar">
       <Grid>
@@ -57,7 +54,7 @@ render(){
         <Grid.Column width={5}>
         <div className="navElementWrapper">
           <Form className="navSearch" onSubmit={this.handleSubmit}>
-              <Input className="navSearchBar" action={{ icon: 'search' }} placeholder='Leave blank to search all restaurants' />
+              <Input onChange={this.handleSearchChange} className="navSearchBar" action={{ icon: 'search' }} placeholder='Leave blank to search all restaurants' />
           </Form>
         </div>
         </Grid.Column>
