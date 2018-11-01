@@ -1,6 +1,9 @@
-
+.cardRating{
+  margin-top:20%;
+  font-size: 3em;
+}
 .cardTitle{
-  font-size: 1.7em;
+  font-size: 2em;
   font-family: "Dosis";
   padding-top: 8px;
   border-radius: 5px;
@@ -13,6 +16,7 @@
   border-width: thin;
   border-color: grey;
   background-color: white;
+  margin-bottom: 14px;
 }
 .restaurant-card:hover{
   border-left: solid;
@@ -22,12 +26,11 @@
   cursor: pointer;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 8px 0 rgba(0, 0, 0, 0.12);
   background-color: var(--whiteBlue)
-
 }
 .cardParkName{
   text-align: left;
   padding-bottom: 5px;
-  margin-left: 40%;
+  margin-left: 50%;
 }
 .cardParkName > div{
   font-family: "Dosis", sans-serif;
@@ -41,14 +44,16 @@
 }
 .filter {
   width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .filterContainer{
   min-width: 220px;
   width: 65%;
   margin-top: 30px;
   padding: 10px;
-  border: solid;
-  border-width: thin;
-  border-color: grey;
-  background-color: white;
+}
+.filterTitle {
+  font-size: 1.5em;
+  letter-spacing: 1px;
 }

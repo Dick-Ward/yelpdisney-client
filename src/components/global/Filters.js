@@ -22,7 +22,7 @@ class Filters extends React.Component{
   render(){
     return(
       <div className="filterContainer">
-        <h5>Filter Results By:</h5>
+        <div className="filterTitle">Filter Results By:</div>
         <Dropdown
           placeholder={'Park'}
           options={Options.parkOptions}
@@ -50,7 +50,7 @@ class Filters extends React.Component{
           name="categoryFilter"
           className="filter"
         />
-        <Button onClick={this.handleClearFilters} size="mini">Clear Filters</Button>
+        <Button onClick={this.handleClearFilters} size="small">Clear Filters</Button>
       </div>
     )
   }
