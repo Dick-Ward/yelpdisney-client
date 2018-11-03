@@ -51,16 +51,16 @@
   height: 92px;
   background: #fff;
   clip-path: url(#ratingSVGQuality);
-  position: absolute;
-  top: 19px;
-  left: 51px;
+  margin-top: -90px;
+  margin-left: 40px;
 }
 .QualityNumber > .numberFill {
   display: block;
   width: 100%;
   transition: all 1s;
   position: absolute;
-  top: 0;
+  top: -13px;
+  left: 10px;
 }
 
 .Cleanliness{
@@ -83,16 +83,16 @@
   height: 92px;
   background: #fff;
   clip-path: url(#ratingSVGCleanliness);
-  position: absolute;
-  top: 19px;
-  left: 51px;
+  margin-top: -90px;
+  margin-left: 40px;
 }
 .CleanlinessNumber > .numberFill {
   display: block;
   width: 100%;
   transition: all 1s;
   position: absolute;
-  top: 0;
+  top: -13px;
+  left: 10px;
 }
 
 .Service{
@@ -115,16 +115,16 @@
   height: 92px;
   background: #fff;
   clip-path: url(#ratingSVGService);
-  position: absolute;
-  top: 19px;
-  left: 51px;
+  margin-top: -90px;
+  margin-left: 40px;
 }
 .ServiceNumber > .numberFill {
   display: block;
   width: 100%;
   transition: all 1s;
   position: absolute;
-  top: 0;
+  top: -13px;
+  left: 10px;
 }
 
 .Value{
@@ -146,16 +146,16 @@
   height: 92px;
   background: #fff;
   clip-path: url(#ratingSVGValue);
-  position: absolute;
-  top: 19px;
-  left: 51px;
+  margin-top: -90px;
+  margin-left: 40px;
 }
 .ValueNumber > .numberFill {
   display: block;
   width: 100%;
   transition: all 1s;
   position: absolute;
-  top: 0;
+  top: -13px;
+  left: 10px;
 }
 .smallSVGText{
   font-size: 35px;

@@ -9,7 +9,7 @@ class Rating extends React.Component {
         <Grid.Row>
           <Grid.Column width={6}>
           </Grid.Column>
-          <Grid.Column width={4}>
+          <Grid.Column width={4} className="rating-text">
             <div className="ratingBox">
               <svg style={{width: 0, height: 0}}>
                 <clipPath id="svgPathOverall">
@@ -21,7 +21,7 @@ class Rating extends React.Component {
 
               <svg style={{width: 0, height: 0}}>
                 <clipPath id={`ratingSVGOverall`}>
-                  <text class="largeSVGText"y="95">{this.props.rating.toFixed(1)}</text>
+                  <text className="largeSVGText" y="95">{this.props.rating.toFixed(1)}</text>
                 </clipPath>
               </svg>
 
