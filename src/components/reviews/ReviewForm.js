@@ -17,10 +17,10 @@ class ReviewForm extends Component{
    handleSubmit = event => {
      event.preventDefault()
      const data = {rating: this.state.rating,
-       quality: this.state.quality,
-       cleanliness: this.state.cleanliness,
-       service: this.state.service,
-       value: this.state.value,
+       quality: Math.round(this.state.quality),
+       cleanliness: Math.round(this.state.cleanliness),
+       service: Math.round(this.state.service),
+       value: Math.round(this.state.value),
        content: this.state.content,
        restaurant_id: this.props.restaurant_id,
        user_id: this.props.user.id}
@@ -42,6 +42,7 @@ class ReviewForm extends Component{
      }
 
   render(){
+    console.log(this.state);
     return(
       <div className="reviewForm">
         <Form onSubmit={this.handleSubmit}>

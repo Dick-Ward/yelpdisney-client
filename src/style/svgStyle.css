@@ -1,50 +1,79 @@
+
 .Overall{
   width: 120px;
   height: 120px;
   clip-path: url(#svgPathOverall);
+  background: #ccc;
+  position: relative;
+
 }
 .Overall > span {
   display: block;
-  height: 100%;
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  bottom: 0;
 }
-
 
 .Quality{
   width: 92px;
   height: 90px;
+  background: #ccc;
   clip-path: url(#svgPathQuality);
+  position: relative;
 }
 .Quality > span {
   display: block;
-  height: 100%;
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  bottom: 0;
 }
 
 .Cleanliness{
   width: 92px;
   height: 90px;
   clip-path: url(#svgPathCleanliness);
+  background: #ccc;
+  position: relative;
+
 }
 .Cleanliness > span {
   display: block;
-  height: 100%;
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  bottom: 0;
 }
 
 .Service{
   width: 92px;
   height: 90px;
   clip-path: url(#svgPathService);
+  background: #ccc;
+  position: relative;
+
 }
 .Service > span {
   display: block;
-  height: 100%;
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  bottom: 0;
 }
 
 .Value{
   width: 92px;
   height: 90px;
   clip-path: url(#svgPathValue);
+  background: #ccc;
+  position: relative;
+  
 }
 .Value > span {
   display: block;
-  height: 100%;
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  bottom: 0;
 }

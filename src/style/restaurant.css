@@ -64,7 +64,6 @@
   border-width: thin;
 }
 .vertical {
-  transform: rotate(-90deg);
-  background: #ccc;
+
   margin: auto;
 }

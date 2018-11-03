@@ -17,6 +17,7 @@ class RestaurantPage extends Component{
 
 
   render(){
+    console.log(this.props)
     const {restaurant} = this.props
     const park = restaurant.resort_name ? restaurant.resort_name : restaurant.park
 
