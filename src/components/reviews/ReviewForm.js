@@ -42,7 +42,6 @@ class ReviewForm extends Component{
      }
 
   render(){
-    console.log(this.state);
     return(
       <div className="reviewForm">
         <Form onSubmit={this.handleSubmit}>

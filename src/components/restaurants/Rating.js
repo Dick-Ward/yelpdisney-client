@@ -18,12 +18,22 @@ class Rating extends React.Component {
               </clipPath>
             </svg>
 
+            <svg style={{width: 0, height: 0}}>
+              <clipPath id={`ratingSVGOverall`}>
+                <text class="largeSVGText" x="10" y="95">{this.props.rating.toFixed(1)}</text>
+              </clipPath>
+            </svg>
+
             <div>
-              <div className="vertical Overall">
+              <div className="Overall">
                 <span className="ratingFill" style={{height: `${(this.props.rating/5*100)}%`, backgroundColor:"blue"}} />
               </div>
+              <div>
+                <div className={`OverallNumber`}>
+                  <span className="numberFill" style={{height: `${100 - (this.props.rating/5*100)}%`, backgroundColor: "blue"}} />
+                </div>
+              </div>
               <div> Overall </div>
-              <div>{this.props.rating}</div>
             </div>
           </Grid.Column>
           <Grid.Column width={6} className="rating-text">

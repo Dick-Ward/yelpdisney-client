@@ -5,75 +5,161 @@
   clip-path: url(#svgPathOverall);
   background: #ccc;
   position: relative;
-
+  margin: auto;
 }
-.Overall > span {
+.Overall > .ratingFill {
   display: block;
   width: 100%;
   transition: all 1s;
   position: absolute;
   bottom: 0;
+}
+.OverallNumber{
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  clip-path: url(#ratingSVGOverall);
+  position: absolute;
+  top: 19px;
+  left: 51px;
+}
+.OverallNumber > .numberFill {
+  display: block;
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  top: 0;
 }
 
 .Quality{
-  width: 92px;
-  height: 90px;
+  width: 90px;
+  height: 92px;
   background: #ccc;
   clip-path: url(#svgPathQuality);
   position: relative;
+  margin: auto;
 }
-.Quality > span {
+.Quality > .ratingFill {
   display: block;
   width: 100%;
   transition: all 1s;
   position: absolute;
   bottom: 0;
+}
+.QualityNumber{
+  width: 90px;
+  height: 92px;
+  background: #fff;
+  clip-path: url(#ratingSVGQuality);
+  position: absolute;
+  top: 19px;
+  left: 51px;
+}
+.QualityNumber > .numberFill {
+  display: block;
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  top: 0;
 }
 
 .Cleanliness{
-  width: 92px;
-  height: 90px;
+  width: 90px;
+  height: 92px;
   clip-path: url(#svgPathCleanliness);
   background: #ccc;
   position: relative;
-
+  margin: auto;
 }
-.Cleanliness > span {
+.Cleanliness > .ratingFill {
   display: block;
   width: 100%;
   transition: all 1s;
   position: absolute;
   bottom: 0;
+}
+.CleanlinessNumber{
+  width: 90px;
+  height: 92px;
+  background: #fff;
+  clip-path: url(#ratingSVGCleanliness);
+  position: absolute;
+  top: 19px;
+  left: 51px;
+}
+.CleanlinessNumber > .numberFill {
+  display: block;
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  top: 0;
 }
 
 .Service{
-  width: 92px;
-  height: 90px;
+  width: 90px;
+  height: 92px;
   clip-path: url(#svgPathService);
   background: #ccc;
   position: relative;
-
+  margin: auto;
 }
-.Service > span {
+.Service > .ratingFill {
   display: block;
   width: 100%;
   transition: all 1s;
   position: absolute;
   bottom: 0;
+}
+.ServiceNumber{
+  width: 90px;
+  height: 92px;
+  background: #fff;
+  clip-path: url(#ratingSVGService);
+  position: absolute;
+  top: 19px;
+  left: 51px;
+}
+.ServiceNumber > .numberFill {
+  display: block;
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  top: 0;
 }
 
 .Value{
-  width: 92px;
-  height: 90px;
+  width: 90px;
+  height: 92px;
   clip-path: url(#svgPathValue);
   background: #ccc;
   position: relative;
-  
+  margin: auto;
 }
-.Value > span {
+.Value > .ratingFill {
   display: block;
   width: 100%;
   transition: all 1s;
   position: absolute;
   bottom: 0;
+}.ValueNumber{
+  width: 90px;
+  height: 92px;
+  background: #fff;
+  clip-path: url(#ratingSVGValue);
+  position: absolute;
+  top: 19px;
+  left: 51px;
+}
+.ValueNumber > .numberFill {
+  display: block;
+  width: 100%;
+  transition: all 1s;
+  position: absolute;
+  top: 0;
+}
+.smallSVGText{
+  font-size: 35px;
+}
+.largeSVGText{
+  font-size: 50px;
 }

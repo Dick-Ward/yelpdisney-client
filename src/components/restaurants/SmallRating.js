@@ -10,12 +10,22 @@ const SmallRating = props => {
           <ellipse cx="45" cy="60" rx="30" ry="30"/>
         </clipPath>
       </svg>
+      <svg style={{width: 0, height: 0}}>
+        <clipPath id={`ratingSVG${props.ratingOf}`}>
+          <text class="smallSVGText" x="19" y="72">{props.rating.toFixed(1)}</text>
+        </clipPath>
+      </svg>
       <div>
-        <div className={`vertical ${props.ratingOf}`}>
+        <div className={`${props.ratingOf}`}>
           <span className="ratingFill" style={{height: `${(props.rating/5*100)}%`, backgroundColor: props.color}} />
-      </div>
-      <div>{props.ratingOf}</div>
-      <div>{props.rating}</div>
+        </div>
+        <div>
+          <div className={`${props.ratingOf}Number`}>
+            <span className="numberFill" style={{height: `${100 - (props.rating/5*100)}%`, backgroundColor: props.color}} />
+          </div>
+        </div>
+        <div>{props.ratingOf}</div>
+
     </div>
     </React.Fragment>
   )
