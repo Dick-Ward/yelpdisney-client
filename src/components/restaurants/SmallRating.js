@@ -13,7 +13,7 @@ const SmallRating = props => {
         </svg>
         <svg style={{width: 0, height: 0}}>
           <clipPath id={`ratingSVG${props.ratingOf}`}>
-            <text class="smallSVGText" y="72">{props.rating.toFixed(1)}</text>
+            <text className="smallSVGText" y="72">{props.rating.toFixed(1)}</text>
           </clipPath>
         </svg>
         <div>

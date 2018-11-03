@@ -29,11 +29,11 @@ class RatingContainer extends React.Component{
           <div className="restaurantParkName"> {this.props.park} </div>
           {this.state.reviewFormOpen ?
             <ReviewForm
-            closeForm={this.closeForm}
-            restaurant_id={this.props.id}
-            name={this.props.name}
+              closeForm={this.closeForm}
+              restaurant_id={this.props.id}
+              name={this.props.name}
             />
-            :
+          :
           <Rating
             rating={this.props.rating}
             quality={this.props.quality}

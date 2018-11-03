@@ -8,13 +8,9 @@ import RestaurantDetails from './RestaurantDetails'
 
 class RestaurantPage extends Component{
 
-
-
   back = () =>{
     this.props.history.goBack()
   }
-
-
 
   render(){
     const {restaurant} = this.props
@@ -27,26 +23,26 @@ class RestaurantPage extends Component{
 
       return (
         <div className="restaurantPage">
-        <Grid>
-          <Grid.Row style={{height: "522px"}}>
-            <Grid.Column  width={2}>
-            </Grid.Column>
-            <Grid.Column width={4} >
-              <span onClick={this.back} className="linkText" >Back</span>
-              <div className="restaurantDetails">
-                <RestaurantDetails restaurant={restaurant} />
-              </div>
-            </Grid.Column>
-            <Grid.Column width={8}>
-              <RatingContainer
-                id={restaurant.id}
-                name={restaurant.name}
-                park={park}
-                rating={restaurant.average_rating}
-                quality={restaurant.average_quality}
-                cleanliness={restaurant.average_cleanliness}
-                service={restaurant.average_service}
-                value={restaurant.average_value}
+          <Grid>
+            <Grid.Row style={{height: "522px"}}>
+              <Grid.Column  width={2}>
+              </Grid.Column>
+              <Grid.Column width={4} >
+                <span onClick={this.back} className="linkText" >Back</span>
+                <div className="restaurantDetails">
+                  <RestaurantDetails restaurant={restaurant} />
+                </div>
+              </Grid.Column>
+              <Grid.Column width={8}>
+                <RatingContainer
+                  id={restaurant.id}
+                  name={restaurant.name}
+                  park={park}
+                  rating={restaurant.average_rating}
+                  quality={restaurant.average_quality}
+                  cleanliness={restaurant.average_cleanliness}
+                  service={restaurant.average_service}
+                  value={restaurant.average_value}
               />
             </Grid.Column>
             <Grid.Column width={2} >
