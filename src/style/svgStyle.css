@@ -17,18 +17,18 @@
 .OverallNumber{
   width: 120px;
   height: 120px;
+  margin-top: -115px;
+  margin-left: 48px;
   background: #fff;
   clip-path: url(#ratingSVGOverall);
-  position: absolute;
-  top: 19px;
-  left: 51px;
 }
 .OverallNumber > .numberFill {
   display: block;
   width: 100%;
   transition: all 1s;
   position: absolute;
-  top: 0;
+  top: -12px;
+  left: -15px;
 }
 
 .Quality{
