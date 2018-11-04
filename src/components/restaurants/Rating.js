@@ -10,7 +10,6 @@ class Rating extends React.Component {
     }
 
   render(){
-    console.log(this.state.rating)
     return(
       <Grid  >
         <Grid.Row>
@@ -28,7 +27,7 @@ class Rating extends React.Component {
 
               <svg style={{width: 0, height: 0}}>
                 <clipPath id={`ratingSVGOverall`}>
-                  <text className="largeSVGText" y="95">{this.state.rating.toFixed(1)}</text>
+                  <text className="largeSVGText" y="95">{this.props.rating.toFixed(1)}</text>
                 </clipPath>
               </svg>
 
@@ -51,16 +50,16 @@ class Rating extends React.Component {
         <Grid.Row >
           <Grid.Column width={4} className="rating-text">
             <SmallRating rating={this.props.quality} ratingOf={"Quality"} color={"red"} />
-            </Grid.Column>
-            <Grid.Column width={4} className="rating-text">
-              <SmallRating rating={this.props.cleanliness} ratingOf={"Cleanliness"} color={"purple"}/>
-            </Grid.Column>
-            <Grid.Column width={4} className="rating-text">
-              <SmallRating rating={this.props.service} ratingOf={"Service"} color={"green"}/>
-            </Grid.Column>
-            <Grid.Column width={4} className="rating-text">
-              <SmallRating rating={this.props.value} ratingOf={"Value"} color={"orange"}/>
-            </Grid.Column>
+          </Grid.Column>
+          <Grid.Column width={4} className="rating-text">
+            <SmallRating rating={this.props.cleanliness} ratingOf={"Cleanliness"} color={"purple"}/>
+          </Grid.Column>
+          <Grid.Column width={4} className="rating-text">
+            <SmallRating rating={this.props.service} ratingOf={"Service"} color={"green"}/>
+          </Grid.Column>
+          <Grid.Column width={4} className="rating-text">
+            <SmallRating rating={this.props.value} ratingOf={"Value"} color={"orange"}/>
+          </Grid.Column>
           </Grid.Row>
           <Grid.Row >
           <Grid.Column width={12} />
@@ -70,14 +69,6 @@ class Rating extends React.Component {
           </Grid.Row>
         </Grid>
     )
-  }
-  componentDidUpdate(prevProps, prevState){
-    if (prevProps.rating !== this.props.rating){
-      this.setState({rating: this.props.rating})
-    }
-  }
-  componentDidMount(){
-    this.setState({rating: this.props.rating})
   }
 }
 
