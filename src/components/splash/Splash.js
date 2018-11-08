@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import Options from '../../services/data'
 import {Input, Dropdown, Label, Grid} from 'semantic-ui-react'
-import VideoCover from 'react-video-cover'
+import YouTube from 'react-youtube'
 import LoginSignup from '../global/LoginSignup'
 import * as actions from "../../actions"
 import "../../style/splash.css"
@@ -41,19 +41,42 @@ class Splash extends React.Component {
     this.setState({loginSelected: !this.state.loginSelected})
   }
 
+onReady(event) {
+  event.target.mute();
+}
+
+onEnd(event) {
+  event.target.playVideo();
+}
+
   render(){
+
     const videoOptions = {
-      src: '/DisneyWalkup.webm',
-      autoPlay: true,
-      loop: true
+    playerVars: {
+      autoplay: 1,
+      controls: 0,
+      disablekb: 1,
+      rel: 0,
+      showinfo: 0,
+      loop: 1,
+      modestbranding: 1,
+      iv_load_policy: 3
     }
+  }
+
+
 
     return(
         <div className="splash" style={{backgroundColor: "#666"}}>
-        <VideoCover
-        videoOptions={videoOptions}
-        style={{zIndex: "-1"}}
-        />
+        <div className="videoBackground">
+          <YouTube
+          videoId="d7FFFENv6i4"
+          opts={videoOptions}
+          className="iframe"
+          onReady={this.onReady}
+          onEnd={this.onEnd}
+          />
+        </div>
         <div className="splashBar">
           <Grid>
             <Grid.Column width={5}>
