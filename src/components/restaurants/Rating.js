@@ -9,6 +9,7 @@ class Rating extends React.Component {
       rating: 0
     }
 
+
   render(){
     return(
       <Grid  >
@@ -17,17 +18,17 @@ class Rating extends React.Component {
           </Grid.Column>
           <Grid.Column width={4} className="rating-text">
             <div className="ratingBox">
-              <svg style={{width: 0, height: 0}}>
+              <svg id="ratingsvg" style={{width: 0, height: 0}}>
                 <clipPath id="svgPathOverall">
-                  <ellipse cx="25" cy="30" rx="25" ry="25"/>
-                  <ellipse cx="95" cy="30" rx="25" ry="25"/>
-                  <ellipse cx="60" cy="80" rx="40" ry="40"/>
+                  <ellipse cx="140" cy="50" rx="37.5" ry="37.5"/>
+                  <ellipse cx="40" cy="50" rx="37.5" ry="37.5"/>
+                  <ellipse cx="90" cy="120" rx="60" ry="60"/>
                 </clipPath>
               </svg>
 
               <svg style={{width: 0, height: 0}}>
                 <clipPath id={`ratingSVGOverall`}>
-                  <text className="largeSVGText" y="95">{this.props.rating.toFixed(1)}</text>
+                  <text className="largeSVGText" x="38" y="150">{this.props.rating.toFixed(1)}</text>
                 </clipPath>
               </svg>
 
@@ -40,7 +41,7 @@ class Rating extends React.Component {
                     <span className="numberFill" style={{height: `${100 - (this.props.rating/5*100)}%`, backgroundColor: "blue"}} />
                   </div>
                 </div>
-                <div> {this.state.rating} </div>
+                <div> Overall Rating </div>
               </div>
             </div>
           </Grid.Column>

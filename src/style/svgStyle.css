@@ -1,7 +1,7 @@
 
 .Overall{
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   clip-path: url(#svgPathOverall);
   background: #ccc;
   position: relative;
@@ -15,25 +15,21 @@
   bottom: 0;
 }
 .OverallNumber{
-  width: 120px;
-  height: 120px;
-  margin-top: -115px;
-  margin-left: 48px;
+  height: 180px;
   background: #fff;
   clip-path: url(#ratingSVGOverall);
+  margin-top: -179px;
+  border: solid;
 }
 .OverallNumber > .numberFill {
   display: block;
-  width: 100%;
+  width: 180px;
   transition: all 1s;
-  position: absolute;
-  top: -14px;
-  left: -15px;
 }
 
 .Quality{
-  width: 90px;
-  height: 92px;
+  width: 120px;
+  height: 120px;
   background: #ccc;
   clip-path: url(#svgPathQuality);
   position: relative;
@@ -47,27 +43,22 @@
   bottom: 0;
 }
 .QualityNumber{
-  width: 90px;
-  height: 92px;
+  height: 120px;
   background: #fff;
   clip-path: url(#ratingSVGQuality);
-  margin-top: -90px;
-  margin-left: 40px;
+  margin-top: -120px;
 }
 .QualityNumber > .numberFill {
   display: block;
-  width: 100%;
+  width: 120px;
   transition: all 1s;
-  position: absolute;
-  top: -13px;
-  left: 10px;
 }
 
 .Cleanliness{
-  width: 90px;
-  height: 92px;
-  clip-path: url(#svgPathCleanliness);
+  width: 120px;
+  height: 120px;
   background: #ccc;
+  clip-path: url(#svgPathCleanliness);
   position: relative;
   margin: auto;
 }
@@ -79,25 +70,20 @@
   bottom: 0;
 }
 .CleanlinessNumber{
-  width: 90px;
-  height: 92px;
+  height: 120px;
   background: #fff;
   clip-path: url(#ratingSVGCleanliness);
-  margin-top: -90px;
-  margin-left: 40px;
+  margin-top: -120px;
 }
 .CleanlinessNumber > .numberFill {
   display: block;
-  width: 100%;
+  width: 120px;
   transition: all 1s;
-  position: absolute;
-  top: -13px;
-  left: 10px;
 }
 
 .Service{
-  width: 90px;
-  height: 92px;
+  width: 120px;
+  height: 120px;
   clip-path: url(#svgPathService);
   background: #ccc;
   position: relative;
@@ -111,25 +97,20 @@
   bottom: 0;
 }
 .ServiceNumber{
-  width: 90px;
-  height: 92px;
+  height: 120px;
   background: #fff;
   clip-path: url(#ratingSVGService);
-  margin-top: -90px;
-  margin-left: 40px;
+  margin-top: -120px;
 }
 .ServiceNumber > .numberFill {
   display: block;
-  width: 100%;
+  width: 120px;
   transition: all 1s;
-  position: absolute;
-  top: -13px;
-  left: 10px;
 }
 
 .Value{
-  width: 90px;
-  height: 92px;
+  width: 120px;
+  height: 120px;
   clip-path: url(#svgPathValue);
   background: #ccc;
   position: relative;
@@ -141,25 +122,21 @@
   transition: all 1s;
   position: absolute;
   bottom: 0;
-}.ValueNumber{
-  width: 90px;
-  height: 92px;
+}
+.ValueNumber{
+  height: 120px;
   background: #fff;
   clip-path: url(#ratingSVGValue);
-  margin-top: -90px;
-  margin-left: 40px;
+  margin-top: -120px;
 }
 .ValueNumber > .numberFill {
   display: block;
-  width: 100%;
+  width: 120px;
   transition: all 1s;
-  position: absolute;
-  top: -13px;
-  left: 10px;
 }
 .smallSVGText{
-  font-size: 35px;
+  font-size: 45px;
 }
 .largeSVGText{
-  font-size: 50px;
+  font-size: 77px;
 }

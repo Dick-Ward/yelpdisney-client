@@ -6,14 +6,14 @@ const SmallRating = props => {
       <div className="ratingBox">
         <svg style={{width: 0, height: 0}}>
           <clipPath id={`svgPath${props.ratingOf}`}>
-            <ellipse cx="20" cy="22" rx="19.5" ry="19.5"/>
-            <ellipse cx="70" cy="22" rx="19.5" ry="19.5"/>
-            <ellipse cx="45" cy="60" rx="30" ry="30"/>
+            <ellipse cx="26.6" cy="29.3" rx="26" ry="26"/>
+            <ellipse cx="93.3" cy="29.3" rx="26" ry="26"/>
+            <ellipse cx="60" cy="80" rx="40" ry="40"/>
           </clipPath>
         </svg>
         <svg style={{width: 0, height: 0}}>
           <clipPath id={`ratingSVG${props.ratingOf}`}>
-            <text className="smallSVGText" y="72">{props.rating.toFixed(1)}</text>
+            <text className="smallSVGText" x="27" y="98">{props.rating.toFixed(1)}</text>
           </clipPath>
         </svg>
         <div>
