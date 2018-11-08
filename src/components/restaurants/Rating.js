@@ -20,15 +20,14 @@ class Rating extends React.Component {
             <div className="ratingBox">
               <svg id="ratingsvg" style={{width: 0, height: 0}}>
                 <clipPath id="svgPathOverall">
-                  <ellipse cx="140" cy="50" rx="37.5" ry="37.5"/>
-                  <ellipse cx="40" cy="50" rx="37.5" ry="37.5"/>
-                  <ellipse cx="90" cy="120" rx="60" ry="60"/>
+                  <ellipse cx="140" cy="50" rx="37" ry="37"/>
+                  <ellipse cx="40" cy="50" rx="37" ry="37"/>
+                  <ellipse cx="90" cy="120" rx="59.5" ry="59.5"/>
                 </clipPath>
               </svg>
-
               <svg style={{width: 0, height: 0}}>
                 <clipPath id={`ratingSVGOverall`}>
-                  <text className="largeSVGText" x="38" y="150">{this.props.rating.toFixed(1)}</text>
+                  <text className="largeSVGText" x="40" y="150">{this.props.rating.toFixed(1)}</text>
                 </clipPath>
               </svg>
 
@@ -48,17 +47,17 @@ class Rating extends React.Component {
           <Grid.Column width={6} className="rating-text">
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row >
-          <Grid.Column width={4} className="rating-text">
+        <Grid.Row style={{paddingLeft: "50px", paddingRight: "50px"}}>
+          <Grid.Column style={{padding: 0}} width={4} className="rating-text">
             <SmallRating rating={this.props.quality} ratingOf={"Quality"} color={"red"} />
           </Grid.Column>
-          <Grid.Column width={4} className="rating-text">
+          <Grid.Column style={{padding: 0}} width={4} className="rating-text">
             <SmallRating rating={this.props.cleanliness} ratingOf={"Cleanliness"} color={"purple"}/>
           </Grid.Column>
-          <Grid.Column width={4} className="rating-text">
+          <Grid.Column style={{padding: 0}} width={4} className="rating-text">
             <SmallRating rating={this.props.service} ratingOf={"Service"} color={"green"}/>
           </Grid.Column>
-          <Grid.Column width={4} className="rating-text">
+          <Grid.Column style={{padding: 0}} width={4} className="rating-text">
             <SmallRating rating={this.props.value} ratingOf={"Value"} color={"orange"}/>
           </Grid.Column>
           </Grid.Row>

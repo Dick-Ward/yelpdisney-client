@@ -24,7 +24,7 @@ class RestaurantPage extends Component{
       return (
         <div className="restaurantPage">
           <Grid>
-            <Grid.Row style={{height: "522px"}}>
+            <Grid.Row >
               <Grid.Column  width={2}>
               </Grid.Column>
               <Grid.Column width={4} >
@@ -53,7 +53,7 @@ class RestaurantPage extends Component{
           </Grid.Column>
             <Grid.Column width={12}>
             <div className="reviewContainer">
-            {reviews.length > 0 ? <div >{reviews}</div>: "Be the first to review this restaurant!"}
+            {reviews.length > 0 ? <div >{reviews}</div>: <div style={{float: "right"}}>Be the first to review this restaurant!</div>}
             </div>
             </Grid.Column>
             <Grid.Column  width={2}>
