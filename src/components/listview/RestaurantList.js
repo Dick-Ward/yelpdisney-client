@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {Grid} from 'semantic-ui-react'
+import {Grid, Dimmer, Loader} from 'semantic-ui-react'
 import * as actions from "../../actions"
 import RestaurantCard from "./RestaurantCard";
 import Filters from "../global/Filters"
@@ -10,7 +10,7 @@ class RestaurantList extends Component {
 
   conditionalRestaurants = () =>{
     if (this.props.restaurantList.length === 0 && this.props.fetchComplete === false){
-      return <div style={{textAlign: "center"}}> Loading... </div>
+      return   <Loader size="huge" inverted active>Loading</Loader>
     } else if (this.props.restaurantList.length === 0 && this.props.fetchComplete === true) {
         return <div style={{textAlign: "center"}}> No restaurants found </div>
     } else if (this.props.fetchComplete === null) {
@@ -47,12 +47,12 @@ class RestaurantList extends Component {
         <Grid.Column width={3}>
           <Filters />
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column width={9}>
           <div className="restaurantListContainer">
             {this.conditionalRestaurants()}
           </div>
         </Grid.Column>
-        <Grid.Column width={3}>
+        <Grid.Column width={2}>
         </Grid.Column>
       </Grid>
     )

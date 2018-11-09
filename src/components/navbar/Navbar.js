@@ -2,9 +2,10 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {Form, Input, Button, Grid, Icon} from 'semantic-ui-react'
+import {Form, Input, Grid} from 'semantic-ui-react'
 import * as actions from "../../actions"
-import NavbarLogin from './NavbarLogin'
+import LoginSignup from '../global/LoginSignup'
+
 
 class Navbar extends React.Component{
 
@@ -12,10 +13,6 @@ class Navbar extends React.Component{
     query: '',
     park: '',
     loginSelected: false
-  }
-
-  handleFilterChange = (e, {value}) =>{
-      this.setState({ park: value });
   }
 
   handleSearchChange = e =>{
@@ -54,29 +51,24 @@ render(){
         <Grid.Column width={3}>
           <Link className="homeLink" to="/"><div className="logo">Yelp Disney</div></Link>
         </Grid.Column>
-        <Grid.Column width={6}>
-          <Form className="navSearch" onSubmit={this.handleSubmit}>
-            <Form.Group >
-              <Form.Field>
-                <Input
-                  style={{width: "300px"}}
-                  type="text"
-                  onChange={this.handleSearchChange}
-                  value={this.state.query}
-                  placeholder="Leave Blank to Search All Restaurants"
-                />
-              </Form.Field>
 
-              <Button><Icon name="search"/></Button>
-            </Form.Group>
+        <Grid.Column width={5}>
+        <div className="navElementWrapper">
+          <Form className="navSearch" onSubmit={this.handleSubmit}>
+              <Input onChange={this.handleSearchChange} className="navSearchBar" action={{ icon: 'search' }} placeholder='Leave blank to search all restaurants' />
           </Form>
+        </div>
         </Grid.Column>
-        <Grid.Column width={3}>
+        <Grid.Column  width={4}>
+        <div className="navElementWrapper">
+        <div className="navbarLogin">
           {this.props.user ?
-            <div className="logout">Welcome {this.props.user.username}! <Button basic size="small" onClick={this.handleLogout}>Logout?</Button></div>
+            <div>Welcome {this.props.user.username}! <span className="navbarLoginText" onClick={this.handleLogout}>Logout?</span></div>
           :
-          <NavbarLogin logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>
-          }
+          <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
+        </div>
+        </div>
+
       </Grid.Column>
         <Grid.Column width={2}>
         </Grid.Column>

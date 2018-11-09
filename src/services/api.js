@@ -36,9 +36,6 @@ const getCurrentUser = () => {
   }).then(res => res.json());
 }
 
-const getRestaurants = fetch(`${API_URL}/restaurants`)
-      .then(res => res.json());
-
 const getRestaurant = permalink =>
   fetch(`${API_URL}/restaurants/${permalink}`)
       .then(res => res.json())
@@ -61,7 +58,6 @@ const api = {
   login,
   signup,
   getCurrentUser,
-  getRestaurants,
   getRestaurant,
   submitReview,
   searchRestaurants

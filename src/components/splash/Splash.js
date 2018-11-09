@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Options from '../../services/data'
-import {Form, Input, Dropdown, Button, Icon, Label} from 'semantic-ui-react'
-import VideoCover from 'react-video-cover'
+import {Input, Dropdown, Label, Grid} from 'semantic-ui-react'
+import YouTube from 'react-youtube'
 import LoginSignup from '../global/LoginSignup'
 import * as actions from "../../actions"
 import "../../style/splash.css"
@@ -42,31 +42,64 @@ class Splash extends React.Component {
     this.setState({loginSelected: !this.state.loginSelected})
   }
 
+onReady(event) {
+  event.target.mute();
+}
+
+onEnd(event) {
+  event.target.playVideo();
+}
+
   render(){
-    console.log(this.state)
+
     const videoOptions = {
-      src: '/DisneyWalkup.webm',
-      autoPlay: true,
-      loop: true
+    playerVars: {
+      autoplay: 1,
+      controls: 0,
+      disablekb: 1,
+      rel: 0,
+      showinfo: 0,
+      loop: 1,
+      modestbranding: 1,
+      iv_load_policy: 3
     }
+  }
+
+
 
     return(
         <div className="splash" style={{backgroundColor: "#666"}}>
-
-          {/* <VideoCover
-            videoOptions={videoOptions}
-            style={{zIndex: "-1"}}
-          /> */}
+        <div className="videoBackground">
+          <YouTube
+          videoId="d7FFFENv6i4"
+          opts={videoOptions}
+          className="iframe"
+          onReady={this.onReady}
+          onEnd={this.onEnd}
+          />
+        </div>
+        <div className="splashBar">
+          <Grid>
+            <Grid.Column width={5}>
+              <div style={{visibility: "hidden"}} className="logo">Yelp Disney</div>
+            </Grid.Column>
+            <Grid.Column  width={9}>
+            <div className="navElementWrapper">
+            <div className="splashLogin">
+              {this.props.user ?
+                <div>Welcome {this.props.user.username}! <span className="splashLoginText" onClick={this.handleLogout}>Logout?</span></div>
+              :
+              <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
+            </div>
+            </div>
+          </Grid.Column>
+            <Grid.Column width={2}>
+            </Grid.Column>
+          </Grid>
+        </div>
 
 
           <div className="splashTitle">Yelp Disney</div>
-
-          <div className="splashLogin">
-            {this.props.user ?
-              <div className="splashGreeting">Welcome {this.props.user.username}! <Button size="small" onClick={this.handleLogout}>Logout?</Button></div>
-            :
-            <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
-          </div>
 
           <div className="splashSearch">
             <form  onSubmit={this.handleSubmit}>
@@ -74,21 +107,15 @@ class Splash extends React.Component {
                 onChange={this.handleSearchChange}
                 value={this.state.query}
                 labelPosition="left"
-
               action>
                 <Label basic>Find</Label>
                 <input />
-
-                <Dropdown style={{width: "40%"}} search selection placeholder={'All Parks'}
-
+                <Dropdown style={{width: "40%"}} selection placeholder={'All Parks'}
                   options={Options.parkOptions}
-                  selection
                   onChange={this.handleFilterChange}/>
-
-                <Input type="submit" icon="search large" value="" attached="left" style={{backgroundColor: "white"}} />
+                <Input type="submit" icon={{name:"search", size: "large"}} value="" attached="left" style={{backgroundColor: "white"}} />
               </Input>
             </form>
-
 
           </div>
           </div>

@@ -2,14 +2,13 @@
   font-family: "Roboto", sans-serif;
 }
 :root{
-  --whiteblue: #D3EFFF;
-  --lightblue: #7CD1FF;
-  --mutedblue: #1D96D7;
+  --whiteBlue: #F2F9FF;
   --brightblue: #19AEFF;
-  --darkblue: #083D59;
+  --backgroundDark: #4793D1;
+  --backgroundLight: #88BFEC;
   padding: 0;
   margin: 0;
-  background-image: linear-gradient(160deg, var(--whiteblue), var(--brightblue));
+  background-image: linear-gradient(var(--backgroundDark), var(--backgroundLight));
 }
 body, ul {
   margin: 0;
@@ -19,12 +18,8 @@ body, ul {
   font-family: "Walt";
   src: local("Walt"), url("../fonts/waltograph42.otf")
 }
-button{
-  color: var(--mutedblue)
-}
-
 .restaurantListContainer{
-  margin-top: 30px;
+  margin-top: 25px;
 }
 .login{
   margin-left: 10%;
@@ -42,14 +37,26 @@ button{
   padding-bottom: 5%;
   background: var(--brightblue);
 }
-.signupIntro{
+.authIntro{
   font-family: "Dosis";
   font-size: 1.5em;
   text-align: center;
   line-height: 1.2em;
+  margin-bottom: 5px;
+}
+.linkText{
+  font-size: 1.1em;
+  text-decoration-line: underline;
+  color: #dddddd;
+}
+.linkText:hover{
+  cursor: pointer;
+  color: white
 }
 .ViewContainer{
   min-height: 100vh;
-  background-color: var(--brightblue);
-  background-image: linear-gradient(160deg, var(--whiteblue), var(--brightblue));
+  background-image: linear-gradient(var(--backgroundDark), var(--backgroundLight));
+}
+.clickable:hover{
+  cursor: pointer;
 }

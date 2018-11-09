@@ -1,48 +1,59 @@
 import React from 'react'
-import {Grid } from 'semantic-ui-react'
-import SmallRating from './SmallRating'
+import {connect} from 'react-redux'
+import Rating from './Rating'
+import ReviewForm from "../reviews/ReviewForm"
 
-const RatingContainer = props =>{
+
+class RatingContainer extends React.Component{
+  state = {
+    reviewFormOpen: false
+  }
+
+  newReview = () =>{
+    if(this.props.user){
+      this.setState({reviewFormOpen: true})
+    } else {
+      alert("You must be logged in to leave a review")
+    }
+  }
+  closeForm = () =>{
+    this.setState({reviewFormOpen: false})
+  }
+
+  render(){
+
   return (
         <div className="ratingContainer">
-          <Grid >
-              <Grid.Column width={6} className="rating-text">
-              </Grid.Column>
-              <Grid.Column width={4} className="rating-text">
-                <svg style={{width: 0, height: 0}}>
-                  <clipPath id="svgPathOverall">
-                     <ellipse cx="93" cy="26" rx="25" ry="25"/>
-                     <ellipse cx="93" cy="94" rx="25" ry="25"/>
-                     <ellipse cx="40" cy="60" rx="40" ry="40"/>
-                  </clipPath>
-                </svg>
-                <div>
-                  <div className="vertical Overall">
-                  <span className="ratingFill" style={{width: `${(props.rating/5*100)}%`, backgroundColor:"blue"}} />
-                  </div>
-                  <div> Overall </div>
-                  <div>{props.rating}</div>
-                </div>
-              </Grid.Column>
-              <Grid.Column width={6} className="rating-text">
-              </Grid.Column>
-              <Grid.Row >
-                <Grid.Column width={4} className="rating-text">
-                  <SmallRating rating={props.quality} ratingOf={"Quality"} color={"red"} />
-                </Grid.Column>
-                <Grid.Column width={4} className="rating-text">
-                  <SmallRating rating={props.cleanliness} ratingOf={"Cleanliness"} color={"purple"}/>
-                </Grid.Column>
-                <Grid.Column width={4} className="rating-text">
-                  <SmallRating rating={props.service} ratingOf={"Service"} color={"green"}/>
-                </Grid.Column>
-                <Grid.Column width={4} className="rating-text">
-                  <SmallRating rating={props.value} ratingOf={"Value"} color={"orange"}/>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
+
+          <div className="restaurantTitle">{this.props.name} </div>
+          <div className="restaurantParkName"> {this.props.park} </div>
+          {this.state.reviewFormOpen ?
+            <ReviewForm
+              closeForm={this.closeForm}
+              restaurant_id={this.props.id}
+              name={this.props.name}
+            />
+          :
+          <Rating
+            rating={this.props.rating}
+            quality={this.props.quality}
+            cleanliness={this.props.cleanliness}
+            service={this.props.service}
+            value={this.props.value}
+            newReview={this.newReview}
+            />
+          }
+
           </div>
+        )}
+      }
+
+      function mapStateToProps(state){
+        return(
+          {
+            user: state.auth.user
+          }
         )
       }
 
-export default RatingContainer
+export default connect(mapStateToProps)(RatingContainer)

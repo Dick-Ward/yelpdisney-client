@@ -1,18 +1,12 @@
-.backButton{
-  position: absolute;
-  left: 25px;
+.restaurantPage{
+  margin-top: 10px;
 }
+
 .ratingContainer{
-  width: 80%;
-  margin: auto;
+  height: 522px;
   border: solid;
   border-width: thin;
-  border-radius: 10px;
-  border-color: RGBa(220,220,255,.1);
-  background-color: white;
-  position: absolute;
-  top: 70px;
-  left: 40px;
+  background-color: var(--whiteBlue);
 }
 .rating-text {
   text-align: center;
@@ -20,50 +14,51 @@
 .restaurantTitle {
   font-family: "Dosis", sans-serif;
   font-size: 3em;
-  margin-top: 5px;
   text-align: center;
-  margin-right: 60px;
+  margin-top: 20px;
+  letter-spacing: 3px;
 }
 .restaurantDetails {
+  margin-top: 10px;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   font-size: 1.1em;
-  padding: 0px;
-  margin-left: 10px;
   border: solid;
   border-width: thin;
-  border-color: RGBA(200,200,255,.1);
-  border-radius: 10px;
-  background-color: RGBa(220,220,255,.1);
-  position: absolute;
-  top: 70px;
-  width: 95%
-}
-.restaurantDetails > :first-child {
-  border: solid;
-  border-width: thin;
-  border-color: RGBA(200,200,255,.1);
-  border-radius: 10px 10px 0px 0px;
-}
-.restaurantDetails > :last-child {
-  border: solid;
-  border-width: thin;
-  border-color: RGBA(200,200,255,.1);
-  border-radius: 0px 0px 10px 10px;
-}
-.restaurantDetails > p {
-  background-color: RGBa(200,200,255,.1);
-  border: solid;
-  border-width: thin;
-  border-color: RGBA(200,200,255,.1);
+  background-color: var(--whiteBlue);
+  text-align: center;
 }
 .restaurantParkName {
   text-align: center;
-  margin-right: 60px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
-.vertical {
-  transform: rotate(-90deg);
-  background: #ccc;
-  margin: auto;
+.slider{
+  appearance: none;
+  outline: none;
+  height: 10px;
+}
+.slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  height: 25px;
+  width: 12px;
+  background: RGBa(1,1,1,0.5);
+  border: solid;
+  border-color: RGBa(1,1,1,.8);
+  border-width: thin;
+  cursor: pointer;
+
+}
+.slider::-moz-range-thumb{
+  height: 25px;
+  width: 12px;
+  background: RGBa(1,1,1,0.5);
+  border: solid;
+  border-color: RGBa(1,1,1,.8);
+  border-width: thin;
+  cursor: pointer;
+}
+.textArea{
+  border: solid;
+  border-width: thin;
 }
