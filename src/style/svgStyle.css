@@ -19,7 +19,6 @@
   background: #fff;
   clip-path: url(#ratingSVGOverall);
   margin-top: -179px;
-  border: solid;
 }
 .OverallNumber > .numberFill {
   display: block;

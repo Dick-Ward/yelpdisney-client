@@ -4,6 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  background-color: black;
 }
 .splashBar {
   line-height: 1.1;
@@ -55,7 +56,7 @@
   color: white;
 }
 .videoBackground{
-  background: white;
+  background: black;
     position: fixed;
     top: -100px;
     bottom: 0;
