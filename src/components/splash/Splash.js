@@ -7,6 +7,7 @@ import LoginSignup from '../global/LoginSignup'
 import * as actions from "../../actions"
 import "../../style/splash.css"
 
+
 class Splash extends React.Component {
   state = {
     query: '',
@@ -99,6 +100,7 @@ onEnd(event) {
 
 
           <div className="splashTitle">Yelp Disney</div>
+
           <div className="splashSearch">
             <form  onSubmit={this.handleSubmit}>
               <Input  size="large" style={{width: "100%"}} type='text' placeholder='Prime Time Cafe,   Tiffins,   Indian,   pizza...'
@@ -114,6 +116,7 @@ onEnd(event) {
                 <Input type="submit" icon={{name:"search", size: "large"}} value="" attached="left" style={{backgroundColor: "white"}} />
               </Input>
             </form>
+
           </div>
           </div>
 

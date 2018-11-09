@@ -6,6 +6,7 @@ import {Form, Input, Grid} from 'semantic-ui-react'
 import * as actions from "../../actions"
 import LoginSignup from '../global/LoginSignup'
 
+
 class Navbar extends React.Component{
 
   state = {
@@ -50,6 +51,7 @@ render(){
         <Grid.Column width={3}>
           <Link className="homeLink" to="/"><div className="logo">Yelp Disney</div></Link>
         </Grid.Column>
+
         <Grid.Column width={5}>
         <div className="navElementWrapper">
           <Form className="navSearch" onSubmit={this.handleSubmit}>
@@ -66,6 +68,7 @@ render(){
           <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
         </div>
         </div>
+
       </Grid.Column>
         <Grid.Column width={2}>
         </Grid.Column>
