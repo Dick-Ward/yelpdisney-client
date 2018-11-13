@@ -20,6 +20,7 @@ class Splash extends React.Component {
   }
 
   handleLogout = () =>{
+    alert("You have successfully logged out.")
     this.props.logout()
   }
 
