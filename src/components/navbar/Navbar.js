@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {Form, Input, Grid} from 'semantic-ui-react'
+import {Form, Input, Grid, Popup} from 'semantic-ui-react'
 import * as actions from "../../actions"
 import LoginSignup from '../global/LoginSignup'
 
@@ -34,6 +34,7 @@ class Navbar extends React.Component{
   }
 
   handleLogout = () =>{
+    alert("You have successfully logged out.")
     this.props.logout()
     this.setState({loginSelected: false})
   }
@@ -61,9 +62,15 @@ render(){
         </Grid.Column>
         <Grid.Column  width={4}>
         <div className="navElementWrapper">
+
         <div className="navbarLogin">
           {this.props.user ?
-            <div>Welcome {this.props.user.username}! <span className="navbarLoginText" onClick={this.handleLogout}>Logout?</span></div>
+            <div><Popup
+       trigger={<span className="navbarLoginText" > Welcome {this.props.user.username}!  </span>}
+       content={<span className="navbarLoginText" onClick={this.handleLogout}>Log Out</span>}
+       on='click'
+       position='top right'
+     /></div>
           :
           <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
         </div>

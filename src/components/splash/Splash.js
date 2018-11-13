@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Options from '../../services/data'
-import {Input, Dropdown, Label, Grid} from 'semantic-ui-react'
+import {Input, Popup, Dropdown, Label, Grid} from 'semantic-ui-react'
 import YouTube from 'react-youtube'
 import LoginSignup from '../global/LoginSignup'
 import * as actions from "../../actions"
@@ -87,7 +87,12 @@ onEnd(event) {
             <div className="navElementWrapper">
             <div className="splashLogin">
               {this.props.user ?
-                <div>Welcome {this.props.user.username}! <span className="splashLoginText" onClick={this.handleLogout}>Logout?</span></div>
+                <div><Popup
+           trigger={<span className="splashLoginText" > Welcome {this.props.user.username}!  </span>}
+           content={<span className="navbarLoginText" onClick={this.handleLogout}>Log Out</span>}
+           on='click'
+           position='top right'
+         /></div>
               :
               <LoginSignup logInToggle={this.logInToggle} loginSelected={this.state.loginSelected}/>}
             </div>

@@ -36,6 +36,14 @@
   appearance: none;
   outline: none;
   height: 10px;
+  width: 90%;
+}
+.slider::-moz-range-track{
+  height: 0px;
+  user-select: none;
+}
+.slider::-moz-focus-outer {
+  border: 0;
 }
 .slider::-webkit-slider-thumb{
   -webkit-appearance: none;

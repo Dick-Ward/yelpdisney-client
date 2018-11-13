@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {Grid, Dimmer, Loader} from 'semantic-ui-react'
+import {Grid, Loader} from 'semantic-ui-react'
 import * as actions from "../../actions"
 import RestaurantCard from "./RestaurantCard";
 import Filters from "../global/Filters"

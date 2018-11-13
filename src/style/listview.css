@@ -2,6 +2,10 @@
   margin-top:20%;
   font-size: 3em;
 }
+.cardRating > span {
+  font-size: .3em;
+  text-align: center;
+}
 .cardTitle{
   font-size: 2.3em;
   font-family: "Dosis";
@@ -32,6 +36,7 @@
   text-align: left;
   padding-bottom: 5px;
   margin-left: 40%;
+  margin-top: -20px;
 }
 .cardParkName > div{
   font-family: "Dosis", sans-serif;

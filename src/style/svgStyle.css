@@ -3,9 +3,11 @@
   width: 180px;
   height: 180px;
   clip-path: url(#svgPathOverall);
-  background: #ccc;
+  background: #ddd;
   position: relative;
   margin: auto;
+  box-shadow:  inset 5px 5px 25px 15px #bbb;
+  
 }
 .Overall > .ratingFill {
   display: block;
@@ -30,10 +32,11 @@
 .Quality{
   width: 120px;
   height: 120px;
-  background: #ccc;
+  background: #ddd;
   clip-path: url(#svgPathQuality);
   position: relative;
   margin: auto;
+  box-shadow:  inset 5px 5px 25px 15px #bbb;
 }
 .Quality > .ratingFill {
   display: block;
@@ -41,6 +44,7 @@
   transition: all 1s;
   position: absolute;
   bottom: 0;
+
 }
 .QualityNumber{
   height: 120px;
@@ -57,10 +61,12 @@
 .Cleanliness{
   width: 120px;
   height: 120px;
-  background: #ccc;
+  background: #ddd;
   clip-path: url(#svgPathCleanliness);
   position: relative;
   margin: auto;
+  box-shadow:  inset 5px 5px 25px 15px #bbb;
+
 }
 .Cleanliness > .ratingFill {
   display: block;
@@ -68,6 +74,7 @@
   transition: all 1s;
   position: absolute;
   bottom: 0;
+
 }
 .CleanlinessNumber{
   height: 120px;
@@ -85,9 +92,11 @@
   width: 120px;
   height: 120px;
   clip-path: url(#svgPathService);
-  background: #ccc;
+  background: #ddd;
   position: relative;
   margin: auto;
+  box-shadow:  inset 5px 5px 25px 15px #bbb;
+
 }
 .Service > .ratingFill {
   display: block;
@@ -95,6 +104,7 @@
   transition: all 1s;
   position: absolute;
   bottom: 0;
+
 }
 .ServiceNumber{
   height: 120px;
@@ -112,9 +122,11 @@
   width: 120px;
   height: 120px;
   clip-path: url(#svgPathValue);
-  background: #ccc;
+  background: #ddd;
   position: relative;
   margin: auto;
+  box-shadow:  inset 5px 5px 25px 15px #bbb;
+
 }
 .Value > .ratingFill {
   display: block;
@@ -122,6 +134,7 @@
   transition: all 1s;
   position: absolute;
   bottom: 0;
+
 }
 .ValueNumber{
   height: 120px;
