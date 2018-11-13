@@ -44,8 +44,8 @@ class SignUp extends React.Component {
           what you have to say!
         </div>
         <Form error onSubmit={this.handleSubmit}>
-          <Form.Input autoFocus name="username" label="Username" placeholder="Username" onChange={this.handleChange} value={this.state.username} />
-          <Form.Input name="email" label="Email" type="email" placeholder="Email" onChange={this.handleChange} value={this.state.email}/>
+          <Form.Input autoFocus maxLength="21" name="username" label="Username" placeholder="Maximum length 21 characters" onChange={this.handleChange} value={this.state.username} />
+          <Form.Input name="email" label="Email" type="email" placeholder="example@user.email" onChange={this.handleChange} value={this.state.email}/>
           <Form.Input name="password" label="Password" type="password" placeholder="Password" onChange={this.handleChange} value={this.state.password}/>
           <Form.Input name="passwordMatch" label="Confirm Password" type="password" placeholder="Password" onChange={this.handleChange} value={this.state.passwordMatch}/>
           <Button type="submit">Submit</Button>
