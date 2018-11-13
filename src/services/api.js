@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000";
+const API_URL = "https://yelp-disney-api.herokuapp.com";
 
 const token = localStorage.getItem("token");
 
