@@ -55,7 +55,6 @@
   border-color: RGBa(1,1,1,.8);
   border-width: thin;
   cursor: pointer;
-
 }
 .slider::-moz-range-thumb{
   height: 25px;
