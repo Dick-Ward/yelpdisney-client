@@ -46,7 +46,29 @@ class Splash extends React.Component {
 onReady(event) {
   event.target.mute();
 }
+isChrome(){
+  if (window.chrome !== null &&
+  typeof window.chrome !== "undefined" &&
+  window.navigator.vendor === "Google Inc." &&
+  typeof window.opr == "undefined"&&
+  window.navigator.userAgent.indexOf("Edge") > -1 === false &&
+  window.navigator.userAgent.match("CriOS") == null){
+    return true
+  }
+  else{
+    return false
+  }
+}
 
+warnBrowser(){
+  if (this. isChrome()){
+    return <div className="BrowserWarn">It looks like you're using Google Chrome, which won't load review animations correctly.  If you want to read more about the Chrome bug I found, you can check out my blog post on <a href="https://medium.com/@TheDickWard/animated-ratings-using-svg-text-clip-paths-and-why-they-dont-work-in-chrome-107676891b7e">SVG Clip Paths and why they don't work in Chrome</a>.  As soon as the change is pushed live, you'll stop seeing this message. In the meantime, you can get the full functionality of this site with <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a></div>
+
+  }
+  else if (!(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)){
+    return <div className="BrowserWarn">It looks like you're not using <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>, which means this site won't load review animations correctly.  If you want to read more about what that means and why, you can check out my blog post on <a href="https://medium.com/@TheDickWard/animated-ratings-using-svg-text-clip-paths-and-why-they-dont-work-in-chrome-107676891b7e">SVG Clip Paths and why they don't work in Chrome</a>.</div>
+  }
+}
 onEnd(event) {
   event.target.playVideo();
 }
@@ -79,6 +101,8 @@ onEnd(event) {
           onEnd={this.onEnd}
           />
         </div>
+        {this.warnBrowser()}
+
         <div className="splashBar">
           <Grid>
             <Grid.Column width={5}>
