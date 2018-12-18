@@ -35,7 +35,6 @@ class Splash extends React.Component {
     this.props.resetRestaurants()
     this.props.applyParkFilter(park)
     this.props.searchRestaurants(query)
-    this.props.clearAllFilters()
     this.props.history.push('/restaurants')
   }
 
@@ -103,10 +102,7 @@ onEnd(event) {
             </Grid.Column>
           </Grid>
         </div>
-
-
           <div className="splashTitle">Yelp Disney</div>
-
           <div className="splashSearch">
             <form  onSubmit={this.handleSubmit}>
               <Input  size="large" style={{width: "100%"}} type='text' placeholder='Prime Time Cafe,   Tiffins,   Indian,   pizza...'
