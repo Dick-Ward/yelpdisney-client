@@ -40,10 +40,14 @@
   top: 60%;
   width: 100%;
   text-align: center;
+
 }
 .splashSearch > form{
   width: 60%;
   margin: auto;
+}
+.splashSearchSubmit{
+  border-radius: 0px 10px 10px 0px ;
 }
 .splashTitle{
   position: absolute;

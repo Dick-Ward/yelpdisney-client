@@ -115,7 +115,7 @@ onEnd(event) {
                 <Dropdown style={{width: "40%"}} search selection placeholder={'All Parks'}
                   options={Options.parkOptions}
                   onChange={this.handleFilterChange}/>
-                <Input type="submit" icon={{name:"search", size: "large"}} value="" attached="left" style={{backgroundColor: "white"}} />
+                <Input type="submit" className="splashSearchSubmit" icon={{name:"search", size: "large"}} value="" attached="left" style={{backgroundColor: "white"}} />
               </Input>
             </form>
 
