@@ -116,7 +116,7 @@ onEnd(event) {
               action>
                 <Label basic>Find</Label>
                 <input />
-                <Dropdown style={{width: "40%"}} selection placeholder={'All Parks'}
+                <Dropdown style={{width: "40%"}} search selection placeholder={'All Parks'}
                   options={Options.parkOptions}
                   onChange={this.handleFilterChange}/>
                 <Input type="submit" icon={{name:"search", size: "large"}} value="" attached="left" style={{backgroundColor: "white"}} />
