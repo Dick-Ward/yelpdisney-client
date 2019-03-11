@@ -23,7 +23,6 @@ const RestaurantCard = ({ restaurant, selectRestaurant, selectedRestaurant }) =>
         </Grid.Column>
         <Grid.Column  width={3}>
         {restaurant.average_rating !== 0 ?<div className="cardRating">{restaurant.average_rating.toFixed(1)}<br/><span>Average Rating</span></div> : <div>Not Yet Rated</div>}
-
       </Grid.Column>
     </Grid>
     </Link>
