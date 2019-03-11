@@ -35,7 +35,6 @@ class Splash extends React.Component {
     this.props.resetRestaurants()
     this.props.applyParkFilter(park)
     this.props.searchRestaurants(query)
-    this.props.clearAllFilters()
     this.props.history.push('/restaurants')
   }
 
@@ -127,10 +126,7 @@ onEnd(event) {
             </Grid.Column>
           </Grid>
         </div>
-
-
           <div className="splashTitle">Yelp Disney</div>
-
           <div className="splashSearch">
             <form  onSubmit={this.handleSubmit}>
               <Input  size="large" style={{width: "100%"}} type='text' placeholder='Prime Time Cafe,   Tiffins,   Indian,   pizza...'
@@ -140,10 +136,10 @@ onEnd(event) {
               action>
                 <Label basic>Find</Label>
                 <input />
-                <Dropdown style={{width: "40%"}} selection placeholder={'All Parks'}
+                <Dropdown style={{width: "40%"}} search selection placeholder={'All Parks'}
                   options={Options.parkOptions}
                   onChange={this.handleFilterChange}/>
-                <Input type="submit" icon={{name:"search", size: "large"}} value="" attached="left" style={{backgroundColor: "white"}} />
+                <Input type="submit" className="splashSearchSubmit" icon={{name:"search", size: "large"}} value="" attached="left" style={{backgroundColor: "white"}} />
               </Input>
             </form>
 
